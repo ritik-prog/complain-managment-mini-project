@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualBasic;
-using Olav.Sanity.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +48,7 @@ namespace helphub
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error during save operation: ",ex.Message);
+                MessageBox.Show("Registration Failed",ex.Message);
             }
 
 
