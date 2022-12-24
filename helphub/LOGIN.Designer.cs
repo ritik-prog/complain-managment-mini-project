@@ -66,7 +66,7 @@ namespace helphub
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 7.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(618, 501);
+            this.label3.Location = new System.Drawing.Point(618, 499);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(377, 23);
             this.label3.TabIndex = 12;
