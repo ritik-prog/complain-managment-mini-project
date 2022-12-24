@@ -275,7 +275,7 @@ namespace helphub
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1688, 1060);
             this.Name = "COMPLAINT";
-            this.Text = "COMPLAINT";
+            this.Text = "COMPLAINT - HELPHUB";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

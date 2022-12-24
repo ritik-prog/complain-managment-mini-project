@@ -21,5 +21,14 @@ namespace helphub
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LOGIN login = new LOGIN();
+
+            login.Show();
+
+            this.Hide(); //Close Form1,the current open form.
+        }
     }
 }
