@@ -26,5 +26,9 @@ namespace helphub
             this.Hide(); //Close Form1,the current open form.
         }
 
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

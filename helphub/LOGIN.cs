@@ -22,32 +22,45 @@ namespace helphub
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            string SQLitecnStr = @"Data Source=C:\Users\ritikmakhija\source\repos\helphub\helphub\helphub.db";
-            SQLiteConnection SQLiteConn = new SQLiteConnection();
-            SQLiteCommand SQLitecmd = new SQLiteCommand();
-            SQLiteDataReader SQLiteReader;
-            SQLiteConn.ConnectionString = SQLitecnStr;
-            SQLiteConn.Open();
-            SQLitecmd.Connection = SQLiteConn;
-            SQLitecmd.CommandText = "SELECT * FROM user WHERE username='"+ Username.Text +"' AND password='"+ Password.Text + "'";
-            try
+            if (Username.Text.Trim() == "" && Password.Text.Trim() == "")
             {
-                SQLitecmd.ExecuteNonQuery();
-                MessageBox.Show("Logedin Succesfully");
-
-                DASHBOARD dashboard = new DASHBOARD();
-
-                dashboard.Show();
-
-                this.Hide(); //Close Form1,the current open form.
+                MessageBox.Show("Empty Fields", "Error")
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Login Failed", ex.Message);
+            else {
+                try
+                {
+                    string SQLitecnStr = @"Data Source=./helphub.db";
+                    SQLiteConnection SQLiteConn = new SQLiteConnection();
+                    SQLiteCommand SQLitecmd = new SQLiteCommand();
+                    SQLiteConn.ConnectionString = SQLitecnStr;
+                    SQLiteConn.Open();
+                    SQLitecmd.Connection = SQLiteConn;
+                    SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + Username.Text + "' AND password='" + Password.Text + "'";
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    if()
+
+
+                    MessageBox.Show("Logedin Succesfully");
+
+                    DASHBOARD dashboard = new DASHBOARD();
+
+                    dashboard.Show();
+
+                    this.Hide(); //Close Form1,the current open form.
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Login Failed", ex.Message);
+                    Console.WriteLine(ex);
+                }
+
+
+                SQLiteConn.Close();
             }
-
-
-            SQLiteConn.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -58,5 +71,13 @@ namespace helphub
 
             this.Hide(); //Close Form1,the current open form.
         }
+    }
+}
+
+public class WrongCredentials: Exception
+{
+    public WrongCredentials(string message)
+       : base(message)
+    {
     }
 }

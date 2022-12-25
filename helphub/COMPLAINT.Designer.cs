@@ -152,9 +152,10 @@ namespace helphub
             this.Label3.Location = new System.Drawing.Point(939, 324);
             this.Label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(394, 49);
+            this.Label3.Size = new System.Drawing.Size(344, 49);
             this.Label3.TabIndex = 14;
-            this.Label3.Text = "CONTACT NUMBER";
+            this.Label3.Text = "MOBILE NUMBER";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label2
             // 
@@ -240,8 +241,13 @@ namespace helphub
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(1479, 38);
+            this.pictureBox2.MaximumSize = new System.Drawing.Size(160, 55);
+            this.pictureBox2.MinimumSize = new System.Drawing.Size(90, 45);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(160, 55);
             this.pictureBox2.TabIndex = 27;
@@ -252,7 +258,10 @@ namespace helphub
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-121, -69);
+            this.pictureBox1.Location = new System.Drawing.Point(-116, -64);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(531, 540);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(231, 240);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(531, 540);
             this.pictureBox1.TabIndex = 26;
