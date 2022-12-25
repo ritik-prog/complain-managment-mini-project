@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Data.SQLite;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace helphub
@@ -24,10 +25,15 @@ namespace helphub
 
         private async void Button2_Click(object sender, EventArgs e)
         {
-            string SQLitecnStr = @"Data Source=C:\Users\ritikmakhija\source\repos\helphub\helphub\helphub.db";
+            if (username.Text.Trim() == "" && Password.Text.Trim() == "" && Aadhar.Text.Trim() == "" && Contact.Text.Trim() == "" && Email.Text.Trim() == "")
+            {
+                MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+            string SQLitecnStr = @"Data Source=.\helphub.db";
             SQLiteConnection SQLiteConn = new SQLiteConnection();
             SQLiteCommand SQLitecmd = new SQLiteCommand();
-            SQLiteDataReader SQLiteReader;
 
             SQLiteConn.ConnectionString = SQLitecnStr;
             SQLiteConn.Open();
@@ -38,7 +44,7 @@ namespace helphub
 
             try {
                 SQLitecmd.ExecuteNonQuery();
-                MessageBox.Show("Registered Succesfully");
+                MessageBox.Show("Registered Succesfully", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LOGIN login = new LOGIN();
 
@@ -48,12 +54,13 @@ namespace helphub
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Registration Failed",ex.Message);
+                MessageBox.Show("Registration Failed: "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
             SQLiteConn.Close();
             }
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

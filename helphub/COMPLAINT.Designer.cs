@@ -50,7 +50,7 @@ namespace helphub
             // 
             this.Aadhar.BackColor = System.Drawing.Color.White;
             this.Aadhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Aadhar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Aadhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Aadhar.Location = new System.Drawing.Point(147, 379);
             this.Aadhar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Aadhar.Multiline = true;
@@ -62,7 +62,7 @@ namespace helphub
             // 
             this.Dcomplaint.BackColor = System.Drawing.Color.White;
             this.Dcomplaint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Dcomplaint.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dcomplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Dcomplaint.Location = new System.Drawing.Point(147, 550);
             this.Dcomplaint.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Dcomplaint.Multiline = true;
@@ -75,7 +75,7 @@ namespace helphub
             // 
             this.Address.BackColor = System.Drawing.Color.White;
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Address.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Address.Location = new System.Drawing.Point(939, 550);
             this.Address.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Address.Multiline = true;
@@ -112,11 +112,11 @@ namespace helphub
             // 
             this.Label6.AutoSize = true;
             this.Label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Label6.Font = new System.Drawing.Font("Bauhaus 93", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label6.Location = new System.Drawing.Point(147, 324);
             this.Label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(362, 49);
+            this.Label6.Size = new System.Drawing.Size(413, 51);
             this.Label6.TabIndex = 17;
             this.Label6.Text = "AADHAR NUMBER";
             // 
@@ -124,11 +124,11 @@ namespace helphub
             // 
             this.Label5.AutoSize = true;
             this.Label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Label5.Font = new System.Drawing.Font("Bauhaus 93", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label5.Location = new System.Drawing.Point(939, 495);
             this.Label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(289, 49);
+            this.Label5.Size = new System.Drawing.Size(359, 51);
             this.Label5.TabIndex = 16;
             this.Label5.Text = "FULL ADDRESS";
             // 
@@ -136,11 +136,11 @@ namespace helphub
             // 
             this.Label4.AutoSize = true;
             this.Label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Label4.Font = new System.Drawing.Font("Bauhaus 93", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label4.Location = new System.Drawing.Point(147, 495);
             this.Label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(564, 49);
+            this.Label4.Size = new System.Drawing.Size(646, 51);
             this.Label4.TabIndex = 15;
             this.Label4.Text = "DETAILS ABOUT COMPLAINT";
             // 
@@ -148,11 +148,11 @@ namespace helphub
             // 
             this.Label3.AutoSize = true;
             this.Label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Label3.Font = new System.Drawing.Font("Bauhaus 93", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label3.Location = new System.Drawing.Point(939, 324);
             this.Label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(344, 49);
+            this.Label3.Size = new System.Drawing.Size(396, 51);
             this.Label3.TabIndex = 14;
             this.Label3.Text = "MOBILE NUMBER";
             this.Label3.Click += new System.EventHandler(this.Label3_Click);
@@ -161,23 +161,23 @@ namespace helphub
             // 
             this.Label2.AutoSize = true;
             this.Label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Label2.Font = new System.Drawing.Font("Bauhaus 93", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label2.Location = new System.Drawing.Point(641, 174);
             this.Label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(403, 49);
+            this.Label2.Size = new System.Drawing.Size(457, 51);
             this.Label2.TabIndex = 13;
             this.Label2.Text = "TYPE OF COMPLAIN";
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Bauhaus 93", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.Label1.Location = new System.Drawing.Point(547, 54);
             this.Label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(599, 78);
+            this.Label1.Size = new System.Drawing.Size(679, 79);
             this.Label1.TabIndex = 12;
             this.Label1.Text = "FILE A COMPLAINT";
             // 
@@ -187,7 +187,7 @@ namespace helphub
             this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBox1.BackColor = System.Drawing.Color.White;
             this.ComboBox1.DropDownWidth = 579;
-            this.ComboBox1.Font = new System.Drawing.Font("Bauhaus 93", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ComboBox1.FormattingEnabled = true;
             this.ComboBox1.Items.AddRange(new object[] {
             "DOMESTIC VOILENCE",
@@ -205,7 +205,7 @@ namespace helphub
             // Button2
             // 
             this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button2.Font = new System.Drawing.Font("Bauhaus 93", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.ForeColor = System.Drawing.Color.White;
             this.Button2.Location = new System.Drawing.Point(524, 775);
             this.Button2.Margin = new System.Windows.Forms.Padding(4);
@@ -214,6 +214,7 @@ namespace helphub
             this.Button2.TabIndex = 25;
             this.Button2.Text = "SUBMIT COMPLAINT";
             this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // GroupBox1
             // 
@@ -259,7 +260,7 @@ namespace helphub
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-116, -64);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(531, 540);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(231, 240);
             this.pictureBox1.Name = "pictureBox1";
@@ -284,6 +285,7 @@ namespace helphub
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1688, 1060);
             this.Name = "COMPLAINT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COMPLAINT - HELPHUB";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();

@@ -24,7 +24,7 @@ namespace helphub
         {
             if (Username.Text.Trim() == "" && Password.Text.Trim() == "")
             {
-                MessageBox.Show("Empty Fields", "Error");
+                MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else {
                 try
