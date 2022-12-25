@@ -24,7 +24,7 @@ namespace helphub
         {
             if (Username.Text.Trim() == "" && Password.Text.Trim() == "")
             {
-                MessageBox.Show("Empty Fields", "Error")
+                MessageBox.Show("Empty Fields", "Error");
             }
             else {
                 try
@@ -40,14 +40,21 @@ namespace helphub
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
+                    if(dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Logedin Succesfully","LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    MessageBox.Show("Logedin Succesfully");
+                        DASHBOARD dashboard = new DASHBOARD();
 
-                    DASHBOARD dashboard = new DASHBOARD();
+                        dashboard.Show();
 
-                    dashboard.Show();
+                        this.Hide(); //Close Form1,the current open form.
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
 
-                    this.Hide(); //Close Form1,the current open form.
                     SQLiteConn.Close();
 
                 }
@@ -69,13 +76,5 @@ namespace helphub
 
             this.Hide(); //Close Form1,the current open form.
         }
-    }
-}
-
-public class WrongCredentials: Exception
-{
-    public WrongCredentials(string message)
-       : base(message)
-    {
     }
 }
