@@ -52,7 +52,8 @@ namespace helphub
             // 
             this.Aadhar.BackColor = System.Drawing.Color.White;
             this.Aadhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Aadhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Aadhar.Enabled = false;
+            this.Aadhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Aadhar.Location = new System.Drawing.Point(147, 379);
             this.Aadhar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Aadhar.Multiline = true;
@@ -64,7 +65,7 @@ namespace helphub
             // 
             this.DREQUEST.BackColor = System.Drawing.Color.White;
             this.DREQUEST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DREQUEST.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DREQUEST.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DREQUEST.Location = new System.Drawing.Point(147, 550);
             this.DREQUEST.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.DREQUEST.Multiline = true;
@@ -77,7 +78,7 @@ namespace helphub
             // 
             this.Address.BackColor = System.Drawing.Color.White;
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Address.Location = new System.Drawing.Point(939, 550);
             this.Address.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Address.Multiline = true;
@@ -90,7 +91,7 @@ namespace helphub
             // 
             this.Contact.BackColor = System.Drawing.Color.White;
             this.Contact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Contact.Location = new System.Drawing.Point(939, 379);
             this.Contact.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Contact.Multiline = true;

@@ -18,6 +18,9 @@ namespace helphub
         public COMPLAINT()
         {
             InitializeComponent();
+            Aadhar.Text = UserData.aadharno;
+            Contact.Text = UserData.mobilenumber;
+            ComboBox1.SelectedItem = "DOMESTIC VOILENCE";
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -59,6 +62,11 @@ namespace helphub
                     {
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("complain Filled, Checkout in status section", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        STATUS status = new STATUS();
+
+                        status.Show();
+
+                        this.Hide(); //Close Form1,the current open form.
                     }
                     catch (Exception ex)
                     {

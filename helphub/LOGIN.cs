@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -40,8 +41,18 @@ namespace helphub
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    if(dt.Rows.Count > 0)
+                    if(dt.Rows.Count == 1)
                     {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            UserData.ID = row["ID"].ToString();
+                            UserData.username = row["username"].ToString();
+                            UserData.aadharno = row["aadharno"].ToString();
+                            UserData.mobilenumber = row["mobilenumber"].ToString();
+                            UserData.password = row["password"].ToString();
+                            UserData.email = row["email"].ToString();
+                        }
+                        
                         MessageBox.Show("Logedin Succesfully","LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         DASHBOARD dashboard = new DASHBOARD();
@@ -49,6 +60,10 @@ namespace helphub
                         dashboard.Show();
 
                         this.Hide(); //Close Form1,the current open form.
+                    }
+                    else if (dt.Rows.Count >= 2)
+                    {
+                        MessageBox.Show("Multiple Username Error, Kindly Contact Admin....", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {

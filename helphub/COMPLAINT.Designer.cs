@@ -51,7 +51,8 @@ namespace helphub
             // 
             this.Aadhar.BackColor = System.Drawing.Color.White;
             this.Aadhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Aadhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Aadhar.Enabled = false;
+            this.Aadhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Aadhar.Location = new System.Drawing.Point(147, 379);
             this.Aadhar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Aadhar.Multiline = true;
@@ -63,7 +64,7 @@ namespace helphub
             // 
             this.Dcomplaint.BackColor = System.Drawing.Color.White;
             this.Dcomplaint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Dcomplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dcomplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Dcomplaint.Location = new System.Drawing.Point(147, 550);
             this.Dcomplaint.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Dcomplaint.Multiline = true;
@@ -76,7 +77,7 @@ namespace helphub
             // 
             this.Address.BackColor = System.Drawing.Color.White;
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Address.Location = new System.Drawing.Point(939, 550);
             this.Address.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Address.Multiline = true;
@@ -89,7 +90,7 @@ namespace helphub
             // 
             this.Contact.BackColor = System.Drawing.Color.White;
             this.Contact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Contact.Location = new System.Drawing.Point(939, 379);
             this.Contact.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Contact.Multiline = true;
@@ -189,7 +190,7 @@ namespace helphub
             this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBox1.BackColor = System.Drawing.Color.White;
             this.ComboBox1.DropDownWidth = 579;
-            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ComboBox1.FormattingEnabled = true;
             this.ComboBox1.Items.AddRange(new object[] {
             "DOMESTIC VOILENCE",
@@ -198,10 +199,10 @@ namespace helphub
             "STREET DOGS",
             "WATER / SEWAGE",
             "OTHER ISSUES"});
-            this.ComboBox1.Location = new System.Drawing.Point(590, 240);
+            this.ComboBox1.Location = new System.Drawing.Point(605, 238);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(515, 50);
+            this.ComboBox1.Size = new System.Drawing.Size(515, 59);
             this.ComboBox1.TabIndex = 24;
             // 
             // Button2
@@ -236,7 +237,7 @@ namespace helphub
             this.GroupBox1.Controls.Add(this.Contact);
             this.GroupBox1.Controls.Add(this.Label2);
             this.GroupBox1.Controls.Add(this.pictureBox1);
-            this.GroupBox1.Location = new System.Drawing.Point(1, 3);
+            this.GroupBox1.Location = new System.Drawing.Point(1, -16);
             this.GroupBox1.MaximumSize = new System.Drawing.Size(1688, 1127);
             this.GroupBox1.MinimumSize = new System.Drawing.Size(1688, 1127);
             this.GroupBox1.Name = "GroupBox1";

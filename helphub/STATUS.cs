@@ -31,10 +31,10 @@ namespace helphub
                 SQLiteConn.Open();
                 // connection + query
                 SQLitecmd.Connection = SQLiteConn;
-                SQLitecmd.CommandText = "SELECT * FROM complaint WHERE aadharno='56436546453654'";
+                SQLitecmd.CommandText = "SELECT * FROM complaint WHERE aadharno='"+ UserData.aadharno +"'";
                 // connection + query
                 SQLitecmd1.Connection = SQLiteConn;
-                SQLitecmd1.CommandText = "SELECT * FROM request WHERE aadharno='54352352345'";
+                SQLitecmd1.CommandText = "SELECT * FROM request WHERE aadharno='"+ UserData.aadharno +"'";
                 // data adapter
                 SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
                 SQLiteDataAdapter da1 = new SQLiteDataAdapter(SQLitecmd1);
@@ -53,14 +53,10 @@ namespace helphub
                 else
                 {
                     MessageBox.Show("No records found", "STATUS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    DASHBOARD dashboard = new DASHBOARD();
-
-                    dashboard.Show();
-
-                    this.Hide(); //Close Form1,the current open form.
                 }
 
                 SQLiteConn.Close();
+                
 
             }
             catch (Exception ex)

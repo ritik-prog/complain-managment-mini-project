@@ -16,6 +16,9 @@ namespace helphub
         public REQUEST()
         {
             InitializeComponent();
+            Aadhar.Text = UserData.aadharno;
+            Contact.Text = UserData.mobilenumber;
+            ComboBox1.SelectedItem = "MEDICAL EMERGENCY";
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -51,24 +54,27 @@ namespace helphub
                     SQLitecmd.Connection = SQLiteConn;
                     String typeofcomplain = ComboBox1.SelectedItem.ToString();
 
-                    SQLitecmd.CommandText = "insert into request(aadharno,typeofrequest,mobilenumber,aboutcomplain,address) VALUES(" + Aadhar.Text + ",'" + typeofcomplain + "'," + Contact.Text + ",'" + DREQUEST.Text + "','" + Address.Text + "')";
+                    SQLitecmd.CommandText = "insert into request(aadharno,typeofrequest,mobilenumber,aboutrequest,address) VALUES(" + Aadhar.Text + ",'" + typeofcomplain + "'," + Contact.Text + ",'" + DREQUEST.Text + "','" + Address.Text + "')";
 
                     try
                     {
                         SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("complain Filled, Checkout in status section", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Request received, Checkout in status section", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        STATUS status = new STATUS();
+
+                        status.Show();
+
+                        this.Hide(); //Close Form1,the current open form.
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Registration Failed: " + ex.Message + "", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Can't Register Your Request: " + ex.Message + "", "Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                     SQLiteConn.Close();
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to File Complain", ex.Message);
+                    MessageBox.Show("Unable to Record your Request: "+ ex.Message +"", "Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine(ex);
                 }
             }

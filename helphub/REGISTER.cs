@@ -52,9 +52,22 @@ namespace helphub
 
                 this.Hide(); //Close Form1,the current open form.
             }
+            catch (SQLiteException ex)
+            {
+                    int code = ex.ErrorCode;
+
+                    if (code == 19)
+                    {
+                        MessageBox.Show("Already Registered Username/Aadhar Number", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Database Error: Error code:- "+ code + ",Error message:- "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Registration Failed: "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Registration Failed: "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
