@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentValidation;
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +10,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static helphub.REGISTER;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace helphub
 {
     public partial class REQUEST : Form
     {
+
+        public class Request
+        {
+            public string DREQUEST { get; set; }
+            public string Address { get; set; }
+            public string Contact { get; set; }
+        }
+
+        public class RequestValidator : AbstractValidator<Request>
+        {
+            public RequestValidator()
+            {
+                RuleFor(Request => Request.DREQUEST).NotNull().WithMessage("Kindly Provide Proper Details about Request");
+                RuleFor(Request => Request.Contact).NotNull();
+                RuleFor(Request => Request.Address).NotNull();
+            }
+        }
         public REQUEST()
         {
             InitializeComponent();
@@ -37,6 +59,28 @@ namespace helphub
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
+            Request request = new Request();
+            RequestValidator validator = new RequestValidator();
+
+            request.Address = Address.Text;
+            request.Contact = Contact.Text;
+            request.DREQUEST = DREQUEST.Text;
+
+            var result = validator.Validate(request);
+
+            if (!result.IsValid)
+            {
+                String errors = "Kindly Solve Below Errors\n";
+                int i = 1;
+                foreach (var failure in result.Errors)
+                {
+                    errors = "" + errors + " " + i + ") Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + "\n";
+                    i++;
+                }
+                MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (DREQUEST.Text.Trim() == "" && Address.Text.Trim() == "" && Aadhar.Text.Trim() == "" && Contact.Text.Trim() == "" && ComboBox1.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -54,7 +98,7 @@ namespace helphub
                     SQLitecmd.Connection = SQLiteConn;
                     String typeofcomplain = ComboBox1.SelectedItem.ToString();
 
-                    SQLitecmd.CommandText = "insert into request(aadharno,typeofrequest,mobilenumber,aboutrequest,address) VALUES(" + Aadhar.Text + ",'" + typeofcomplain + "'," + Contact.Text + ",'" + DREQUEST.Text + "','" + Address.Text + "')";
+                    SQLitecmd.CommandText = "insert into request(aadharno,typeofrequest,mobilenumber,aboutrequest,address) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + DREQUEST.Text + "','" + Address.Text + "')";
 
                     try
                     {

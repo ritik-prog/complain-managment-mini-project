@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace helphub
 {
     public partial class COMPLAINT : Form
     {
+        public class Complaint
+        {
+            public string DCOMPLAIN { get; set; }
+            public string Address { get; set; }
+            public string Contact { get; set; }
+        }
+
+        public class ComplaintValidator : AbstractValidator<Complaint>
+        {
+            public ComplaintValidator()
+            {
+                RuleFor(Complaint => Complaint.DCOMPLAIN).NotNull().WithMessage("Kindly Provide Proper Details about Complain");
+                RuleFor(Complaint => Complaint.Contact).NotNull();
+                RuleFor(Complaint => Complaint.Address).NotNull();
+            }
+        }
         public COMPLAINT()
         {
             InitializeComponent();
@@ -39,6 +56,27 @@ namespace helphub
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            Complaint complain = new Complaint();
+            ComplaintValidator validator = new ComplaintValidator();
+
+            complain.Address = Address.Text;
+            complain.Contact = Contact.Text;
+            complain.DCOMPLAIN = Dcomplaint.Text;
+
+            var result = validator.Validate(complain);
+
+            if (!result.IsValid)
+            {
+                String errors = "Kindly Solve Below Errors\n";
+                int i = 1;
+                foreach (var failure in result.Errors)
+                {
+                    errors = "" + errors + " " + i + ") Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + "\n";
+                    i++;
+                }
+                MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (Dcomplaint.Text.Trim() == "" && Address.Text.Trim() == "" && Aadhar.Text.Trim() == "" && Contact.Text.Trim() == "" && ComboBox1.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -56,7 +94,7 @@ namespace helphub
                     SQLitecmd.Connection = SQLiteConn;
                     String typeofcomplain = ComboBox1.SelectedItem.ToString();
 
-                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address) VALUES(" + Aadhar.Text + ",'" + typeofcomplain + "'," + Contact.Text + ",'" + Dcomplaint.Text + "','" + Address.Text + "')";
+                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + Dcomplaint.Text + "','" + Address.Text + "')";
 
                     try
                     {

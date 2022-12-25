@@ -12,12 +12,35 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Data.SQLite;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using FluentValidation;
+
 
 
 namespace helphub
 {
     public partial class REGISTER : Form
     {
+        public class RegisterUser
+        {
+            public string Contact { get; set; }
+            public string username { get; set; }
+            public string Password { get; set; }
+            public string Aadhar { get; set; }
+            public string Email { get; set; }
+        }
+
+        public class RegisterValidator : AbstractValidator<RegisterUser>
+        {
+            public RegisterValidator()
+            {
+                RuleFor(RegisterUser => RegisterUser.Email).NotNull().EmailAddress();
+                RuleFor(RegisterUser => RegisterUser.Contact).NotNull().Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
+                RuleFor(RegisterUser => RegisterUser.username).NotNull();
+                RuleFor(RegisterUser => RegisterUser.Password).NotNull();
+                RuleFor(RegisterUser => RegisterUser.Aadhar).NotNull().Matches("^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$");
+            }
+        }
+
         public REGISTER()
         {
             InitializeComponent();
@@ -25,6 +48,30 @@ namespace helphub
 
         private async void Button2_Click(object sender, EventArgs e)
         {
+            RegisterUser ruser = new RegisterUser();
+            RegisterValidator validator = new RegisterValidator();
+
+            ruser.Aadhar = Aadhar.Text;
+            ruser.Contact = Contact.Text;
+            ruser.Email = Email.Text;
+            ruser.Password = Password.Text;
+            ruser.username = username.Text;
+
+            var result = validator.Validate(ruser);
+
+            if (!result.IsValid)
+            {
+                String errors ="Kindly Solve Below Errors\n";
+                int i = 1;
+                foreach (var failure in result.Errors)
+                {
+                    errors = ""+ errors + " "+i+") Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + "\n";
+                    i++;
+                }
+                MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (username.Text.Trim() == "" && Password.Text.Trim() == "" && Aadhar.Text.Trim() == "" && Contact.Text.Trim() == "" && Email.Text.Trim() == "")
             {
                 MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -40,7 +87,7 @@ namespace helphub
 
             SQLitecmd.Connection = SQLiteConn;
 
-            SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email) VALUES("+Aadhar.Text+",'"+ username.Text +"',"+ Contact.Text +",'"+ Password.Text +"','"+ Email.Text +"')";
+            SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email) VALUES('"+Aadhar.Text+"','"+ username.Text +"','"+ Contact.Text +"','"+ Password.Text +"','"+ Email.Text +"')";
 
             try {
                 SQLitecmd.ExecuteNonQuery();

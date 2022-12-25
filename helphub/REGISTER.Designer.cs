@@ -107,6 +107,7 @@ namespace helphub
             this.Contact.Location = new System.Drawing.Point(1019, 426);
             this.Contact.Margin = new System.Windows.Forms.Padding(6);
             this.Contact.Name = "Contact";
+            this.Contact.PlaceholderText = "+91826959xxxx";
             this.Contact.Size = new System.Drawing.Size(468, 52);
             this.Contact.TabIndex = 12;
             // 
@@ -118,6 +119,7 @@ namespace helphub
             this.Aadhar.Location = new System.Drawing.Point(1028, 283);
             this.Aadhar.Margin = new System.Windows.Forms.Padding(6);
             this.Aadhar.Name = "Aadhar";
+            this.Aadhar.PlaceholderText = "3675 9834 6012";
             this.Aadhar.Size = new System.Drawing.Size(459, 52);
             this.Aadhar.TabIndex = 11;
             // 
@@ -145,6 +147,7 @@ namespace helphub
             this.Email.Location = new System.Drawing.Point(240, 426);
             this.Email.Margin = new System.Windows.Forms.Padding(6);
             this.Email.Name = "Email";
+            this.Email.PlaceholderText = "helphub@gmail.com";
             this.Email.Size = new System.Drawing.Size(431, 52);
             this.Email.TabIndex = 9;
             // 
@@ -156,6 +159,7 @@ namespace helphub
             this.username.Location = new System.Drawing.Point(240, 283);
             this.username.Margin = new System.Windows.Forms.Padding(6);
             this.username.Name = "username";
+            this.username.PlaceholderText = "Helphub";
             this.username.Size = new System.Drawing.Size(431, 52);
             this.username.TabIndex = 8;
             // 

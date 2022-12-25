@@ -96,6 +96,7 @@ namespace helphub
             this.Contact.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Contact.Multiline = true;
             this.Contact.Name = "Contact";
+            this.Contact.PlaceholderText = "+91826959xxxx";
             this.Contact.Size = new System.Drawing.Size(592, 68);
             this.Contact.TabIndex = 20;
             // 

@@ -45,7 +45,7 @@ namespace helphub
                 da.Fill(dt);
                 da1.Fill(dt1);
 
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0 || dt1.Rows.Count > 0)
                 {
                     complaindataview.DataSource = dt;
                     requestdataview.DataSource = dt1;
