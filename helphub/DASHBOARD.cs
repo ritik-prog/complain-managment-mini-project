@@ -43,5 +43,14 @@ namespace helphub
 
             this.Hide(); //Close Form1,the current open form.
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            STATUS status = new STATUS();
+
+            status.Show();
+
+            this.Hide(); //Close Form1,the current open form.
+        }
     }
 }

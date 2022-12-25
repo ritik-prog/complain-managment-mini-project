@@ -63,9 +63,49 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Component_2_FINAL {
+            get {
+                object obj = ResourceManager.GetObject("Component 2-FINAL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DASHBOARD {
             get {
                 object obj = ResourceManager.GetObject("DASHBOARD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGIN_BANNER {
+            get {
+                object obj = ResourceManager.GetObject("LOGIN_BANNER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGOUT {
+            get {
+                object obj = ResourceManager.GetObject("LOGOUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Support_service_with_headphones__Customer_Support_service_logo_template__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Support service with headphones. Customer Support service logo template (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

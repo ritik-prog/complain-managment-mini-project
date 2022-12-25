@@ -24,7 +24,6 @@ namespace helphub
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(COMPLAINT));
             this.Aadhar = new System.Windows.Forms.TextBox();
             this.Dcomplaint = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
@@ -259,7 +258,7 @@ namespace helphub
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::helphub.Properties.Resources.LOGOUT;
             this.pictureBox2.Location = new System.Drawing.Point(1479, 93);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(160, 55);
@@ -270,7 +269,7 @@ namespace helphub
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::helphub.Properties.Resources.Support_service_with_headphones__Customer_Support_service_logo_template__1_;
             this.pictureBox1.Location = new System.Drawing.Point(-119, -69);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(531, 540);

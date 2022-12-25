@@ -103,6 +103,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.Button3.TabIndex = 4;
             this.Button3.Text = "COMPLAINT / REQUEST STATUS";
             this.Button3.UseVisualStyleBackColor = false;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // Label1
             // 
@@ -135,7 +136,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::helphub.Properties.Resources.Support_service_with_headphones__Customer_Support_service_logo_template__1_;
             this.pictureBox2.Location = new System.Drawing.Point(-128, -73);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(349, 401);
@@ -146,7 +147,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::helphub.Properties.Resources.LOGOUT;
             this.pictureBox1.Location = new System.Drawing.Point(1488, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 56);
