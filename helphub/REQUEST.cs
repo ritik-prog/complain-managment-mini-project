@@ -73,5 +73,14 @@ namespace helphub
                 }
             }
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            DASHBOARD dashboard = new DASHBOARD();
+
+            dashboard.Show();
+
+            this.Hide(); //Close Form1,the current open form.
+        }
     }
 }
