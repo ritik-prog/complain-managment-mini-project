@@ -40,8 +40,6 @@ namespace helphub
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    if()
-
 
                     MessageBox.Show("Logedin Succesfully");
 
@@ -50,6 +48,7 @@ namespace helphub
                     dashboard.Show();
 
                     this.Hide(); //Close Form1,the current open form.
+                    SQLiteConn.Close();
 
                 }
                 catch (Exception ex)
@@ -59,7 +58,6 @@ namespace helphub
                 }
 
 
-                SQLiteConn.Close();
             }
         }
 
