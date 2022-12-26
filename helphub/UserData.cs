@@ -14,5 +14,6 @@ namespace helphub
         public static string mobilenumber = "";
         public static string password = "";
         public static string email = "";
+        public static string role = "";
     }
 }

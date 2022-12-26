@@ -51,15 +51,28 @@ namespace helphub
                             UserData.mobilenumber = row["mobilenumber"].ToString();
                             UserData.password = row["password"].ToString();
                             UserData.email = row["email"].ToString();
+                            UserData.role = row["Role"].ToString();
                         }
-                        
-                        MessageBox.Show("Logedin Succesfully","LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(UserData.role);
+                        if (UserData.role == "ADMIN")
+                        {
+                            ADMIN admin = new ADMIN();
 
-                        DASHBOARD dashboard = new DASHBOARD();
+                            admin.Show();
 
-                        dashboard.Show();
+                            this.Hide(); //Close Form1,the current open form.
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Logedin Succesfully", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.Hide(); //Close Form1,the current open form.
+                            DASHBOARD dashboard = new DASHBOARD();
+
+                            dashboard.Show();
+
+                            this.Hide(); //Close Form1,the current open form.
+                        }
                     }
                     else if (dt.Rows.Count >= 2)
                     {

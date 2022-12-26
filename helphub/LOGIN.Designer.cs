@@ -64,13 +64,15 @@ namespace helphub
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(581, 524);
+            this.label3.Location = new System.Drawing.Point(657, 534);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(435, 25);
+            this.label3.Size = new System.Drawing.Size(247, 50);
             this.label3.TabIndex = 12;
-            this.label3.Text = "DON\'T HAVE ACCOUNT? REGISTER HERE";
+            this.label3.Text = "DON\'T HAVE ACCOUNT\r\nREGISTER HERE";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Password
