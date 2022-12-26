@@ -28,7 +28,7 @@ namespace helphub
             public ComplaintValidator()
             {
                 RuleFor(Complaint => Complaint.DCOMPLAIN).NotNull().WithMessage("Kindly Provide Proper Details about Complain");
-                RuleFor(Complaint => Complaint.Contact).NotNull();
+                RuleFor(RegisterUser => RegisterUser.Contact).NotNull().Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
                 RuleFor(Complaint => Complaint.Address).NotNull();
             }
         }
@@ -38,6 +38,7 @@ namespace helphub
             Aadhar.Text = UserData.aadharno;
             Contact.Text = UserData.mobilenumber;
             ComboBox1.SelectedItem = "DOMESTIC VOILENCE";
+            Address.Text = UserData.address;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace helphub
                 int i = 1;
                 foreach (var failure in result.Errors)
                 {
-                    errors = "" + errors + " " + i + ") Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + "\n";
+                    errors = "" + errors + " " + i + ") " + failure.ErrorMessage + "\n";
                     i++;
                 }
                 MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,7 +100,7 @@ namespace helphub
                     try
                     {
                         SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("complain Filled, Checkout in status section", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("complain Filled, Checkout in status section", "Complain", MessageBoxButtons.OK);
                         STATUS status = new STATUS();
 
                         status.Show();

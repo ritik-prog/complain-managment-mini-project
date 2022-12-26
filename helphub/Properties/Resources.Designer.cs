@@ -63,6 +63,16 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ADMINPANEL {
+            get {
+                object obj = ResourceManager.GetObject("ADMINPANEL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Component_2_FINAL {
             get {
                 object obj = ResourceManager.GetObject("Component 2-FINAL", resourceCulture);

@@ -31,8 +31,8 @@ namespace helphub
             public RequestValidator()
             {
                 RuleFor(Request => Request.DREQUEST).NotNull().WithMessage("Kindly Provide Proper Details about Request");
-                RuleFor(Request => Request.Contact).NotNull();
                 RuleFor(Request => Request.Address).NotNull();
+                RuleFor(Request => Request.Contact).NotNull().Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
             }
         }
         public REQUEST()
@@ -41,6 +41,7 @@ namespace helphub
             Aadhar.Text = UserData.aadharno;
             Contact.Text = UserData.mobilenumber;
             ComboBox1.SelectedItem = "MEDICAL EMERGENCY";
+            Address.Text = UserData.address;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace helphub
             request.Address = Address.Text;
             request.Contact = Contact.Text;
             request.DREQUEST = DREQUEST.Text;
+
 
             var result = validator.Validate(request);
 
@@ -103,7 +105,7 @@ namespace helphub
                     try
                     {
                         SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("Request received, Checkout in status section", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Request received, Checkout in status section", "Request", MessageBoxButtons.OK);
                         STATUS status = new STATUS();
 
                         status.Show();

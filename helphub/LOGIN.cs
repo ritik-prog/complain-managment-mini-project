@@ -52,8 +52,9 @@ namespace helphub
                             UserData.password = row["password"].ToString();
                             UserData.email = row["email"].ToString();
                             UserData.role = row["Role"].ToString();
+                            UserData.address = row["address"].ToString();
                         }
-                        MessageBox.Show(UserData.role);
+
                         if (UserData.role == "ADMIN")
                         {
                             ADMIN admin = new ADMIN();

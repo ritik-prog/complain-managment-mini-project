@@ -22,6 +22,7 @@ namespace helphub
     {
         public class RegisterUser
         {
+            public string Address { get; set; }
             public string Contact { get; set; }
             public string username { get; set; }
             public string Password { get; set; }
@@ -36,6 +37,7 @@ namespace helphub
                 RuleFor(RegisterUser => RegisterUser.Email).NotNull().EmailAddress();
                 RuleFor(RegisterUser => RegisterUser.Contact).NotNull().Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
                 RuleFor(RegisterUser => RegisterUser.username).NotNull();
+                RuleFor(RegisterUser => RegisterUser.Address).NotNull();
                 RuleFor(RegisterUser => RegisterUser.Password).NotNull();
                 RuleFor(RegisterUser => RegisterUser.Aadhar).NotNull().Matches("^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$");
             }
@@ -56,6 +58,8 @@ namespace helphub
             ruser.Email = Email.Text;
             ruser.Password = Password.Text;
             ruser.username = username.Text;
+            ruser.Address = Address.Text;
+
 
             var result = validator.Validate(ruser);
 
@@ -65,7 +69,7 @@ namespace helphub
                 int i = 1;
                 foreach (var failure in result.Errors)
                 {
-                    errors = ""+ errors + " "+i+") Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage + "\n";
+                    errors = ""+ errors + " "+i+") " + failure.ErrorMessage + "\n";
                     i++;
                 }
                 MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -87,7 +91,7 @@ namespace helphub
 
             SQLitecmd.Connection = SQLiteConn;
 
-            SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email) VALUES('"+Aadhar.Text+"','"+ username.Text +"','"+ Contact.Text +"','"+ Password.Text +"','"+ Email.Text +"')";
+            SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email,address) VALUES('"+Aadhar.Text+"','"+ username.Text +"','"+ Contact.Text +"','"+ Password.Text +"','"+ Email.Text + "','"+ Address.Text +"')";
 
             try {
                 SQLitecmd.ExecuteNonQuery();

@@ -30,9 +30,11 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.Button3 = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +120,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.pictureBox3);
             this.GroupBox1.Controls.Add(this.pictureBox2);
             this.GroupBox1.Controls.Add(this.pictureBox1);
             this.GroupBox1.Controls.Add(this.Label1);
@@ -132,6 +135,18 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.GroupBox1.Size = new System.Drawing.Size(1688, 1127);
             this.GroupBox1.TabIndex = 11;
             this.GroupBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::helphub.Properties.Resources.ADMINPANEL;
+            this.pictureBox3.Location = new System.Drawing.Point(1442, 862);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(216, 100);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
@@ -177,6 +192,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.Text = "DASHBOARD - HELPHUB";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -191,5 +207,6 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
         public GroupBox GroupBox1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
     }
 }

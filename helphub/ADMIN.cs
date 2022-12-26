@@ -213,7 +213,7 @@ namespace helphub
                 SQLiteConn.Open();
                 SQLitecmd.Connection = SQLiteConn;
                 int tempid = int.Parse(ID);
-                SQLitecmd.CommandText = "UPDATE complaint SET status = '" + Status + "' WHERE ID = " + tempid + ";";
+                SQLitecmd.CommandText = "UPDATE request SET status = '" + Status + "' WHERE ID = " + tempid + ";";
                 try
                 {
                     SQLitecmd.ExecuteNonQuery();

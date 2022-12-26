@@ -15,5 +15,6 @@ namespace helphub
         public static string password = "";
         public static string email = "";
         public static string role = "";
+        public static string address = "";
     }
 }
