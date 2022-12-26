@@ -94,10 +94,6 @@ namespace helphub
                     complaindataview.DataSource = dt;
                     requestdataview.DataSource = dt1;
                 }
-                else
-                {
-                    MessageBox.Show("No records found", "STATUS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
 
                 SQLiteConn.Close();
                 
