@@ -230,5 +230,43 @@ namespace helphub
                 Console.WriteLine(ex);
             }
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            int x = this.Left + (this.Width / 2) - 200;
+            int y = this.Top + (this.Height / 2) - 100;
+            string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make admin", "Update user role", "", x, y);
+            if (username != "")
+            {
+                try
+                {
+                    string SQLitecnStr = @"Data Source=./helphub.db";
+                    SQLiteConnection SQLiteConn = new SQLiteConnection();
+                    SQLiteCommand SQLitecmd = new SQLiteCommand();
+                    SQLiteConn.ConnectionString = SQLitecnStr;
+                    SQLiteConn.Open();
+                    SQLitecmd.Connection = SQLiteConn;
+                    SQLitecmd.CommandText = "UPDATE user SET role = 'ADMIN' WHERE username = '" + username + "';";
+                    try
+                    {
+                        SQLitecmd.ExecuteNonQuery();
+                        MessageBox.Show("New admin added Succesfully");
+                        fetchData();
+                        this.Refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Can't Add New Admin", ex.Message);
+                    }
+                    SQLiteConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Can't Add New Admin", ex.Message);
+                    Console.WriteLine(ex);
+                }
+            }
+        }
     }
 }

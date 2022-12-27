@@ -49,12 +49,14 @@ namespace helphub
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.requestdataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Label1
@@ -71,6 +73,7 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.pictureBox4);
             this.GroupBox1.Controls.Add(this.button2);
             this.GroupBox1.Controls.Add(this.button1);
             this.GroupBox1.Controls.Add(this.requestdataview);
@@ -309,9 +312,10 @@ namespace helphub
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::helphub.Properties.Resources.DASHBOARD;
-            this.pictureBox3.Location = new System.Drawing.Point(1645, 50);
+            this.pictureBox3.Location = new System.Drawing.Point(1660, 85);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(200, 58);
             this.pictureBox3.TabIndex = 28;
@@ -320,11 +324,12 @@ namespace helphub
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::helphub.Properties.Resources.LOGOUT;
-            this.pictureBox2.Location = new System.Drawing.Point(1645, 104);
+            this.pictureBox2.Location = new System.Drawing.Point(1706, 139);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(160, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(164, 55);
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
@@ -338,6 +343,17 @@ namespace helphub
             this.pictureBox1.Size = new System.Drawing.Size(531, 540);
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::helphub.Properties.Resources.addnewadmin;
+            this.pictureBox4.Location = new System.Drawing.Point(1606, 38);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(254, 51);
+            this.pictureBox4.TabIndex = 34;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // ADMIN
             // 
@@ -364,6 +380,7 @@ namespace helphub
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +410,6 @@ namespace helphub
         private DataGridViewTextBoxColumn address;
         private DataGridViewTextBoxColumn STATUS;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private PictureBox pictureBox4;
     }
 }

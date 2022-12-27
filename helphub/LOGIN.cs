@@ -81,7 +81,22 @@ namespace helphub
                     }
                     else
                     {
-                        MessageBox.Show("Wrong Credentials", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + Username.Text + "'";
+                        da = new SQLiteDataAdapter(SQLitecmd);
+                        da.Fill(dt);
+                        if (dt.Rows.Count != 1)
+                        {
+                            MessageBox.Show("Username Doesn't Exists, Kindly Register now", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            REGISTER register = new REGISTER();
+
+                            register.Show();
+
+                            this.Hide(); //Close Form1,the current open form.
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong Credentials", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
 
                     SQLiteConn.Close();
