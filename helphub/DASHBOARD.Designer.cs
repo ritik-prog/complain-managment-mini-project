@@ -46,7 +46,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Button4.Location = new System.Drawing.Point(-136, 287);
+            this.Button4.Location = new System.Drawing.Point(-130, 307);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(59, 58);
             this.Button4.TabIndex = 10;
@@ -194,15 +194,15 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(893, 451);
+            this.ClientSize = new System.Drawing.Size(904, 471);
             this.Controls.Add(this.Button4);
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(909, 490);
+            this.MaximumSize = new System.Drawing.Size(920, 510);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(909, 490);
+            this.MinimumSize = new System.Drawing.Size(920, 510);
             this.Name = "DASHBOARD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DASHBOARD - HELPHUB";

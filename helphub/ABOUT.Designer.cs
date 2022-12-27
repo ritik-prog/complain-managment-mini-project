@@ -40,6 +40,8 @@
             // 
             this.pictureBox1.Image = global::helphub.Properties.Resources.about;
             this.pictureBox1.Location = new System.Drawing.Point(-420, 0);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(1279, 206);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(1279, 206);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1279, 206);
             this.pictureBox1.TabIndex = 0;
@@ -66,16 +68,22 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // ABOUT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ABOUT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABOUT - HELPHUB";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
