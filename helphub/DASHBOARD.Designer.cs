@@ -33,10 +33,12 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Button4
@@ -120,6 +122,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.pictureBox4);
             this.GroupBox1.Controls.Add(this.pictureBox3);
             this.GroupBox1.Controls.Add(this.pictureBox2);
             this.GroupBox1.Controls.Add(this.pictureBox1);
@@ -170,6 +173,15 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::helphub.Properties.Resources.about1;
+            this.pictureBox4.Location = new System.Drawing.Point(9, 810);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(99, 95);
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
+            // 
             // DASHBOARD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -195,6 +207,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -208,5 +221,6 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }

@@ -63,6 +63,26 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about {
+            get {
+                object obj = ResourceManager.GetObject("about", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap about1 {
+            get {
+                object obj = ResourceManager.GetObject("about1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addnewadmin {
             get {
                 object obj = ResourceManager.GetObject("addnewadmin", resourceCulture);
@@ -86,6 +106,16 @@ namespace helphub.Properties {
         internal static System.Drawing.Bitmap Component_2_FINAL {
             get {
                 object obj = ResourceManager.GetObject("Component 2-FINAL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Component_3 {
+            get {
+                object obj = ResourceManager.GetObject("Component 3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace helphub.Properties {
         internal static System.Drawing.Bitmap Support_service_with_headphones__Customer_Support_service_logo_template__1_ {
             get {
                 object obj = ResourceManager.GetObject("Support service with headphones. Customer Support service logo template (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Support_service_with_headphones1 {
+            get {
+                object obj = ResourceManager.GetObject("Support service with headphones1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
