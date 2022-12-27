@@ -73,16 +73,6 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap about1 {
-            get {
-                object obj = ResourceManager.GetObject("about1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap addnewadmin {
             get {
                 object obj = ResourceManager.GetObject("addnewadmin", resourceCulture);
@@ -166,6 +156,16 @@ namespace helphub.Properties {
         internal static System.Drawing.Bitmap LOGIN_BANNER {
             get {
                 object obj = ResourceManager.GetObject("LOGIN_BANNER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGIN_BANNER1 {
+            get {
+                object obj = ResourceManager.GetObject("LOGIN_BANNER1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

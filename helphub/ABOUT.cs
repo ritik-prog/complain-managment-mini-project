@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace helphub
 {
-    public partial class Form1 : Form
+    public partial class ABOUT : Form
     {
-        public Form1()
+        public ABOUT()
         {
             InitializeComponent();
         }

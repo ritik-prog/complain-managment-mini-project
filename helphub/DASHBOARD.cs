@@ -68,5 +68,14 @@ namespace helphub
                 this.Hide(); //Close Form1,the current open form.
             }
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ABOUT about = new ABOUT();
+
+            about.Show();
+
+            this.Hide(); //Close Form1,the current open form.
+        }
     }
 }

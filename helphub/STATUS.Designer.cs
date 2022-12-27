@@ -59,10 +59,9 @@ namespace helphub
             // 
             this.Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.Button1.Location = new System.Drawing.Point(1096, 1418);
-            this.Button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Button1.Location = new System.Drawing.Point(590, 665);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(625, 188);
+            this.Button1.Size = new System.Drawing.Size(337, 88);
             this.Button1.TabIndex = 18;
             this.Button1.Text = "SUBMIT COMPLAIN";
             this.Button1.UseVisualStyleBackColor = false;
@@ -72,10 +71,9 @@ namespace helphub
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(546, 217);
-            this.Label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Label1.Location = new System.Drawing.Point(299, 102);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(640, 67);
+            this.Label1.Size = new System.Drawing.Size(334, 36);
             this.Label1.TabIndex = 12;
             this.Label1.Text = "COMPLAINS STATUS";
             this.Label1.Click += new System.EventHandler(this.Label1_Click);
@@ -89,11 +87,13 @@ namespace helphub
             this.GroupBox1.Controls.Add(this.pictureBox2);
             this.GroupBox1.Controls.Add(this.Label1);
             this.GroupBox1.Controls.Add(this.pictureBox1);
-            this.GroupBox1.Location = new System.Drawing.Point(1, -23);
-            this.GroupBox1.MaximumSize = new System.Drawing.Size(1688, 1127);
-            this.GroupBox1.MinimumSize = new System.Drawing.Size(1688, 1127);
+            this.GroupBox1.Location = new System.Drawing.Point(1, -11);
+            this.GroupBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.GroupBox1.MaximumSize = new System.Drawing.Size(909, 528);
+            this.GroupBox1.MinimumSize = new System.Drawing.Size(909, 528);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(1688, 1127);
+            this.GroupBox1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.GroupBox1.Size = new System.Drawing.Size(909, 528);
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
             // 
@@ -116,11 +116,12 @@ namespace helphub
             this.dataGridViewTextBoxColumn7});
             this.requestdataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.requestdataview.GridColor = System.Drawing.Color.Black;
-            this.requestdataview.Location = new System.Drawing.Point(86, 753);
+            this.requestdataview.Location = new System.Drawing.Point(51, 353);
+            this.requestdataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.requestdataview.Name = "requestdataview";
             this.requestdataview.RowHeadersWidth = 82;
             this.requestdataview.RowTemplate.Height = 41;
-            this.requestdataview.Size = new System.Drawing.Size(1485, 322);
+            this.requestdataview.Size = new System.Drawing.Size(800, 151);
             this.requestdataview.TabIndex = 31;
             // 
             // dataGridViewTextBoxColumn1
@@ -191,10 +192,9 @@ namespace helphub
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(580, 656);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(317, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(576, 67);
+            this.label2.Size = new System.Drawing.Size(300, 36);
             this.label2.TabIndex = 30;
             this.label2.Text = "REQUEST STATUS";
             // 
@@ -217,11 +217,12 @@ namespace helphub
             this.status_table});
             this.complaindataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.complaindataview.GridColor = System.Drawing.Color.Black;
-            this.complaindataview.Location = new System.Drawing.Point(86, 331);
+            this.complaindataview.Location = new System.Drawing.Point(51, 155);
+            this.complaindataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.complaindataview.Name = "complaindataview";
             this.complaindataview.RowHeadersWidth = 82;
             this.complaindataview.RowTemplate.Height = 41;
-            this.complaindataview.Size = new System.Drawing.Size(1485, 322);
+            this.complaindataview.Size = new System.Drawing.Size(800, 151);
             this.complaindataview.TabIndex = 29;
             // 
             // ID
@@ -291,9 +292,11 @@ namespace helphub
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::helphub.Properties.Resources.DASHBOARD;
-            this.pictureBox3.Location = new System.Drawing.Point(1439, 50);
+            this.pictureBox3.Location = new System.Drawing.Point(693, 18);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(200, 58);
+            this.pictureBox3.Size = new System.Drawing.Size(227, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 28;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -302,9 +305,11 @@ namespace helphub
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::helphub.Properties.Resources.LOGOUT;
-            this.pictureBox2.Location = new System.Drawing.Point(1479, 105);
+            this.pictureBox2.Location = new System.Drawing.Point(745, 60);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(160, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(244, 52);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -313,28 +318,29 @@ namespace helphub
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::helphub.Properties.Resources.Support_service_with_headphones__Customer_Support_service_logo_template__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(-124, -68);
+            this.pictureBox1.Location = new System.Drawing.Point(-67, -32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(531, 540);
+            this.pictureBox1.Size = new System.Drawing.Size(255, 241);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
             // STATUS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1662, 1089);
+            this.ClientSize = new System.Drawing.Size(896, 519);
             this.Controls.Add(this.Button1);
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1688, 1160);
+            this.MaximumSize = new System.Drawing.Size(912, 558);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1688, 1160);
+            this.MinimumSize = new System.Drawing.Size(912, 558);
             this.Name = "STATUS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STATUS - HELPHUB";
