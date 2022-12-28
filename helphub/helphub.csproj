@@ -10,7 +10,7 @@
 	  <CopySQLiteInteropFiles>false</CopySQLiteInteropFiles>
 	  <CleanSQLiteInteropFiles>false</CleanSQLiteInteropFiles>
 	  <CollectSQLiteInteropFiles>false</CollectSQLiteInteropFiles>
-	  <Platforms>AnyCPU;x64</Platforms>
+	  <Platforms>AnyCPU;x64;x86</Platforms>
 	  <StartupObject>helphub.Program</StartupObject>
   </PropertyGroup>
 
