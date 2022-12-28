@@ -99,6 +99,7 @@ namespace helphub
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(253, 30);
             this.Password.TabIndex = 13;
+            this.Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_KeyDown);
             // 
             // Contact
             // 
@@ -110,6 +111,7 @@ namespace helphub
             this.Contact.PlaceholderText = "+91826959xxxx";
             this.Contact.Size = new System.Drawing.Size(253, 30);
             this.Contact.TabIndex = 12;
+            this.Contact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contact_KeyDown);
             // 
             // Aadhar
             // 
@@ -121,6 +123,7 @@ namespace helphub
             this.Aadhar.PlaceholderText = "3675 9834 6012";
             this.Aadhar.Size = new System.Drawing.Size(248, 30);
             this.Aadhar.TabIndex = 11;
+            this.Aadhar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.aadhar_KeyDown);
             // 
             // Address
             // 
@@ -136,6 +139,7 @@ namespace helphub
             this.Address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Address.Size = new System.Drawing.Size(233, 121);
             this.Address.TabIndex = 10;
+            this.Address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.address_KeyDown);
             // 
             // Email
             // 
@@ -147,6 +151,7 @@ namespace helphub
             this.Email.PlaceholderText = "helphub@gmail.com";
             this.Email.Size = new System.Drawing.Size(233, 30);
             this.Email.TabIndex = 9;
+            this.Email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.email_KeyDown);
             // 
             // username
             // 
@@ -158,6 +163,7 @@ namespace helphub
             this.username.PlaceholderText = "Helphub";
             this.username.Size = new System.Drawing.Size(233, 30);
             this.username.TabIndex = 8;
+            this.username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.username_KeyDown);
             // 
             // Label7
             // 
@@ -284,7 +290,6 @@ namespace helphub
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(854, 450);
             this.Name = "REGISTER";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRATION - HELPHUB";
             this.REGISTRATION.ResumeLayout(false);

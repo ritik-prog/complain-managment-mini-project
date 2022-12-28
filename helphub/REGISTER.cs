@@ -34,18 +34,19 @@ namespace helphub
         {
             public RegisterValidator()
             {
-                RuleFor(RegisterUser => RegisterUser.Email).NotNull().EmailAddress();
-                RuleFor(RegisterUser => RegisterUser.Contact).NotNull().Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
+                RuleFor(RegisterUser => RegisterUser.Email).EmailAddress().NotNull();
+                RuleFor(RegisterUser => RegisterUser.Contact).Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$").NotNull();
                 RuleFor(RegisterUser => RegisterUser.username).NotNull();
                 RuleFor(RegisterUser => RegisterUser.Address).NotNull();
                 RuleFor(RegisterUser => RegisterUser.Password).NotNull();
-                RuleFor(RegisterUser => RegisterUser.Aadhar).NotNull().Matches("^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$");
+                RuleFor(RegisterUser => RegisterUser.Aadhar).Matches("^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$").NotNull();
             }
         }
 
         public REGISTER()
         {
             InitializeComponent();
+            username.Select();
         }
 
         private async void Button2_Click(object sender, EventArgs e)
@@ -133,6 +134,51 @@ namespace helphub
             login.Show();
 
             this.Hide(); //Close Form1,the current open form.
+        }
+
+        // change focus
+        private void username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Aadhar.Focus();
+            }
+        }
+        private void aadhar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Email.Focus();
+            }
+        }
+        private void email_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Contact.Focus();
+            }
+        }
+        private void contact_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Address.Focus();
+            }
+        }
+        private void address_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Password.Focus();
+            }
+        }
+
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Button2_Click(null, EventArgs.Empty);
+            }
         }
     }
 }

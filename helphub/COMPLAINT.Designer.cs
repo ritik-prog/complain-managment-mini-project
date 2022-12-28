@@ -194,6 +194,7 @@ namespace helphub
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(279, 33);
             this.ComboBox1.TabIndex = 24;
+            this.ComboBox1.KeyDown += new KeyEventHandler(combobox_KeyDown);
             // 
             // Button2
             // 

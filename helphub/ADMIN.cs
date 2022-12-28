@@ -162,51 +162,98 @@ namespace helphub
             this.Hide(); //Close Form1,the current open form.
         }
 
+        private Boolean check_complaint_exist(string ID)
+        {
+            string SQLitecnStr = @"Data Source=./helphub.db";
+            SQLiteConnection SQLiteConn = new SQLiteConnection();
+            SQLiteCommand SQLitecmd = new SQLiteCommand();
+            SQLiteConn.ConnectionString = SQLitecnStr;
+            SQLiteConn.Open();
+            SQLitecmd.Connection = SQLiteConn;
+            SQLitecmd.CommandText = "SELECT * FROM complaint WHERE ID=" + ID + "";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             int x = this.Left + (this.Width / 2) - 200;
             int y = this.Top + (this.Height / 2) - 100;
-            string ID = Microsoft.VisualBasic.Interaction.InputBox("Enter ID of Complaint", "Update Complaint status", "", x, y);
+            string ID = "";
+            ID = Microsoft.VisualBasic.Interaction.InputBox("Enter ID of Complaint", "Update Complaint status", "", x, y);
             if(ID == "")
             {
                 MessageBox.Show("ID field is empty/Updating status aborted");
                 return;
             }
-            string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Complaint", "Update Complaint status", "", x, y);
-            if (Status == "")
+            if (check_complaint_exist(ID))
             {
-                MessageBox.Show("Status field is empty/Updating status aborted");
-                return;
-            }
-            try
-            {
-                string SQLitecnStr = @"Data Source=./helphub.db";
-                SQLiteConnection SQLiteConn = new SQLiteConnection();
-                SQLiteCommand SQLitecmd = new SQLiteCommand();
-                SQLiteConn.ConnectionString = SQLitecnStr;
-                SQLiteConn.Open();
-                SQLitecmd.Connection = SQLiteConn;
-                int tempid = int.Parse(ID);
-                SQLitecmd.CommandText = "UPDATE complaint SET status = '"+ Status + "' WHERE ID = "+ tempid + ";";
+
+                string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Complaint", "Update Complaint status", "", x, y);
+                if (Status == "")
+                {
+                    MessageBox.Show("Status field is empty/Updating status aborted");
+                    return;
+                }
                 try
                 {
-                    SQLitecmd.ExecuteNonQuery();
-                    MessageBox.Show("Status Updated Succesfully");
-                    fetchData();
-                    this.Refresh();
+                    string SQLitecnStr = @"Data Source=./helphub.db";
+                    SQLiteConnection SQLiteConn = new SQLiteConnection();
+                    SQLiteCommand SQLitecmd = new SQLiteCommand();
+                    SQLiteConn.ConnectionString = SQLitecnStr;
+                    SQLiteConn.Open();
+                    SQLitecmd.Connection = SQLiteConn;
+                    int tempid = int.Parse(ID);
+                    SQLitecmd.CommandText = "UPDATE complaint SET status = '" + Status + "' WHERE ID = " + tempid + ";";
+                    try
+                    {
+                        SQLitecmd.ExecuteNonQuery();
+                        MessageBox.Show("Status Updated Succesfully");
+                        fetchData();
+                        this.Refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update Failed", ex.Message);
+                    }
+                    SQLiteConn.Close();
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Update Failed", ex.Message);
+                    Console.WriteLine(ex);
                 }
-                SQLiteConn.Close();
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Update Failed", ex.Message);
-                Console.WriteLine(ex);
+                MessageBox.Show("ID doesn't Exists");
             }
+        }
+
+        private Boolean check_request_exist(string ID)
+        {
+            string SQLitecnStr = @"Data Source=./helphub.db";
+            SQLiteConnection SQLiteConn = new SQLiteConnection();
+            SQLiteCommand SQLitecmd = new SQLiteCommand();
+            SQLiteConn.ConnectionString = SQLitecnStr;
+            SQLiteConn.Open();
+            SQLitecmd.Connection = SQLiteConn;
+            SQLitecmd.CommandText = "SELECT * FROM request WHERE ID=" + ID + "";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -219,50 +266,15 @@ namespace helphub
                 MessageBox.Show("ID field is empty/Updating status aborted");
                 return;
             }
-            string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Complaint", "Update Complaint status", "", x, y);
-            if (Status == "")
+            if (check_request_exist(ID))
             {
-                MessageBox.Show("Status field is empty/Updating status aborted");
-                return;
-            }
-            try
-            {
-                string SQLitecnStr = @"Data Source=./helphub.db";
-                SQLiteConnection SQLiteConn = new SQLiteConnection();
-                SQLiteCommand SQLitecmd = new SQLiteCommand();
-                SQLiteConn.ConnectionString = SQLitecnStr;
-                SQLiteConn.Open();
-                SQLitecmd.Connection = SQLiteConn;
-                int tempid = int.Parse(ID);
-                SQLitecmd.CommandText = "UPDATE request SET status = '" + Status + "' WHERE ID = " + tempid + ";";
-                try
-                {
-                    SQLitecmd.ExecuteNonQuery();
-                    MessageBox.Show("Status Updated Succesfully");
-                    fetchData();
-                    this.Refresh();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Update Failed", ex.Message);
-                }
-                SQLiteConn.Close();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Update Failed", ex.Message);
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            int x = this.Left + (this.Width / 2) - 200;
-            int y = this.Top + (this.Height / 2) - 100;
-            string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make admin", "Update user role", "", x, y);
-            if (username != "")
-            {
+                string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Complaint", "Update Complaint status", "", x, y);
+                if (Status == "")
+                {
+                    MessageBox.Show("Status field is empty/Updating status aborted");
+                    return;
+                }
                 try
                 {
                     string SQLitecnStr = @"Data Source=./helphub.db";
@@ -271,24 +283,95 @@ namespace helphub
                     SQLiteConn.ConnectionString = SQLitecnStr;
                     SQLiteConn.Open();
                     SQLitecmd.Connection = SQLiteConn;
-                    SQLitecmd.CommandText = "UPDATE user SET role = 'ADMIN' WHERE username = '" + username + "';";
+                    int tempid = int.Parse(ID);
+                    SQLitecmd.CommandText = "UPDATE request SET status = '" + Status + "' WHERE ID = " + tempid + ";";
                     try
                     {
                         SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("New admin added Succesfully");
+                        MessageBox.Show("Status Updated Succesfully");
                         fetchData();
                         this.Refresh();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Can't Add New Admin", ex.Message);
+                        MessageBox.Show("Update Failed", ex.Message);
                     }
                     SQLiteConn.Close();
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Can't Add New Admin", ex.Message);
+                    MessageBox.Show("Update Failed", ex.Message);
+                    Console.WriteLine(ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID doesn't Exists");
+
+            }
+        }
+
+        private Boolean check_username_exist(string username)
+        {
+            string SQLitecnStr = @"Data Source=./helphub.db";
+            SQLiteConnection SQLiteConn = new SQLiteConnection();
+            SQLiteCommand SQLitecmd = new SQLiteCommand();
+            SQLiteConn.ConnectionString = SQLitecnStr;
+            SQLiteConn.Open();
+            SQLitecmd.Connection = SQLiteConn;
+            SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + username + "'";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            int x = this.Left + (this.Width / 2) - 200;
+            int y = this.Top + (this.Height / 2) - 100;
+            string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make admin", "Update user role", "", x, y);
+            if (username != "")
+            {
+                if (check_username_exist(username))
+                {
+                    try
+                    {
+                        string SQLitecnStr = @"Data Source=./helphub.db";
+                        SQLiteConnection SQLiteConn = new SQLiteConnection();
+                        SQLiteCommand SQLitecmd = new SQLiteCommand();
+                        SQLiteConn.ConnectionString = SQLitecnStr;
+                        SQLiteConn.Open();
+                        SQLitecmd.Connection = SQLiteConn;
+                        SQLitecmd.CommandText = "UPDATE user SET role = 'ADMIN' WHERE username = '" + username + "';";
+                        try
+                        {
+                            SQLitecmd.ExecuteNonQuery();
+                            MessageBox.Show("New admin added Succesfully");
+                            fetchData();
+                            this.Refresh();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Can't Add New Admin", ex.Message);
+                        }
+                        SQLiteConn.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Can't Add New Admin", ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username Doesn't Exists");
                 }
             }
             else
@@ -304,32 +387,39 @@ namespace helphub
             string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make supervisor", "Update user role", "", x, y);
             if (username != "")
             {
-                try
+                if (check_username_exist(username))
                 {
-                    string SQLitecnStr = @"Data Source=./helphub.db";
-                    SQLiteConnection SQLiteConn = new SQLiteConnection();
-                    SQLiteCommand SQLitecmd = new SQLiteCommand();
-                    SQLiteConn.ConnectionString = SQLitecnStr;
-                    SQLiteConn.Open();
-                    SQLitecmd.Connection = SQLiteConn;
-                    SQLitecmd.CommandText = "UPDATE user SET role = 'SUPERVISOR' WHERE username = '" + username + "';";
                     try
                     {
-                        SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("New Supervisor added Succesfully");
-                        fetchData();
-                        this.Refresh();
+                        string SQLitecnStr = @"Data Source=./helphub.db";
+                        SQLiteConnection SQLiteConn = new SQLiteConnection();
+                        SQLiteCommand SQLitecmd = new SQLiteCommand();
+                        SQLiteConn.ConnectionString = SQLitecnStr;
+                        SQLiteConn.Open();
+                        SQLitecmd.Connection = SQLiteConn;
+                        SQLitecmd.CommandText = "UPDATE user SET role = 'SUPERVISOR' WHERE username = '" + username + "';";
+                        try
+                        {
+                            SQLitecmd.ExecuteNonQuery();
+                            MessageBox.Show("New Supervisor added Succesfully");
+                            fetchData();
+                            this.Refresh();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Can't Add New Supervisor", ex.Message);
+                        }
+                        SQLiteConn.Close();
+
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Can't Add New Supervisor", ex.Message);
                     }
-                    SQLiteConn.Close();
-
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Can't Add New Supervisor", ex.Message);
+                    MessageBox.Show("Username Doesn't Exists");
                 }
             }
             else

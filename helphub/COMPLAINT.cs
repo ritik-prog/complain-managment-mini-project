@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static helphub.COMPLAINT;
+using static helphub.REQUEST;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -38,6 +40,7 @@ namespace helphub
             Aadhar.Text = UserData.aadharno;
             Contact.Text = UserData.mobilenumber;
             ComboBox1.SelectedItem = "DOMESTIC VOILENCE";
+            ComboBox1.Select();
             Address.Text = UserData.address;
         }
 
@@ -135,6 +138,13 @@ namespace helphub
         private void Label4_Click(object sender, EventArgs e)
         {
 
+        }
+        private void combobox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Dcomplaint.Focus();
+            }
         }
     }
 }

@@ -41,6 +41,7 @@ namespace helphub
             Aadhar.Text = UserData.aadharno;
             Contact.Text = UserData.mobilenumber;
             ComboBox1.SelectedItem = "MEDICAL EMERGENCY";
+            ComboBox1.Select();
             Address.Text = UserData.address;
         }
 

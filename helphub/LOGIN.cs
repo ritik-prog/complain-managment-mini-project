@@ -23,7 +23,7 @@ namespace helphub
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (Username.Text.Trim() == "" && Password.Text.Trim() == "")
+            if (Username.Text.Trim() == "" || Password.Text.Trim() == "")
             {
                 MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -119,6 +119,20 @@ namespace helphub
             register.Show();
 
             this.Hide(); //Close Form1,the current open form.
+        }
+        private void username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Password.Focus();
+            }
+        }
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Button2_Click(null, EventArgs.Empty);
+            }
         }
     }
 }

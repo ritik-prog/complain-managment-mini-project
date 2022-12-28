@@ -86,6 +86,8 @@ namespace helphub
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(248, 30);
             this.Password.TabIndex = 11;
+            this.Password.KeyDown += new KeyEventHandler(password_KeyDown);
+
             // 
             // Username
             // 
@@ -96,6 +98,7 @@ namespace helphub
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(248, 28);
             this.Username.TabIndex = 8;
+            this.Username.KeyDown += new KeyEventHandler(username_KeyDown);
             // 
             // Label5
             // 
