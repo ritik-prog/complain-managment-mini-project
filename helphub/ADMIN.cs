@@ -20,6 +20,11 @@ namespace helphub
         {
             InitializeComponent();
             fetchData();
+            if(UserData.role == "SUPERVISOR")
+            {
+                pictureBox4.Hide();
+                pictureBox5.Hide();
+            }
         }
 
     public static DialogResult InputBox(string title, string promptText, ref string value)
@@ -162,7 +167,17 @@ namespace helphub
             int x = this.Left + (this.Width / 2) - 200;
             int y = this.Top + (this.Height / 2) - 100;
             string ID = Microsoft.VisualBasic.Interaction.InputBox("Enter ID of Complaint", "Update Complaint status", "", x, y);
+            if(ID == "")
+            {
+                MessageBox.Show("ID field is empty/Updating status aborted");
+                return;
+            }
             string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Complaint", "Update Complaint status", "", x, y);
+            if (Status == "")
+            {
+                MessageBox.Show("Status field is empty/Updating status aborted");
+                return;
+            }
             try
             {
                 string SQLitecnStr = @"Data Source=./helphub.db";
@@ -199,7 +214,17 @@ namespace helphub
             int x = this.Left + (this.Width / 2) - 200;
             int y = this.Top + (this.Height / 2) - 100;
             string ID = Microsoft.VisualBasic.Interaction.InputBox("Enter Id of Request", "Update Request Status", "", x, y);
-            string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Request", "Update Request Status", "", x, y);
+            if (ID == "")
+            {
+                MessageBox.Show("ID field is empty/Updating status aborted");
+                return;
+            }
+            string Status = Microsoft.VisualBasic.Interaction.InputBox("Enter status of Complaint", "Update Complaint status", "", x, y);
+            if (Status == "")
+            {
+                MessageBox.Show("Status field is empty/Updating status aborted");
+                return;
+            }
             try
             {
                 string SQLitecnStr = @"Data Source=./helphub.db";
@@ -264,8 +289,52 @@ namespace helphub
                 catch (Exception ex)
                 {
                     MessageBox.Show("Can't Add New Admin", ex.Message);
-                    Console.WriteLine(ex);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Username field is empty");
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            int x = this.Left + (this.Width / 2) - 200;
+            int y = this.Top + (this.Height / 2) - 100;
+            string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make supervisor", "Update user role", "", x, y);
+            if (username != "")
+            {
+                try
+                {
+                    string SQLitecnStr = @"Data Source=./helphub.db";
+                    SQLiteConnection SQLiteConn = new SQLiteConnection();
+                    SQLiteCommand SQLitecmd = new SQLiteCommand();
+                    SQLiteConn.ConnectionString = SQLitecnStr;
+                    SQLiteConn.Open();
+                    SQLitecmd.Connection = SQLiteConn;
+                    SQLitecmd.CommandText = "UPDATE user SET role = 'SUPERVISOR' WHERE username = '" + username + "';";
+                    try
+                    {
+                        SQLitecmd.ExecuteNonQuery();
+                        MessageBox.Show("New Supervisor added Succesfully");
+                        fetchData();
+                        this.Refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Can't Add New Supervisor", ex.Message);
+                    }
+                    SQLiteConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Can't Add New Supervisor", ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username field is empty");
             }
         }
     }

@@ -188,9 +188,9 @@ namespace helphub
             "WATER SUPPLY",
             "OTHER ISSUES"});
             this.ComboBox1.Location = new System.Drawing.Point(320, 137);
-            this.ComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(279, 32);
+            this.ComboBox1.Size = new System.Drawing.Size(279, 30);
             this.ComboBox1.TabIndex = 24;
             // 
             // Button2
@@ -200,7 +200,7 @@ namespace helphub
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.ForeColor = System.Drawing.Color.White;
             this.Button2.Location = new System.Drawing.Point(284, 388);
-            this.Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Button2.Margin = new System.Windows.Forms.Padding(2);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(360, 78);
             this.Button2.TabIndex = 25;

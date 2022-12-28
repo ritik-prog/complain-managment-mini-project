@@ -137,6 +137,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::helphub.Properties.Resources.Component_3;
             this.pictureBox4.Location = new System.Drawing.Point(2, 398);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);

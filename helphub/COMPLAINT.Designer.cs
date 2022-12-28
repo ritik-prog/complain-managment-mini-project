@@ -191,7 +191,7 @@ namespace helphub
             this.ComboBox1.Location = new System.Drawing.Point(326, 112);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(279, 34);
+            this.ComboBox1.Size = new System.Drawing.Size(279, 33);
             this.ComboBox1.TabIndex = 24;
             // 
             // Button2

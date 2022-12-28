@@ -17,9 +17,9 @@ namespace helphub
         public STATUS()
         {
             InitializeComponent();
-            fetchData();
+            FetchData();
         }
-        public void fetchData()
+        public void FetchData()
         {
             try
             {
@@ -56,7 +56,6 @@ namespace helphub
                 }
 
                 SQLiteConn.Close();
-                
 
             }
             catch (Exception ex)

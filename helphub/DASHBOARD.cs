@@ -15,7 +15,11 @@ namespace helphub
         public DASHBOARD()
         {
             InitializeComponent();
-            if (UserData.role != "ADMIN")
+            if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR")
+            {
+                this.pictureBox3.Visible = true;
+            }
+            else
             {
                 this.pictureBox3.Visible = false;
             }
@@ -27,7 +31,7 @@ namespace helphub
 
             login.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -59,7 +63,7 @@ namespace helphub
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if(UserData.role == "ADMIN")
+            if(UserData.role == "ADMIN" || UserData.role == "SUPERVISOR")
             {
                 ADMIN admin = new ADMIN();
 

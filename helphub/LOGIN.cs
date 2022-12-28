@@ -55,7 +55,7 @@ namespace helphub
                             UserData.address = row["address"].ToString();
                         }
 
-                        if (UserData.role == "ADMIN")
+                        if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR")
                         {
                             ADMIN admin = new ADMIN();
 
