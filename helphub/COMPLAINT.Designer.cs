@@ -24,6 +24,7 @@ namespace helphub
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(COMPLAINT));
             this.Aadhar = new System.Windows.Forms.TextBox();
             this.Dcomplaint = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
@@ -285,6 +286,7 @@ namespace helphub
             this.Controls.Add(this.Button1);
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(916, 518);
             this.MinimizeBox = false;
