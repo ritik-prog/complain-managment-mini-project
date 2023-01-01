@@ -54,7 +54,7 @@ namespace helphub
                     }
                     else
                     {
-                        SQLitecmd1.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '" + comboBox2.SelectedItem + "'";
+                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '" + comboBox2.SelectedItem + "'";
                     }
                     if (ComboBox1.SelectedItem == "ALL REQUEST")
                     {
@@ -81,32 +81,24 @@ namespace helphub
                     }
                     else
                     {
-                        SQLitecmd.CommandText = "SELECT * FROM request WHERE state = '" + UserData.role + "' AND typeofrequest = '" + ComboBox1.SelectedItem + "'";
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE state = '" + UserData.role + "' AND typeofrequest = '" + ComboBox1.SelectedItem + "'";
                     }
                 }
+
                 // data adapter
                 SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
-                SQLiteDataAdapter da1 = new SQLiteDataAdapter(SQLitecmd1);
                 // data table
                 DataTable dt = new DataTable();
-                DataTable dt1 = new DataTable();
                 // filling data in datatable with adapter
                 da.Fill(dt);
+                complaindataview.DataSource = dt;
+
+                SQLiteDataAdapter da1 = new SQLiteDataAdapter(SQLitecmd1);
+                DataTable dt1 = new DataTable();
                 da1.Fill(dt1);
-
-                if (dt.Rows.Count > 0)
-                {
-                    complaindataview.DataSource = dt;
-                }
-
-                if (dt1.Rows.Count > 0)
-                {
-                    requestdataview.DataSource = dt1;
-                }
+                requestdataview.DataSource = dt1;
 
                 SQLiteConn.Close();
-                
-
             }
             catch (Exception ex)
             {

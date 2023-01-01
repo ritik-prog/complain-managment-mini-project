@@ -315,6 +315,7 @@ namespace helphub
             this.requestdataview.RowTemplate.Height = 41;
             this.requestdataview.Size = new System.Drawing.Size(909, 224);
             this.requestdataview.TabIndex = 31;
+            this.requestdataview.AutoGenerateColumns = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -472,6 +473,7 @@ namespace helphub
             this.complaindataview.RowTemplate.Height = 41;
             this.complaindataview.Size = new System.Drawing.Size(909, 212);
             this.complaindataview.TabIndex = 43;
+            this.complaindataview.AutoGenerateColumns = false;
             // 
             // dataGridViewTextBoxColumn9
             // 
