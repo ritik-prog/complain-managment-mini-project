@@ -39,6 +39,10 @@ namespace helphub
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.Button2 = new System.Windows.Forms.Button();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.city = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,7 +58,7 @@ namespace helphub
             this.Aadhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Aadhar.Enabled = false;
             this.Aadhar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Aadhar.Location = new System.Drawing.Point(81, 203);
+            this.Aadhar.Location = new System.Drawing.Point(81, 185);
             this.Aadhar.Multiline = true;
             this.Aadhar.Name = "Aadhar";
             this.Aadhar.Size = new System.Drawing.Size(320, 31);
@@ -65,11 +69,11 @@ namespace helphub
             this.DREQUEST.BackColor = System.Drawing.Color.White;
             this.DREQUEST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DREQUEST.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DREQUEST.Location = new System.Drawing.Point(81, 283);
+            this.DREQUEST.Location = new System.Drawing.Point(81, 329);
             this.DREQUEST.Multiline = true;
             this.DREQUEST.Name = "DREQUEST";
             this.DREQUEST.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DREQUEST.Size = new System.Drawing.Size(320, 84);
+            this.DREQUEST.Size = new System.Drawing.Size(320, 136);
             this.DREQUEST.TabIndex = 22;
             // 
             // Address
@@ -77,11 +81,11 @@ namespace helphub
             this.Address.BackColor = System.Drawing.Color.White;
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address.Location = new System.Drawing.Point(508, 283);
+            this.Address.Location = new System.Drawing.Point(508, 329);
             this.Address.Multiline = true;
             this.Address.Name = "Address";
             this.Address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Address.Size = new System.Drawing.Size(353, 84);
+            this.Address.Size = new System.Drawing.Size(360, 53);
             this.Address.TabIndex = 21;
             // 
             // Contact
@@ -89,11 +93,11 @@ namespace helphub
             this.Contact.BackColor = System.Drawing.Color.White;
             this.Contact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Contact.Location = new System.Drawing.Point(508, 203);
+            this.Contact.Location = new System.Drawing.Point(508, 185);
             this.Contact.Multiline = true;
             this.Contact.Name = "Contact";
             this.Contact.PlaceholderText = "+91826959xxxx";
-            this.Contact.Size = new System.Drawing.Size(320, 33);
+            this.Contact.Size = new System.Drawing.Size(360, 33);
             this.Contact.TabIndex = 20;
             // 
             // Button1
@@ -112,7 +116,7 @@ namespace helphub
             this.Label6.AutoSize = true;
             this.Label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label6.Location = new System.Drawing.Point(81, 177);
+            this.Label6.Location = new System.Drawing.Point(81, 156);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(220, 26);
             this.Label6.TabIndex = 17;
@@ -123,7 +127,7 @@ namespace helphub
             this.Label5.AutoSize = true;
             this.Label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label5.Location = new System.Drawing.Point(508, 257);
+            this.Label5.Location = new System.Drawing.Point(508, 300);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(191, 26);
             this.Label5.TabIndex = 16;
@@ -134,7 +138,7 @@ namespace helphub
             this.Label4.AutoSize = true;
             this.Label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label4.Location = new System.Drawing.Point(81, 257);
+            this.Label4.Location = new System.Drawing.Point(81, 300);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(230, 26);
             this.Label4.TabIndex = 15;
@@ -145,7 +149,7 @@ namespace helphub
             this.Label3.AutoSize = true;
             this.Label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label3.Location = new System.Drawing.Point(508, 177);
+            this.Label3.Location = new System.Drawing.Point(508, 156);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(232, 26);
             this.Label3.TabIndex = 14;
@@ -156,7 +160,7 @@ namespace helphub
             this.Label2.AutoSize = true;
             this.Label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label2.Location = new System.Drawing.Point(347, 107);
+            this.Label2.Location = new System.Drawing.Point(343, 75);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(225, 26);
             this.Label2.TabIndex = 13;
@@ -167,7 +171,7 @@ namespace helphub
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.Label1.Location = new System.Drawing.Point(272, 63);
+            this.Label1.Location = new System.Drawing.Point(272, 36);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(359, 39);
             this.Label1.TabIndex = 12;
@@ -187,11 +191,12 @@ namespace helphub
             "NEW ROAD ",
             "WATER SUPPLY",
             "OTHER ISSUES"});
-            this.ComboBox1.Location = new System.Drawing.Point(320, 137);
+            this.ComboBox1.Location = new System.Drawing.Point(312, 103);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(279, 30);
             this.ComboBox1.TabIndex = 24;
+            this.ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // Button2
             // 
@@ -199,7 +204,7 @@ namespace helphub
             this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.ForeColor = System.Drawing.Color.White;
-            this.Button2.Location = new System.Drawing.Point(284, 388);
+            this.Button2.Location = new System.Drawing.Point(508, 387);
             this.Button2.Margin = new System.Windows.Forms.Padding(2);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(360, 78);
@@ -210,6 +215,10 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.city);
+            this.GroupBox1.Controls.Add(this.label8);
+            this.GroupBox1.Controls.Add(this.comboBox2);
+            this.GroupBox1.Controls.Add(this.label7);
             this.GroupBox1.Controls.Add(this.pictureBox3);
             this.GroupBox1.Controls.Add(this.pictureBox2);
             this.GroupBox1.Controls.Add(this.Label1);
@@ -234,6 +243,128 @@ namespace helphub
             this.GroupBox1.Size = new System.Drawing.Size(909, 528);
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
+            // 
+            // city
+            // 
+            this.city.BackColor = System.Drawing.Color.White;
+            this.city.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.city.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.city.Location = new System.Drawing.Point(508, 256);
+            this.city.Multiline = true;
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(360, 33);
+            this.city.TabIndex = 33;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(508, 228);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 26);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "CITY";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.DropDownWidth = 579;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox2.Location = new System.Drawing.Point(81, 256);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(320, 33);
+            this.comboBox2.TabIndex = 31;
+            this.comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(81, 228);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 26);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "STATE";
             // 
             // pictureBox3
             // 
@@ -268,7 +399,7 @@ namespace helphub
             this.pictureBox1.Location = new System.Drawing.Point(-64, -32);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(286, 253);
+            this.pictureBox1.Size = new System.Drawing.Size(246, 245);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -318,5 +449,9 @@ namespace helphub
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        public Label label7;
+        public ComboBox comboBox2;
+        public Label label8;
+        public TextBox city;
     }
 }

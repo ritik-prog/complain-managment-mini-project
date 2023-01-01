@@ -193,6 +193,26 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap stateadmin {
+            get {
+                object obj = ResourceManager.GetObject("stateadmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stateadmin1 {
+            get {
+                object obj = ResourceManager.GetObject("stateadmin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Support_service_with_headphones__Customer_Support_service_logo_template__1_ {
             get {
                 object obj = ResourceManager.GetObject("Support service with headphones. Customer Support service logo template (1)", resourceCulture);

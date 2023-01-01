@@ -20,54 +20,18 @@ namespace helphub
         {
             InitializeComponent();
             fetchData();
-            if(UserData.role == "SUPERVISOR")
+            if(UserData.role != "ADMIN")
             {
                 pictureBox4.Hide();
                 pictureBox5.Hide();
+                pictureBox6.Hide();
+                button3.Hide();
+                button4.Hide();
             }
+            ComboBox1.SelectedItem = "ALL REQUEST";
+            comboBox2.SelectedItem = "ALL COMPLAINS";
         }
 
-    public static DialogResult InputBox(string title, string promptText, ref string value)
-    {
-        Form form = new Form();
-        Label label = new Label();
-        TextBox textBox = new TextBox();
-        Button buttonOk = new Button();
-        Button buttonCancel = new Button();
-
-        form.Text = title;
-        label.Text = promptText;
-        textBox.Text = value;
-
-        buttonOk.Text = "OK";
-        buttonCancel.Text = "Cancel";
-        buttonOk.DialogResult = DialogResult.OK;
-        buttonCancel.DialogResult = DialogResult.Cancel;
-
-        label.SetBounds(9, 20, 372, 13);
-        textBox.SetBounds(12, 36, 372, 20);
-        buttonOk.SetBounds(228, 72, 75, 23);
-        buttonCancel.SetBounds(309, 72, 75, 23);
-
-        label.AutoSize = true;
-        textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
-        buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-
-        form.ClientSize = new Size(396, 107);
-        form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
-        form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
-        form.FormBorderStyle = FormBorderStyle.FixedDialog;
-        form.StartPosition = FormStartPosition.CenterScreen;
-        form.MinimizeBox = false;
-        form.MaximizeBox = false;
-        form.AcceptButton = buttonOk;
-        form.CancelButton = buttonCancel;
-
-        DialogResult dialogResult = form.ShowDialog();
-        value = textBox.Text;
-        return dialogResult;
-    }
     public void fetchData()
         {
             try
@@ -78,12 +42,48 @@ namespace helphub
                 SQLiteCommand SQLitecmd1 = new SQLiteCommand();
                 SQLiteConn.ConnectionString = SQLitecnStr;
                 SQLiteConn.Open();
-                // connection + query
                 SQLitecmd.Connection = SQLiteConn;
-                SQLitecmd.CommandText = "SELECT * FROM complaint";
-                // connection + query
                 SQLitecmd1.Connection = SQLiteConn;
-                SQLitecmd1.CommandText = "SELECT * FROM request";
+                SQLitecmd.CommandText = "";
+                SQLitecmd1.CommandText = "";
+                if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR")
+                {
+                    if (comboBox2.SelectedItem == "ALL COMPLAINS")
+                    {
+                        SQLitecmd.CommandText = "SELECT * FROM complaint";
+                    }
+                    else
+                    {
+                        SQLitecmd1.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '" + comboBox2.SelectedItem + "'";
+                    }
+                    if (ComboBox1.SelectedItem == "ALL REQUEST")
+                    {
+                        SQLitecmd1.CommandText = "SELECT * FROM request";
+                    }
+                    else
+                    {
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE typeofrequest = '"+ ComboBox1.SelectedItem +"'";
+                    }
+                }
+                else
+                {
+                    if (comboBox2.SelectedItem == "ALL COMPLAINS")
+                    {
+                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE state = '" + UserData.role + "'";
+                    }
+                    else
+                    {
+                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE state = '" + UserData.role + "' AND typeofcomplain = '" + comboBox2.SelectedItem + "'";
+                    }
+                    if (ComboBox1.SelectedItem == "ALL REQUEST")
+                    {
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE state = '" + UserData.role + "'";
+                    }
+                    else
+                    {
+                        SQLitecmd.CommandText = "SELECT * FROM request WHERE state = '" + UserData.role + "' AND typeofrequest = '" + ComboBox1.SelectedItem + "'";
+                    }
+                }
                 // data adapter
                 SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
                 SQLiteDataAdapter da1 = new SQLiteDataAdapter(SQLitecmd1);
@@ -94,9 +94,13 @@ namespace helphub
                 da.Fill(dt);
                 da1.Fill(dt1);
 
-                if (dt.Rows.Count > 0 || dt1.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     complaindataview.DataSource = dt;
+                }
+
+                if (dt1.Rows.Count > 0)
+                {
                     requestdataview.DataSource = dt1;
                 }
 
@@ -426,6 +430,120 @@ namespace helphub
             {
                 MessageBox.Show("Username field is empty");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int x = this.Left + (this.Width / 2) - 200;
+            int y = this.Top + (this.Height / 2) - 100;
+            string ID = Microsoft.VisualBasic.Interaction.InputBox("Enter Id of Complain", "Delete Complain", "", x, y);
+            if (ID == "")
+            {
+                MessageBox.Show("ID field is empty/Deleting complain aborted");
+                return;
+            }
+            if (check_complaint_exist(ID))
+            {
+                try
+                {
+                    string SQLitecnStr = @"Data Source=./helphub.db";
+                    SQLiteConnection SQLiteConn = new SQLiteConnection();
+                    SQLiteCommand SQLitecmd = new SQLiteCommand();
+                    SQLiteConn.ConnectionString = SQLitecnStr;
+                    SQLiteConn.Open();
+                    SQLitecmd.Connection = SQLiteConn;
+                    int tempid = int.Parse(ID);
+                    SQLitecmd.CommandText = "DELETE FROM complaint WHERE ID = " + tempid + ";";
+                    try
+                    {
+                        SQLitecmd.ExecuteNonQuery();
+                        MessageBox.Show("Complaint Deleted");
+                        fetchData();
+                        this.Refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Process Failed", ex.Message);
+                    }
+                    SQLiteConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Process Failed", ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID doesn't Exists");
+
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            AddStateAdmin admin = new AddStateAdmin();
+            admin.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int x = this.Left + (this.Width / 2) - 200;
+            int y = this.Top + (this.Height / 2) - 100;
+            string ID = Microsoft.VisualBasic.Interaction.InputBox("Enter Id of Request", "Delete Request", "", x, y);
+            if (ID == "")
+            {
+                MessageBox.Show("ID field is empty/Deleting request aborted");
+                return;
+            }
+            if (check_complaint_exist(ID))
+            {
+                try
+                {
+                    string SQLitecnStr = @"Data Source=./helphub.db";
+                    SQLiteConnection SQLiteConn = new SQLiteConnection();
+                    SQLiteCommand SQLitecmd = new SQLiteCommand();
+                    SQLiteConn.ConnectionString = SQLitecnStr;
+                    SQLiteConn.Open();
+                    SQLitecmd.Connection = SQLiteConn;
+                    int tempid = int.Parse(ID);
+                    SQLitecmd.CommandText = "DELETE FROM request WHERE ID = " + tempid + ";";
+                    try
+                    {
+                        SQLitecmd.ExecuteNonQuery();
+                        MessageBox.Show("Request Deleted");
+                        fetchData();
+                        this.Refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Process Failed", ex.Message);
+                    }
+                    SQLiteConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Process Failed", ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID doesn't Exists");
+
+            }
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fetchData();
+            this.Refresh();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fetchData();
+            this.Refresh();
         }
     }
 }

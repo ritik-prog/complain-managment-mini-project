@@ -130,6 +130,9 @@
   <data name="addnewadmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addnewadmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stateadmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stateadmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LOADING" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOADING.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,10 +160,13 @@
   <data name="LOGIN_BANNER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN_BANNER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="addnewsupervisor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addnewsupervisor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Support service with headphones. Customer Support service logo template (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Support service with headphones. Customer Support service logo template (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addnewsupervisor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addnewsupervisor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stateadmin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stateadmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

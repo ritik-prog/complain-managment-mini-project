@@ -39,6 +39,10 @@ namespace helphub
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.Button2 = new System.Windows.Forms.Button();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.city = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,11 +69,11 @@ namespace helphub
             this.Dcomplaint.BackColor = System.Drawing.Color.White;
             this.Dcomplaint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Dcomplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Dcomplaint.Location = new System.Drawing.Point(79, 258);
+            this.Dcomplaint.Location = new System.Drawing.Point(79, 334);
             this.Dcomplaint.Multiline = true;
             this.Dcomplaint.Name = "Dcomplaint";
             this.Dcomplaint.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Dcomplaint.Size = new System.Drawing.Size(320, 84);
+            this.Dcomplaint.Size = new System.Drawing.Size(320, 141);
             this.Dcomplaint.TabIndex = 22;
             // 
             // Address
@@ -77,11 +81,11 @@ namespace helphub
             this.Address.BackColor = System.Drawing.Color.White;
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address.Location = new System.Drawing.Point(506, 258);
+            this.Address.Location = new System.Drawing.Point(506, 334);
             this.Address.Multiline = true;
             this.Address.Name = "Address";
             this.Address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Address.Size = new System.Drawing.Size(353, 84);
+            this.Address.Size = new System.Drawing.Size(320, 54);
             this.Address.TabIndex = 21;
             // 
             // Contact
@@ -122,7 +126,7 @@ namespace helphub
             this.Label5.AutoSize = true;
             this.Label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label5.Location = new System.Drawing.Point(506, 232);
+            this.Label5.Location = new System.Drawing.Point(506, 305);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(191, 26);
             this.Label5.TabIndex = 16;
@@ -133,7 +137,7 @@ namespace helphub
             this.Label4.AutoSize = true;
             this.Label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label4.Location = new System.Drawing.Point(79, 232);
+            this.Label4.Location = new System.Drawing.Point(79, 305);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(240, 26);
             this.Label4.TabIndex = 15;
@@ -194,7 +198,8 @@ namespace helphub
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(279, 33);
             this.ComboBox1.TabIndex = 24;
-            this.ComboBox1.KeyDown += new KeyEventHandler(combobox_KeyDown);
+            this.ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.ComboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combobox_KeyDown);
             // 
             // Button2
             // 
@@ -202,10 +207,10 @@ namespace helphub
             this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.ForeColor = System.Drawing.Color.White;
-            this.Button2.Location = new System.Drawing.Point(282, 363);
+            this.Button2.Location = new System.Drawing.Point(506, 393);
             this.Button2.Margin = new System.Windows.Forms.Padding(2);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(360, 78);
+            this.Button2.Size = new System.Drawing.Size(320, 78);
             this.Button2.TabIndex = 25;
             this.Button2.Text = "SUBMIT COMPLAINT";
             this.Button2.UseVisualStyleBackColor = false;
@@ -213,6 +218,10 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.city);
+            this.GroupBox1.Controls.Add(this.label8);
+            this.GroupBox1.Controls.Add(this.comboBox2);
+            this.GroupBox1.Controls.Add(this.label7);
             this.GroupBox1.Controls.Add(this.pictureBox3);
             this.GroupBox1.Controls.Add(this.pictureBox2);
             this.GroupBox1.Controls.Add(this.Label1);
@@ -237,6 +246,128 @@ namespace helphub
             this.GroupBox1.Size = new System.Drawing.Size(909, 528);
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
+            // 
+            // city
+            // 
+            this.city.BackColor = System.Drawing.Color.White;
+            this.city.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.city.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.city.Location = new System.Drawing.Point(506, 254);
+            this.city.Multiline = true;
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(320, 33);
+            this.city.TabIndex = 32;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(506, 226);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 26);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "CITY";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.DropDownWidth = 579;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox2.Location = new System.Drawing.Point(79, 254);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(320, 33);
+            this.comboBox2.TabIndex = 30;
+            this.comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(79, 226);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 26);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "STATE";
             // 
             // pictureBox3
             // 
@@ -321,5 +452,9 @@ namespace helphub
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        public TextBox city;
+        public Label label8;
+        public ComboBox comboBox2;
+        public Label label7;
     }
 }

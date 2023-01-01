@@ -23,6 +23,7 @@ namespace helphub
             public string DCOMPLAIN { get; set; }
             public string Address { get; set; }
             public string Contact { get; set; }
+            public string City { get; set; }
         }
 
         public class ComplaintValidator : AbstractValidator<Complaint>
@@ -32,6 +33,7 @@ namespace helphub
                 RuleFor(Complaint => Complaint.DCOMPLAIN).NotNull().WithMessage("Kindly Provide Proper Details about Complain");
                 RuleFor(RegisterUser => RegisterUser.Contact).NotNull().Matches("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
                 RuleFor(Complaint => Complaint.Address).NotNull();
+                RuleFor(Complaint => Complaint.City).NotNull();
             }
         }
         public COMPLAINT()
@@ -40,6 +42,7 @@ namespace helphub
             Aadhar.Text = UserData.aadharno;
             Contact.Text = UserData.mobilenumber;
             ComboBox1.SelectedItem = "DOMESTIC VOILENCE";
+            comboBox2.SelectedItem = "AP|Andhra Pradesh";
             ComboBox1.Select();
             Address.Text = UserData.address;
         }
@@ -66,6 +69,7 @@ namespace helphub
             complain.Address = Address.Text;
             complain.Contact = Contact.Text;
             complain.DCOMPLAIN = Dcomplaint.Text;
+            complain.City = city.Text;
 
             var result = validator.Validate(complain);
 
@@ -97,8 +101,9 @@ namespace helphub
                     SQLiteConn.Open();
                     SQLitecmd.Connection = SQLiteConn;
                     String typeofcomplain = ComboBox1.SelectedItem.ToString();
+                    String state = comboBox2.SelectedItem.ToString();
 
-                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + Dcomplaint.Text + "','" + Address.Text + "')";
+                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address,state,city) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + Dcomplaint.Text + "','" + Address.Text + "','"+ state + "','" + city.Text + "')";
 
                     try
                     {

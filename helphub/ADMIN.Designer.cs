@@ -27,6 +27,13 @@ namespace helphub
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN));
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,28 +45,32 @@ namespace helphub
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.complaindataview = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aadharno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeofcomplain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilenumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aboutcomplain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.complaindataview = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestdataview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
             this.SuspendLayout();
             // 
             // Label1
@@ -67,7 +78,7 @@ namespace helphub
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(409, 140);
+            this.Label1.Location = new System.Drawing.Point(46, 101);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(200, 36);
             this.Label1.TabIndex = 12;
@@ -75,13 +86,20 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.complaindataview);
+            this.GroupBox1.Controls.Add(this.comboBox2);
+            this.GroupBox1.Controls.Add(this.label4);
+            this.GroupBox1.Controls.Add(this.ComboBox1);
+            this.GroupBox1.Controls.Add(this.label3);
+            this.GroupBox1.Controls.Add(this.pictureBox6);
+            this.GroupBox1.Controls.Add(this.button4);
+            this.GroupBox1.Controls.Add(this.button3);
             this.GroupBox1.Controls.Add(this.pictureBox5);
             this.GroupBox1.Controls.Add(this.pictureBox4);
             this.GroupBox1.Controls.Add(this.button2);
             this.GroupBox1.Controls.Add(this.button1);
             this.GroupBox1.Controls.Add(this.requestdataview);
             this.GroupBox1.Controls.Add(this.label2);
-            this.GroupBox1.Controls.Add(this.complaindataview);
             this.GroupBox1.Controls.Add(this.pictureBox3);
             this.GroupBox1.Controls.Add(this.pictureBox2);
             this.GroupBox1.Controls.Add(this.Label1);
@@ -96,13 +114,126 @@ namespace helphub
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.DropDownWidth = 579;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "ALL COMPLAINS",
+            "DOMESTIC VOILENCE",
+            "ELECTRICITY",
+            "ROAD",
+            "STREET DOGS",
+            "WATER / SEWAGE",
+            "OTHER ISSUES"});
+            this.comboBox2.Location = new System.Drawing.Point(676, 140);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(279, 33);
+            this.comboBox2.TabIndex = 41;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(414, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(284, 26);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "FILTER BY COMPLAIN:- ";
+            // 
+            // ComboBox1
+            // 
+            this.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComboBox1.BackColor = System.Drawing.Color.White;
+            this.ComboBox1.DropDownWidth = 579;
+            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Items.AddRange(new object[] {
+            "ALL REQUEST",
+            "MEDICAL EMERGENCY",
+            "ELECTRICITY CONNECTION",
+            "NEW ROAD ",
+            "WATER SUPPLY",
+            "OTHER ISSUES"});
+            this.ComboBox1.Location = new System.Drawing.Point(676, 421);
+            this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(279, 30);
+            this.ComboBox1.TabIndex = 39;
+            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(419, 422);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(274, 26);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "FILTER BY REQUEST:- ";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::helphub.Properties.Resources.stateadmin1;
+            this.pictureBox6.Location = new System.Drawing.Point(710, 684);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(334, 47);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox6.TabIndex = 38;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(513, 390);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(219, 30);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "DELETE REQUEST";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(498, 107);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(219, 30);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "DELETE COMPLAIN";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::helphub.Properties.Resources.addnewsupervisor;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 684);
+            this.pictureBox5.Location = new System.Drawing.Point(320, 684);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(334, 47);
@@ -117,7 +248,7 @@ namespace helphub
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::helphub.Properties.Resources.addnewadmin;
-            this.pictureBox4.Location = new System.Drawing.Point(736, 684);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 684);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(264, 47);
@@ -132,7 +263,7 @@ namespace helphub
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(736, 142);
+            this.button2.Location = new System.Drawing.Point(736, 107);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(219, 30);
@@ -147,7 +278,7 @@ namespace helphub
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(736, 410);
+            this.button1.Location = new System.Drawing.Point(736, 390);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 30);
@@ -172,7 +303,9 @@ namespace helphub
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
             this.requestdataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.requestdataview.GridColor = System.Drawing.Color.Black;
             this.requestdataview.Location = new System.Drawing.Point(46, 454);
@@ -237,116 +370,39 @@ namespace helphub
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 200;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "city";
+            this.dataGridViewTextBoxColumn3.HeaderText = "City";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "status";
-            this.dataGridViewTextBoxColumn7.HeaderText = "STATUS";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "state";
+            this.dataGridViewTextBoxColumn7.HeaderText = "State";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 200;
+            this.dataGridViewTextBoxColumn7.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "status";
+            this.dataGridViewTextBoxColumn8.HeaderText = "STATUS";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 200;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(422, 408);
+            this.label2.Location = new System.Drawing.Point(46, 390);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(187, 36);
             this.label2.TabIndex = 30;
             this.label2.Text = "REQUESTS";
-            // 
-            // complaindataview
-            // 
-            this.complaindataview.AllowUserToAddRows = false;
-            this.complaindataview.AllowUserToDeleteRows = false;
-            this.complaindataview.AllowUserToResizeColumns = false;
-            this.complaindataview.AllowUserToResizeRows = false;
-            this.complaindataview.BackgroundColor = System.Drawing.Color.White;
-            this.complaindataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.complaindataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.complaindataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.aadharno,
-            this.typeofcomplain,
-            this.mobilenumber,
-            this.aboutcomplain,
-            this.address,
-            this.STATUS});
-            this.complaindataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.complaindataview.GridColor = System.Drawing.Color.Black;
-            this.complaindataview.Location = new System.Drawing.Point(46, 184);
-            this.complaindataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.complaindataview.Name = "complaindataview";
-            this.complaindataview.RowHeadersWidth = 82;
-            this.complaindataview.RowTemplate.Height = 41;
-            this.complaindataview.Size = new System.Drawing.Size(909, 212);
-            this.complaindataview.TabIndex = 29;
-            this.complaindataview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.complaindataview_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 10;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 200;
-            // 
-            // aadharno
-            // 
-            this.aadharno.DataPropertyName = "aadharno";
-            this.aadharno.HeaderText = "Aadhar Number";
-            this.aadharno.MinimumWidth = 10;
-            this.aadharno.Name = "aadharno";
-            this.aadharno.ReadOnly = true;
-            this.aadharno.Width = 200;
-            // 
-            // typeofcomplain
-            // 
-            this.typeofcomplain.DataPropertyName = "typeofcomplain";
-            this.typeofcomplain.HeaderText = "Complain";
-            this.typeofcomplain.MinimumWidth = 10;
-            this.typeofcomplain.Name = "typeofcomplain";
-            this.typeofcomplain.ReadOnly = true;
-            this.typeofcomplain.Width = 200;
-            // 
-            // mobilenumber
-            // 
-            this.mobilenumber.DataPropertyName = "mobilenumber";
-            this.mobilenumber.HeaderText = "Mobile Number";
-            this.mobilenumber.MinimumWidth = 10;
-            this.mobilenumber.Name = "mobilenumber";
-            this.mobilenumber.ReadOnly = true;
-            this.mobilenumber.Width = 200;
-            // 
-            // aboutcomplain
-            // 
-            this.aboutcomplain.DataPropertyName = "aboutcomplain";
-            this.aboutcomplain.HeaderText = "Complain Details";
-            this.aboutcomplain.MinimumWidth = 10;
-            this.aboutcomplain.Name = "aboutcomplain";
-            this.aboutcomplain.ReadOnly = true;
-            this.aboutcomplain.Width = 200;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.MinimumWidth = 10;
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Width = 200;
-            // 
-            // STATUS
-            // 
-            this.STATUS.DataPropertyName = "status";
-            this.STATUS.HeaderText = "STATUS";
-            this.STATUS.MinimumWidth = 10;
-            this.STATUS.Name = "STATUS";
-            this.STATUS.ReadOnly = true;
-            this.STATUS.Width = 200;
             // 
             // pictureBox3
             // 
@@ -380,13 +436,119 @@ namespace helphub
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::helphub.Properties.Resources.Support_service_with_headphones__Customer_Support_service_logo_template__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(-95, -32);
+            this.pictureBox1.Location = new System.Drawing.Point(-48, -22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(318, 279);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 161);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
+            // 
+            // complaindataview
+            // 
+            this.complaindataview.AllowUserToAddRows = false;
+            this.complaindataview.AllowUserToDeleteRows = false;
+            this.complaindataview.AllowUserToResizeColumns = false;
+            this.complaindataview.AllowUserToResizeRows = false;
+            this.complaindataview.BackgroundColor = System.Drawing.Color.White;
+            this.complaindataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.complaindataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.complaindataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.complaindataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.complaindataview.GridColor = System.Drawing.Color.Black;
+            this.complaindataview.Location = new System.Drawing.Point(46, 176);
+            this.complaindataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.complaindataview.Name = "complaindataview";
+            this.complaindataview.RowHeadersWidth = 82;
+            this.complaindataview.RowTemplate.Height = 41;
+            this.complaindataview.Size = new System.Drawing.Size(909, 212);
+            this.complaindataview.TabIndex = 43;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "aadharno";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Aadhar Number";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "typeofcomplain";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Complain";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "mobilenumber";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Mobile Number";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "aboutcomplain";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Complain Details";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "address";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "city";
+            this.dataGridViewTextBoxColumn15.HeaderText = "City";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "state";
+            this.dataGridViewTextBoxColumn16.HeaderText = "State";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "status";
+            this.dataGridViewTextBoxColumn17.HeaderText = "STATUS";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 200;
             // 
             // ADMIN
             // 
@@ -408,13 +570,14 @@ namespace helphub
             this.Text = "ADMIN - HELPHUB";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestdataview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -423,7 +586,6 @@ namespace helphub
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private DataGridView complaindataview;
         private DataGridViewTextBoxColumn REQUEST;
         public Label label2;
         private DataGridView requestdataview;
@@ -436,15 +598,26 @@ namespace helphub
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn aadharno;
-        private DataGridViewTextBoxColumn typeofcomplain;
-        private DataGridViewTextBoxColumn mobilenumber;
-        private DataGridViewTextBoxColumn aboutcomplain;
-        private DataGridViewTextBoxColumn address;
-        private DataGridViewTextBoxColumn STATUS;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Button button4;
+        private Button button3;
+        private PictureBox pictureBox6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        public ComboBox ComboBox1;
+        public Label label3;
+        public ComboBox comboBox2;
+        public Label label4;
+        private DataGridView complaindataview;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
     }
 }
