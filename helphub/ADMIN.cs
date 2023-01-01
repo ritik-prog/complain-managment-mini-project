@@ -19,7 +19,6 @@ namespace helphub
         public ADMIN()
         {
             InitializeComponent();
-            fetchData();
             if(UserData.role != "ADMIN")
             {
                 pictureBox4.Hide();
@@ -28,11 +27,21 @@ namespace helphub
                 button3.Hide();
                 button4.Hide();
             }
+            if (UserData.role != "ADMIN" && UserData.role != "SUPERVISOR")
+            {
+                label5.Hide();
+                comboBox3.Hide();
+                label6.Hide();
+                comboBox4.Hide();
+            }
             ComboBox1.SelectedItem = "ALL REQUEST";
             comboBox2.SelectedItem = "ALL COMPLAINS";
+            comboBox3.SelectedItem = "ALL STATE";
+            comboBox4.SelectedItem = "ALL STATE";
+            fetchData();
         }
 
-    public void fetchData()
+        public void fetchData()
         {
             try
             {
@@ -48,21 +57,37 @@ namespace helphub
                 SQLitecmd1.CommandText = "";
                 if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR")
                 {
-                    if (comboBox2.SelectedItem == "ALL COMPLAINS")
+                    if (comboBox2.SelectedItem == "ALL COMPLAINS" && comboBox3.SelectedItem == "ALL STATE")
                     {
                         SQLitecmd.CommandText = "SELECT * FROM complaint";
                     }
-                    else
+                    else if (comboBox2.SelectedItem == "ALL COMPLAINS" && comboBox3.SelectedItem != "ALL STATE")
+                    {
+                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE state = '" + comboBox3.SelectedItem + "'";
+                    }
+                    else if (comboBox2.SelectedItem != "ALL COMPLAINS" && comboBox3.SelectedItem == "ALL STATE")
                     {
                         SQLitecmd.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '" + comboBox2.SelectedItem + "'";
                     }
-                    if (ComboBox1.SelectedItem == "ALL REQUEST")
+                    else
+                    {
+                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '"+ comboBox2.SelectedItem +"' AND state = '" + comboBox3.SelectedItem + "'";
+                    }
+                    if (ComboBox1.SelectedItem == "ALL REQUEST" && comboBox4.SelectedItem == "ALL STATE")
                     {
                         SQLitecmd1.CommandText = "SELECT * FROM request";
                     }
+                    else if (ComboBox1.SelectedItem == "ALL REQUEST" && comboBox4.SelectedItem != "ALL STATE")
+                    {
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE state = '" + comboBox4.SelectedItem + "'";
+                    }
+                    else if (ComboBox1.SelectedItem != "ALL REQUEST" && comboBox4.SelectedItem == "ALL STATE")
+                    {
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE typeofrequest = '" + ComboBox1.SelectedItem + "'";
+                    }
                     else
                     {
-                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE typeofrequest = '"+ ComboBox1.SelectedItem +"'";
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE typeofrequest = '"+ ComboBox1.SelectedItem + "' AND state = '" + comboBox4.SelectedItem + "'";
                     }
                 }
                 else
@@ -533,6 +558,18 @@ namespace helphub
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fetchData();
+            this.Refresh();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fetchData();
+            this.Refresh();
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             fetchData();
             this.Refresh();

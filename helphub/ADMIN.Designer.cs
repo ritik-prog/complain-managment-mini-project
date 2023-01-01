@@ -27,9 +27,16 @@ namespace helphub
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN));
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.complaindataview = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,30 +46,14 @@ namespace helphub
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.requestdataview = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Request_dataview = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.complaindataview = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -70,7 +61,6 @@ namespace helphub
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
             this.SuspendLayout();
             // 
             // Label1
@@ -86,10 +76,14 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.comboBox4);
+            this.GroupBox1.Controls.Add(this.ComboBox1);
+            this.GroupBox1.Controls.Add(this.label6);
+            this.GroupBox1.Controls.Add(this.comboBox3);
+            this.GroupBox1.Controls.Add(this.label5);
             this.GroupBox1.Controls.Add(this.complaindataview);
             this.GroupBox1.Controls.Add(this.comboBox2);
             this.GroupBox1.Controls.Add(this.label4);
-            this.GroupBox1.Controls.Add(this.ComboBox1);
             this.GroupBox1.Controls.Add(this.label3);
             this.GroupBox1.Controls.Add(this.pictureBox6);
             this.GroupBox1.Controls.Add(this.button4);
@@ -114,6 +108,268 @@ namespace helphub
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
             // 
+            // comboBox4
+            // 
+            this.comboBox4.AutoCompleteCustomSource.AddRange(new string[] {
+            "ALL STATE",
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox4.BackColor = System.Drawing.Color.White;
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.DropDownWidth = 579;
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "ALL STATE",
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox4.Location = new System.Drawing.Point(265, 424);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(204, 33);
+            this.comboBox4.TabIndex = 47;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // ComboBox1
+            // 
+            this.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComboBox1.BackColor = System.Drawing.Color.White;
+            this.ComboBox1.DropDownWidth = 579;
+            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Items.AddRange(new object[] {
+            "ALL REQUEST",
+            "MEDICAL EMERGENCY",
+            "ELECTRICITY CONNECTION",
+            "NEW ROAD ",
+            "WATER SUPPLY",
+            "OTHER ISSUES"});
+            this.ComboBox1.Location = new System.Drawing.Point(728, 424);
+            this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(227, 30);
+            this.ComboBox1.TabIndex = 39;
+            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(46, 428);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(235, 26);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "FILTER BY STATE:- ";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteCustomSource.AddRange(new string[] {
+            "ALL STATE",
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox3.BackColor = System.Drawing.Color.White;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.DropDownWidth = 579;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "ALL STATE",
+            "AP|Andhra Pradesh",
+            "AR|Arunachal Pradesh",
+            "AS|Assam",
+            "BR|Bihar",
+            "CT|Chhattisgarh",
+            "GA|Goa",
+            "GJ|Gujarat",
+            "HR|Haryana",
+            "HP|Himachal Pradesh",
+            "JK|Jammu and Kashmir",
+            "JH|Jharkhand",
+            "KA|Karnataka",
+            "KL|Kerala",
+            "MP|Madhya Pradesh",
+            "MH|Maharashtra",
+            "MN|Manipur",
+            "ML|Meghalaya",
+            "MZ|Mizoram",
+            "NL|Nagaland",
+            "OR|Odisha",
+            "PB|Punjab",
+            "RJ|Rajasthan",
+            "SK|Sikkim",
+            "TN|Tamil Nadu",
+            "TG|Telangana",
+            "TR|Tripura",
+            "UT|Uttarakhand",
+            "UP|Uttar Pradesh",
+            "WB|West Bengal",
+            "AN|Andaman and Nicobar Islands",
+            "CH|Chandigarh",
+            "DN|Dadra and Nagar Haveli",
+            "DD|Daman and Diu",
+            "DL|Delhi",
+            "LD|Lakshadweep",
+            "PY|Puducherry"});
+            this.comboBox3.Location = new System.Drawing.Point(259, 140);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(204, 33);
+            this.comboBox3.TabIndex = 45;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(46, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(235, 26);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "FILTER BY STATE:- ";
+            // 
+            // complaindataview
+            // 
+            this.complaindataview.AllowUserToAddRows = false;
+            this.complaindataview.AllowUserToDeleteRows = false;
+            this.complaindataview.AllowUserToResizeColumns = false;
+            this.complaindataview.AllowUserToResizeRows = false;
+            this.complaindataview.BackgroundColor = System.Drawing.Color.White;
+            this.complaindataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.complaindataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.complaindataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16});
+            this.complaindataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.complaindataview.GridColor = System.Drawing.Color.Black;
+            this.complaindataview.Location = new System.Drawing.Point(46, 176);
+            this.complaindataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.complaindataview.Name = "complaindataview";
+            this.complaindataview.RowHeadersWidth = 82;
+            this.complaindataview.RowTemplate.Height = 41;
+            this.complaindataview.Size = new System.Drawing.Size(909, 212);
+            this.complaindataview.TabIndex = 43;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "city";
+            this.dataGridViewTextBoxColumn15.HeaderText = "City";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "state";
+            this.dataGridViewTextBoxColumn16.HeaderText = "State";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 5;
+            // 
             // comboBox2
             // 
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -131,10 +387,10 @@ namespace helphub
             "STREET DOGS",
             "WATER / SEWAGE",
             "OTHER ISSUES"});
-            this.comboBox2.Location = new System.Drawing.Point(676, 140);
+            this.comboBox2.Location = new System.Drawing.Point(728, 140);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(279, 33);
+            this.comboBox2.Size = new System.Drawing.Size(227, 33);
             this.comboBox2.TabIndex = 41;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -143,40 +399,18 @@ namespace helphub
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(414, 143);
+            this.label4.Location = new System.Drawing.Point(468, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(284, 26);
             this.label4.TabIndex = 42;
             this.label4.Text = "FILTER BY COMPLAIN:- ";
-            // 
-            // ComboBox1
-            // 
-            this.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ComboBox1.BackColor = System.Drawing.Color.White;
-            this.ComboBox1.DropDownWidth = 579;
-            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ComboBox1.FormattingEnabled = true;
-            this.ComboBox1.Items.AddRange(new object[] {
-            "ALL REQUEST",
-            "MEDICAL EMERGENCY",
-            "ELECTRICITY CONNECTION",
-            "NEW ROAD ",
-            "WATER SUPPLY",
-            "OTHER ISSUES"});
-            this.ComboBox1.Location = new System.Drawing.Point(676, 421);
-            this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(279, 30);
-            this.ComboBox1.TabIndex = 39;
-            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(419, 422);
+            this.label3.Location = new System.Drawing.Point(476, 426);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(274, 26);
             this.label3.TabIndex = 40;
@@ -297,79 +531,17 @@ namespace helphub
             this.requestdataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.requestdataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.requestdataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.Request_dataview,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewTextBoxColumn7});
             this.requestdataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.requestdataview.GridColor = System.Drawing.Color.Black;
-            this.requestdataview.Location = new System.Drawing.Point(46, 454);
+            this.requestdataview.Location = new System.Drawing.Point(46, 464);
             this.requestdataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.requestdataview.Name = "requestdataview";
             this.requestdataview.RowHeadersWidth = 82;
             this.requestdataview.RowTemplate.Height = 41;
-            this.requestdataview.Size = new System.Drawing.Size(909, 224);
+            this.requestdataview.Size = new System.Drawing.Size(909, 214);
             this.requestdataview.TabIndex = 31;
-            this.requestdataview.AutoGenerateColumns = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "aadharno";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Aadhar Number";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // Request_dataview
-            // 
-            this.Request_dataview.DataPropertyName = "typeofrequest";
-            this.Request_dataview.HeaderText = "Request";
-            this.Request_dataview.MinimumWidth = 10;
-            this.Request_dataview.Name = "Request_dataview";
-            this.Request_dataview.ReadOnly = true;
-            this.Request_dataview.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "mobilenumber";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Mobile Number";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "aboutrequest";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Request Details";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "address";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 200;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -384,15 +556,6 @@ namespace helphub
             this.dataGridViewTextBoxColumn7.HeaderText = "State";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "status";
-            this.dataGridViewTextBoxColumn8.HeaderText = "STATUS";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 200;
             // 
             // label2
             // 
@@ -445,113 +608,6 @@ namespace helphub
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // complaindataview
-            // 
-            this.complaindataview.AllowUserToAddRows = false;
-            this.complaindataview.AllowUserToDeleteRows = false;
-            this.complaindataview.AllowUserToResizeColumns = false;
-            this.complaindataview.AllowUserToResizeRows = false;
-            this.complaindataview.BackgroundColor = System.Drawing.Color.White;
-            this.complaindataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.complaindataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.complaindataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17});
-            this.complaindataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.complaindataview.GridColor = System.Drawing.Color.Black;
-            this.complaindataview.Location = new System.Drawing.Point(46, 176);
-            this.complaindataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.complaindataview.Name = "complaindataview";
-            this.complaindataview.RowHeadersWidth = 82;
-            this.complaindataview.RowTemplate.Height = 41;
-            this.complaindataview.Size = new System.Drawing.Size(909, 212);
-            this.complaindataview.TabIndex = 43;
-            this.complaindataview.AutoGenerateColumns = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "aadharno";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Aadhar Number";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "typeofcomplain";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Complain";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "mobilenumber";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Mobile Number";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "aboutcomplain";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Complain Details";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "address";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "city";
-            this.dataGridViewTextBoxColumn15.HeaderText = "City";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "state";
-            this.dataGridViewTextBoxColumn16.HeaderText = "State";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "status";
-            this.dataGridViewTextBoxColumn17.HeaderText = "STATUS";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 200;
-            // 
             // ADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -572,6 +628,7 @@ namespace helphub
             this.Text = "ADMIN - HELPHUB";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -579,7 +636,6 @@ namespace helphub
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,5 +677,9 @@ namespace helphub
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        public Label label5;
+        public ComboBox comboBox3;
+        public ComboBox comboBox4;
+        public Label label6;
     }
 }
