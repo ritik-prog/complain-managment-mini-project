@@ -84,6 +84,11 @@ namespace helphub
 
                     if(dt.Rows.Count == 1)
                     {
+                        if (dt.Rows[0]["banned"].ToString() == "YES")
+                        {
+                            MessageBox.Show("Account Banned", "SECURITY SYSTEM HELPHUB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         foreach (DataRow row in dt.Rows)
                         {
                             UserData.ID = row["ID"].ToString();
