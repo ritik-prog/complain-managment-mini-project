@@ -27,14 +27,23 @@ namespace helphub
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN));
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.complaindataview = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AadharNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeofcomplain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AboutComplain = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,13 +55,22 @@ namespace helphub
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.requestdataview = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeofrequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aboutrequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -66,16 +84,19 @@ namespace helphub
             // Label1
             // 
             this.Label1.AutoSize = true;
+            this.Label1.BackColor = System.Drawing.Color.White;
+            this.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(46, 101);
+            this.Label1.Location = new System.Drawing.Point(758, 19);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(200, 36);
+            this.Label1.Size = new System.Drawing.Size(202, 38);
             this.Label1.TabIndex = 12;
             this.Label1.Text = "COMPLAINS";
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.pictureBox7);
             this.GroupBox1.Controls.Add(this.comboBox4);
             this.GroupBox1.Controls.Add(this.ComboBox1);
             this.GroupBox1.Controls.Add(this.label6);
@@ -100,13 +121,26 @@ namespace helphub
             this.GroupBox1.Controls.Add(this.pictureBox1);
             this.GroupBox1.Location = new System.Drawing.Point(1, -11);
             this.GroupBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.GroupBox1.MaximumSize = new System.Drawing.Size(1017, 731);
-            this.GroupBox1.MinimumSize = new System.Drawing.Size(1017, 731);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.GroupBox1.Size = new System.Drawing.Size(1017, 731);
+            this.GroupBox1.Size = new System.Drawing.Size(1354, 615);
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::helphub.Properties.Resources.BAN_UNBAN;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 175);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(331, 57);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox7.TabIndex = 48;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // comboBox4
             // 
@@ -192,7 +226,7 @@ namespace helphub
             "DL|Delhi",
             "LD|Lakshadweep",
             "PY|Puducherry"});
-            this.comboBox4.Location = new System.Drawing.Point(265, 424);
+            this.comboBox4.Location = new System.Drawing.Point(631, 382);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(204, 33);
@@ -214,7 +248,7 @@ namespace helphub
             "NEW ROAD ",
             "WATER SUPPLY",
             "OTHER ISSUES"});
-            this.ComboBox1.Location = new System.Drawing.Point(728, 424);
+            this.ComboBox1.Location = new System.Drawing.Point(1094, 385);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(227, 30);
@@ -226,7 +260,7 @@ namespace helphub
             this.label6.AutoSize = true;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(46, 428);
+            this.label6.Location = new System.Drawing.Point(412, 386);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(235, 26);
             this.label6.TabIndex = 46;
@@ -316,7 +350,7 @@ namespace helphub
             "DL|Delhi",
             "LD|Lakshadweep",
             "PY|Puducherry"});
-            this.comboBox3.Location = new System.Drawing.Point(259, 140);
+            this.comboBox3.Location = new System.Drawing.Point(623, 81);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(204, 33);
@@ -328,7 +362,7 @@ namespace helphub
             this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(46, 143);
+            this.label5.Location = new System.Drawing.Point(410, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(235, 26);
             this.label5.TabIndex = 44;
@@ -344,31 +378,113 @@ namespace helphub
             this.complaindataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.complaindataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.complaindataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.username,
+            this.AadharNumber,
+            this.MobileNumber,
+            this.typeofcomplain,
+            this.AboutComplain,
+            this.address,
             this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
+            this.dataGridViewTextBoxColumn16,
+            this.Status});
             this.complaindataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.complaindataview.GridColor = System.Drawing.Color.Black;
-            this.complaindataview.Location = new System.Drawing.Point(46, 176);
+            this.complaindataview.Location = new System.Drawing.Point(410, 117);
             this.complaindataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.complaindataview.Name = "complaindataview";
             this.complaindataview.RowHeadersWidth = 82;
             this.complaindataview.RowTemplate.Height = 41;
-            this.complaindataview.Size = new System.Drawing.Size(909, 212);
+            this.complaindataview.Size = new System.Drawing.Size(909, 201);
             this.complaindataview.TabIndex = 43;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 43;
+            // 
+            // username
+            // 
+            this.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.username.DataPropertyName = "username";
+            this.username.HeaderText = "Username";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Width = 85;
+            // 
+            // AadharNumber
+            // 
+            this.AadharNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AadharNumber.DataPropertyName = "aadharno";
+            this.AadharNumber.HeaderText = "Aadhar Number";
+            this.AadharNumber.Name = "AadharNumber";
+            this.AadharNumber.ReadOnly = true;
+            this.AadharNumber.Width = 107;
+            // 
+            // MobileNumber
+            // 
+            this.MobileNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MobileNumber.DataPropertyName = "mobilenumber";
+            this.MobileNumber.HeaderText = "Mobile Number";
+            this.MobileNumber.Name = "MobileNumber";
+            this.MobileNumber.ReadOnly = true;
+            this.MobileNumber.Width = 106;
+            // 
+            // typeofcomplain
+            // 
+            this.typeofcomplain.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typeofcomplain.DataPropertyName = "typeofcomplain";
+            this.typeofcomplain.HeaderText = "Type of Complain";
+            this.typeofcomplain.Name = "typeofcomplain";
+            this.typeofcomplain.ReadOnly = true;
+            this.typeofcomplain.Width = 115;
+            // 
+            // AboutComplain
+            // 
+            this.AboutComplain.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AboutComplain.DataPropertyName = "aboutcomplain";
+            this.AboutComplain.HeaderText = "About Complain";
+            this.AboutComplain.Name = "AboutComplain";
+            this.AboutComplain.ReadOnly = true;
+            this.AboutComplain.Width = 110;
+            // 
+            // address
+            // 
+            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 74;
             // 
             // dataGridViewTextBoxColumn15
             // 
+            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn15.DataPropertyName = "city";
             this.dataGridViewTextBoxColumn15.HeaderText = "City";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 53;
             // 
             // dataGridViewTextBoxColumn16
             // 
-            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn16.DataPropertyName = "state";
             this.dataGridViewTextBoxColumn16.HeaderText = "State";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 5;
+            this.dataGridViewTextBoxColumn16.Width = 58;
+            // 
+            // Status
+            // 
+            this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Status.DataPropertyName = "status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 64;
             // 
             // comboBox2
             // 
@@ -387,7 +503,7 @@ namespace helphub
             "STREET DOGS",
             "WATER / SEWAGE",
             "OTHER ISSUES"});
-            this.comboBox2.Location = new System.Drawing.Point(728, 140);
+            this.comboBox2.Location = new System.Drawing.Point(1092, 81);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(227, 33);
@@ -399,7 +515,7 @@ namespace helphub
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(468, 143);
+            this.label4.Location = new System.Drawing.Point(832, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(284, 26);
             this.label4.TabIndex = 42;
@@ -410,7 +526,7 @@ namespace helphub
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(476, 426);
+            this.label3.Location = new System.Drawing.Point(842, 388);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(274, 26);
             this.label3.TabIndex = 40;
@@ -421,11 +537,11 @@ namespace helphub
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::helphub.Properties.Resources.stateadmin1;
-            this.pictureBox6.Location = new System.Drawing.Point(710, 684);
+            this.pictureBox6.Image = global::helphub.Properties.Resources.stateadmin2;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 293);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(334, 47);
+            this.pictureBox6.Size = new System.Drawing.Size(331, 63);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox6.TabIndex = 38;
             this.pictureBox6.TabStop = false;
@@ -437,7 +553,7 @@ namespace helphub
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(513, 390);
+            this.button4.Location = new System.Drawing.Point(410, 352);
             this.button4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(219, 30);
@@ -452,7 +568,7 @@ namespace helphub
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(498, 107);
+            this.button3.Location = new System.Drawing.Point(410, 48);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(219, 30);
@@ -467,10 +583,10 @@ namespace helphub
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::helphub.Properties.Resources.addnewsupervisor;
-            this.pictureBox5.Location = new System.Drawing.Point(320, 684);
+            this.pictureBox5.Location = new System.Drawing.Point(0, 234);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(334, 47);
+            this.pictureBox5.Size = new System.Drawing.Size(331, 57);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox5.TabIndex = 35;
             this.pictureBox5.TabStop = false;
@@ -482,10 +598,10 @@ namespace helphub
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::helphub.Properties.Resources.addnewadmin;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 684);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 358);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(264, 47);
+            this.pictureBox4.Size = new System.Drawing.Size(331, 57);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
@@ -497,7 +613,7 @@ namespace helphub
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(736, 107);
+            this.button2.Location = new System.Drawing.Point(1100, 48);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(219, 30);
@@ -512,7 +628,7 @@ namespace helphub
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(736, 390);
+            this.button1.Location = new System.Drawing.Point(1100, 352);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 30);
@@ -531,52 +647,136 @@ namespace helphub
             this.requestdataview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.requestdataview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.requestdataview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn7});
+            this.dataGridViewTextBoxColumn4,
+            this.typeofrequest,
+            this.aboutrequest,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn18});
             this.requestdataview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.requestdataview.GridColor = System.Drawing.Color.Black;
-            this.requestdataview.Location = new System.Drawing.Point(46, 464);
+            this.requestdataview.Location = new System.Drawing.Point(412, 418);
             this.requestdataview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.requestdataview.Name = "requestdataview";
             this.requestdataview.RowHeadersWidth = 82;
             this.requestdataview.RowTemplate.Height = 41;
-            this.requestdataview.Size = new System.Drawing.Size(909, 214);
+            this.requestdataview.Size = new System.Drawing.Size(909, 185);
             this.requestdataview.TabIndex = 31;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 43;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "username";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Username";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 85;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "city";
-            this.dataGridViewTextBoxColumn3.HeaderText = "City";
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "aadharno";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Aadhar Number";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 107;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "mobilenumber";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Mobile Number";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 106;
+            // 
+            // typeofrequest
+            // 
+            this.typeofrequest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typeofrequest.DataPropertyName = "typeofrequest";
+            this.typeofrequest.HeaderText = "Type of Request";
+            this.typeofrequest.Name = "typeofrequest";
+            this.typeofrequest.ReadOnly = true;
+            this.typeofrequest.Width = 106;
+            // 
+            // aboutrequest
+            // 
+            this.aboutrequest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.aboutrequest.DataPropertyName = "aboutrequest";
+            this.aboutrequest.HeaderText = "About Request";
+            this.aboutrequest.Name = "aboutrequest";
+            this.aboutrequest.ReadOnly = true;
+            this.aboutrequest.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "city";
+            this.dataGridViewTextBoxColumn5.HeaderText = "City";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 53;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "state";
             this.dataGridViewTextBoxColumn7.HeaderText = "State";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 5;
+            this.dataGridViewTextBoxColumn7.Width = 58;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "address";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "status";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 64;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(46, 390);
+            this.label2.Location = new System.Drawing.Point(771, 324);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 36);
+            this.label2.Size = new System.Drawing.Size(189, 38);
             this.label2.TabIndex = 30;
             this.label2.Text = "REQUESTS";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::helphub.Properties.Resources.DASHBOARD;
-            this.pictureBox3.Location = new System.Drawing.Point(783, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 417);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(246, 46);
+            this.pictureBox3.Size = new System.Drawing.Size(331, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 28;
             this.pictureBox3.TabStop = false;
@@ -587,10 +787,10 @@ namespace helphub
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::helphub.Properties.Resources.LOGOUT;
-            this.pictureBox2.Location = new System.Drawing.Point(846, 57);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 463);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(246, 39);
+            this.pictureBox2.Size = new System.Drawing.Size(407, 46);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
@@ -600,10 +800,10 @@ namespace helphub
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::helphub.Properties.Resources.Support_service_with_headphones__Customer_Support_service_logo_template__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(-48, -22);
+            this.pictureBox1.Location = new System.Drawing.Point(-66, -42);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 161);
+            this.pictureBox1.Size = new System.Drawing.Size(245, 276);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -615,19 +815,18 @@ namespace helphub
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1001, 722);
+            this.ClientSize = new System.Drawing.Size(1349, 602);
             this.Controls.Add(this.GroupBox1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1024, 762);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1017, 761);
             this.Name = "ADMIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN - HELPHUB";
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -649,19 +848,12 @@ namespace helphub
         private DataGridView requestdataview;
         private Button button2;
         private Button button1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Request_dataview;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private Button button4;
         private Button button3;
         private PictureBox pictureBox6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         public ComboBox ComboBox1;
         public Label label3;
@@ -674,12 +866,31 @@ namespace helphub
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         public Label label5;
         public ComboBox comboBox3;
         public ComboBox comboBox4;
         public Label label6;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn username;
+        private DataGridViewTextBoxColumn AadharNumber;
+        private DataGridViewTextBoxColumn MobileNumber;
+        private DataGridViewTextBoxColumn typeofcomplain;
+        private DataGridViewTextBoxColumn AboutComplain;
+        private DataGridViewTextBoxColumn address;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn typeofrequest;
+        private DataGridViewTextBoxColumn aboutrequest;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private PictureBox pictureBox7;
     }
 }

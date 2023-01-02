@@ -142,6 +142,9 @@
   <data name="LOGIN_BANNER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN_BANNER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GOBACK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOBACK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ADMINPANEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADMINPANEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,10 +181,13 @@
   <data name="PROFILE_BANNER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PROFILE_BANNER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stateadmin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stateadmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Support service with headphones. Customer Support service logo template (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Support service with headphones. Customer Support service logo template (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GOBACK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GOBACK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BAN-UNBAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BAN-UNBAN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

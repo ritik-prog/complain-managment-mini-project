@@ -24,8 +24,12 @@ namespace helphub
                 pictureBox4.Hide();
                 pictureBox5.Hide();
                 pictureBox6.Hide();
+                pictureBox7.Hide();
                 button3.Hide();
                 button4.Hide();
+                pictureBox1.Width = 682;
+                pictureBox1.Height = 736;
+                pictureBox1.Location = new Point(-168, -139);
             }
             if (UserData.role != "ADMIN" && UserData.role != "SUPERVISOR")
             {
@@ -573,6 +577,69 @@ namespace helphub
         {
             fetchData();
             this.Refresh();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            int x = this.Left + (this.Width / 2) - 200;
+            int y = this.Top + (this.Height / 2) - 100;
+            string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to BAN/UNBAN", "BAN/UNBAN USER", "", x, y);
+            if (username != "")
+            {
+                if (check_username_exist(username))
+                {
+                    string option = Microsoft.VisualBasic.Interaction.InputBox("Want to ban user or unban?\nType 'ban' to Ban a user\nType 'unban' to UnBan a user\nNote:- Type in lowercase only", "BAN/UNBAN USER", "", x, y);
+                    if (option != "")
+                    {
+                        string banorunban = option == "ban" ? "YES" : "NO";
+                        if (username != "")
+                        {
+                            try
+                            {
+                                string SQLitecnStr = @"Data Source=./helphub.db";
+                                SQLiteConnection SQLiteConn = new SQLiteConnection();
+                                SQLiteCommand SQLitecmd = new SQLiteCommand();
+                                SQLiteConn.ConnectionString = SQLitecnStr;
+                                SQLiteConn.Open();
+                                SQLitecmd.Connection = SQLiteConn;
+                                SQLitecmd.CommandText = "UPDATE user SET banned = '"+ banorunban +"' WHERE username = '" + username + "';";
+                                try
+                                {
+                                    SQLitecmd.ExecuteNonQuery();
+                                    MessageBox.Show("User succesfully "+ option +"ned");
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Can't "+ option +" user", ex.Message);
+                                }
+                                SQLiteConn.Close();
+
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Can't "+ option +" user", ex.Message);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Option field is empty");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username Doesn't Exists");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username field is empty");
+            }
         }
     }
 }

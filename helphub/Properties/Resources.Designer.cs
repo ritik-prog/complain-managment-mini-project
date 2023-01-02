@@ -103,6 +103,16 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BAN_UNBAN {
+            get {
+                object obj = ResourceManager.GetObject("BAN-UNBAN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Component_2_FINAL {
             get {
                 object obj = ResourceManager.GetObject("Component 2-FINAL", resourceCulture);
@@ -256,6 +266,16 @@ namespace helphub.Properties {
         internal static System.Drawing.Bitmap stateadmin1 {
             get {
                 object obj = ResourceManager.GetObject("stateadmin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stateadmin2 {
+            get {
+                object obj = ResourceManager.GetObject("stateadmin2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

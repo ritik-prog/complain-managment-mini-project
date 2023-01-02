@@ -56,11 +56,17 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +153,7 @@
             this.label2.Size = new System.Drawing.Size(129, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "APPLICATION LOGS";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -174,6 +181,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
@@ -181,14 +189,15 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(54, 308);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(493, 122);
+            this.panel3.Size = new System.Drawing.Size(493, 148);
             this.panel3.TabIndex = 9;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(3, 94);
+            this.label8.Location = new System.Drawing.Point(3, 115);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(234, 21);
             this.label8.TabIndex = 8;
@@ -198,7 +207,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(3, 73);
+            this.label7.Location = new System.Drawing.Point(3, 94);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(196, 21);
             this.label7.TabIndex = 7;
@@ -208,7 +217,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(3, 52);
+            this.label6.Location = new System.Drawing.Point(3, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(228, 21);
             this.label6.TabIndex = 6;
@@ -241,9 +250,9 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label13);
-            this.panel4.Location = new System.Drawing.Point(54, 436);
+            this.panel4.Location = new System.Drawing.Point(620, 162);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(493, 100);
+            this.panel4.Size = new System.Drawing.Size(493, 123);
             this.panel4.TabIndex = 10;
             // 
             // label10
@@ -293,9 +302,9 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label16);
-            this.panel5.Location = new System.Drawing.Point(54, 542);
+            this.panel5.Location = new System.Drawing.Point(620, 308);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(493, 100);
+            this.panel5.Size = new System.Drawing.Size(493, 148);
             this.panel5.TabIndex = 11;
             // 
             // label9
@@ -338,12 +347,62 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "REQUEST STATISTICS";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(3, 52);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(235, 21);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Total number of banned user:- ";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Controls.Add(this.label18);
+            this.panel6.Controls.Add(this.button7);
+            this.panel6.Controls.Add(this.button8);
+            this.panel6.Location = new System.Drawing.Point(620, 78);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(493, 66);
+            this.panel6.TabIndex = 8;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(3, 2);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(124, 17);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "BAN/UNBAN LOGS";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(0, 22);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(204, 42);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "BAN LOGS";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(286, 22);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(204, 42);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "UNBAN LOGS";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // SUPERADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 652);
+            this.ClientSize = new System.Drawing.Size(1183, 494);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -352,10 +411,8 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(640, 691);
             this.MdiChildrenMinimizedAnchorBottom = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(640, 691);
             this.Name = "SUPERADMIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SUPERADMIN";
@@ -369,6 +426,8 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +462,10 @@
         private Label label14;
         private Label label15;
         private Label label16;
+        private Label label17;
+        private Panel panel6;
+        private Label label18;
+        private Button button7;
+        private Button button8;
     }
 }

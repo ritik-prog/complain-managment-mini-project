@@ -103,7 +103,7 @@ namespace helphub
                     String typeofcomplain = ComboBox1.SelectedItem.ToString();
                     String state = comboBox2.SelectedItem.ToString();
 
-                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address,state,city) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + Dcomplaint.Text + "','" + Address.Text + "','"+ state + "','" + city.Text + "')";
+                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address,state,city,username) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + Dcomplaint.Text + "','" + Address.Text + "','"+ state + "','" + city.Text + "','" + UserData.username + "')";
 
                     try
                     {
