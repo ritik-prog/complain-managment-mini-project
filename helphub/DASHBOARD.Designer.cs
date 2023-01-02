@@ -34,11 +34,13 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // Button4
@@ -116,6 +118,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.pictureBox5);
             this.GroupBox1.Controls.Add(this.pictureBox4);
             this.GroupBox1.Controls.Add(this.pictureBox3);
             this.GroupBox1.Controls.Add(this.pictureBox1);
@@ -139,7 +142,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::helphub.Properties.Resources.Component_3;
-            this.pictureBox4.Location = new System.Drawing.Point(2, 398);
+            this.pictureBox4.Location = new System.Drawing.Point(11, 411);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(68, 57);
@@ -167,7 +170,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::helphub.Properties.Resources.LOGOUT;
-            this.pictureBox1.Location = new System.Drawing.Point(754, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(769, 53);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(221, 51);
@@ -187,6 +190,17 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::helphub.Properties.Resources.PROFILE;
+            this.pictureBox5.Location = new System.Drawing.Point(751, 9);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(153, 50);
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // DASHBOARD
             // 
@@ -213,6 +227,7 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -227,5 +242,6 @@ internal partial class DASHBOARD : System.Windows.Forms.Form
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }

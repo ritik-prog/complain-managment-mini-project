@@ -120,5 +120,12 @@ namespace helphub
 
             this.Hide(); //Close Form1,the current open form.
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            PROFILE profile = new PROFILE();
+            profile.Show();
+            this.Hide();
+        }
     }
 }

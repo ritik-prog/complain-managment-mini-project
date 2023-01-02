@@ -133,6 +133,26 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GOBACK {
+            get {
+                object obj = ResourceManager.GetObject("GOBACK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GOBACK1 {
+            get {
+                object obj = ResourceManager.GetObject("GOBACK1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LOADING {
             get {
                 object obj = ResourceManager.GetObject("LOADING", resourceCulture);
@@ -186,6 +206,36 @@ namespace helphub.Properties {
         internal static System.Drawing.Bitmap LOGOUT {
             get {
                 object obj = ResourceManager.GetObject("LOGOUT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PROFILE {
+            get {
+                object obj = ResourceManager.GetObject("PROFILE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile_avtar {
+            get {
+                object obj = ResourceManager.GetObject("profile-avtar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PROFILE_BANNER {
+            get {
+                object obj = ResourceManager.GetObject("PROFILE_BANNER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
