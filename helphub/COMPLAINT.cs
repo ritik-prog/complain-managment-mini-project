@@ -107,6 +107,8 @@ namespace helphub
 
                     try
                     {
+
+                        CreateLogs.userlogobj.userlog(UserData.username, "Complain filled", this.Name);
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("complain Filled, Checkout in status section", "Complain", MessageBoxButtons.OK);
                         STATUS status = new STATUS();
@@ -117,7 +119,9 @@ namespace helphub
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Registration Failed: " + ex.Message + "", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        CreateLogs.userlogobj.userlog(UserData.username, "Unable to file complain: " + ex.Message, this.Name);
+                        MessageBox.Show("Unable to file complain: " + ex.Message + "", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     SQLiteConn.Close();
@@ -125,6 +129,7 @@ namespace helphub
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.userlogobj.userlog(UserData.username, "Unable to file complain: " + ex.Message, this.Name);
                     MessageBox.Show("Unable to File Complain", ex.Message);
                     Console.WriteLine(ex);
                 }

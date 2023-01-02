@@ -38,7 +38,6 @@ namespace helphub
             this.Label4 = new System.Windows.Forms.Label();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
             this.Button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.REGISTRATION.SuspendLayout();
@@ -63,7 +62,6 @@ namespace helphub
             this.REGISTRATION.Controls.Add(this.Label4);
             this.REGISTRATION.Controls.Add(this.Label3);
             this.REGISTRATION.Controls.Add(this.Label2);
-            this.REGISTRATION.Controls.Add(this.Label1);
             this.REGISTRATION.Controls.Add(this.Button2);
             this.REGISTRATION.Controls.Add(this.pictureBox1);
             this.REGISTRATION.Location = new System.Drawing.Point(-2, -10);
@@ -80,7 +78,7 @@ namespace helphub
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::helphub.Properties.Resources.Component_2_FINAL;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 41);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 295);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(148, 29);
@@ -94,7 +92,7 @@ namespace helphub
             this.Password.BackColor = System.Drawing.Color.White;
             this.Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Password.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Password.Location = new System.Drawing.Point(510, 277);
+            this.Password.Location = new System.Drawing.Point(524, 189);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(253, 30);
@@ -106,10 +104,10 @@ namespace helphub
             this.Contact.BackColor = System.Drawing.Color.White;
             this.Contact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Contact.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Contact.Location = new System.Drawing.Point(510, 206);
+            this.Contact.Location = new System.Drawing.Point(524, 120);
             this.Contact.Name = "Contact";
             this.Contact.PlaceholderText = "+91826959xxxx";
-            this.Contact.Size = new System.Drawing.Size(253, 30);
+            this.Contact.Size = new System.Drawing.Size(248, 30);
             this.Contact.TabIndex = 12;
             this.Contact.KeyDown += new System.Windows.Forms.KeyEventHandler(this.contact_KeyDown);
             // 
@@ -118,7 +116,7 @@ namespace helphub
             this.Aadhar.BackColor = System.Drawing.Color.White;
             this.Aadhar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Aadhar.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Aadhar.Location = new System.Drawing.Point(515, 139);
+            this.Aadhar.Location = new System.Drawing.Point(524, 46);
             this.Aadhar.Name = "Aadhar";
             this.Aadhar.PlaceholderText = "3675 9834 6012";
             this.Aadhar.Size = new System.Drawing.Size(248, 30);
@@ -133,7 +131,7 @@ namespace helphub
             this.Address.BackColor = System.Drawing.Color.White;
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Address.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address.Location = new System.Drawing.Point(90, 277);
+            this.Address.Location = new System.Drawing.Point(248, 189);
             this.Address.Multiline = true;
             this.Address.Name = "Address";
             this.Address.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -146,7 +144,7 @@ namespace helphub
             this.Email.BackColor = System.Drawing.Color.White;
             this.Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Email.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Email.Location = new System.Drawing.Point(90, 206);
+            this.Email.Location = new System.Drawing.Point(248, 120);
             this.Email.Name = "Email";
             this.Email.PlaceholderText = "helphub@gmail.com";
             this.Email.Size = new System.Drawing.Size(233, 30);
@@ -158,7 +156,7 @@ namespace helphub
             this.username.BackColor = System.Drawing.Color.White;
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.username.Font = new System.Drawing.Font("Tahoma", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.username.Location = new System.Drawing.Point(90, 139);
+            this.username.Location = new System.Drawing.Point(248, 46);
             this.username.Name = "username";
             this.username.PlaceholderText = "Helphub";
             this.username.Size = new System.Drawing.Size(233, 30);
@@ -170,7 +168,7 @@ namespace helphub
             this.Label7.AutoSize = true;
             this.Label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label7.Location = new System.Drawing.Point(510, 255);
+            this.Label7.Location = new System.Drawing.Point(524, 162);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(126, 24);
             this.Label7.TabIndex = 7;
@@ -181,7 +179,7 @@ namespace helphub
             this.Label6.AutoSize = true;
             this.Label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label6.Location = new System.Drawing.Point(510, 183);
+            this.Label6.Location = new System.Drawing.Point(524, 93);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(146, 24);
             this.Label6.TabIndex = 6;
@@ -192,7 +190,7 @@ namespace helphub
             this.Label5.AutoSize = true;
             this.Label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label5.Location = new System.Drawing.Point(515, 116);
+            this.Label5.Location = new System.Drawing.Point(524, 19);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(132, 24);
             this.Label5.TabIndex = 5;
@@ -203,7 +201,7 @@ namespace helphub
             this.Label4.AutoSize = true;
             this.Label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label4.Location = new System.Drawing.Point(90, 255);
+            this.Label4.Location = new System.Drawing.Point(248, 162);
             this.Label4.Margin = new System.Windows.Forms.Padding(0);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(106, 24);
@@ -215,7 +213,7 @@ namespace helphub
             this.Label3.AutoSize = true;
             this.Label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label3.Location = new System.Drawing.Point(90, 183);
+            this.Label3.Location = new System.Drawing.Point(248, 93);
             this.Label3.Margin = new System.Windows.Forms.Padding(0);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(71, 24);
@@ -227,22 +225,12 @@ namespace helphub
             this.Label2.AutoSize = true;
             this.Label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label2.Location = new System.Drawing.Point(90, 117);
+            this.Label2.Location = new System.Drawing.Point(248, 19);
             this.Label2.Margin = new System.Windows.Forms.Padding(0);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(125, 24);
             this.Label2.TabIndex = 2;
             this.Label2.Text = "USERNAME";
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Label1.Location = new System.Drawing.Point(228, 23);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(395, 55);
-            this.Label1.TabIndex = 1;
-            this.Label1.Text = "REGISTRATION";
             // 
             // Button2
             // 
@@ -250,9 +238,9 @@ namespace helphub
             this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.ForeColor = System.Drawing.Color.White;
-            this.Button2.Location = new System.Drawing.Point(339, 318);
+            this.Button2.Location = new System.Drawing.Point(524, 234);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(423, 80);
+            this.Button2.Size = new System.Drawing.Size(253, 76);
             this.Button2.TabIndex = 0;
             this.Button2.Text = "REGISTER";
             this.Button2.UseVisualStyleBackColor = false;
@@ -260,18 +248,19 @@ namespace helphub
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::helphub.Properties.Resources.Support_service_with_headphones__Customer_Support_service_logo_template__1_;
+            this.pictureBox1.Image = global::helphub.Properties.Resources.REGISTER_BANNER;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(228, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(-11, -10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 353);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 351);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // REGISTER
             // 
@@ -279,16 +268,14 @@ namespace helphub
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(838, 411);
+            this.ClientSize = new System.Drawing.Size(795, 312);
             this.Controls.Add(this.REGISTRATION);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(854, 450);
             this.MdiChildrenMinimizedAnchorBottom = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(854, 450);
             this.Name = "REGISTER";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRATION - HELPHUB";
@@ -308,7 +295,6 @@ namespace helphub
         public Label Label4;
         public Label Label3;
         public Label Label2;
-        public Label Label1;
         public TextBox Aadhar;
         public GroupBox REGISTRATION;
         public TextBox Password;

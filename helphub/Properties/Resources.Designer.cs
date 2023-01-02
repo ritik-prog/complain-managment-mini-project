@@ -253,6 +253,16 @@ namespace helphub.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap REGISTER_BANNER {
+            get {
+                object obj = ResourceManager.GetObject("REGISTER_BANNER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stateadmin {
             get {
                 object obj = ResourceManager.GetObject("stateadmin", resourceCulture);

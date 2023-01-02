@@ -37,6 +37,7 @@ namespace helphub
             string confirm = Microsoft.VisualBasic.Interaction.InputBox("Type 'confirm' to delete account", "DELETE ACCOUNT", "", x, y);
             if (confirm == "" || confirm != "confirm")
             {
+                CreateLogs.userlogobj.userlog(username.Text, "Wrong Confirm spelling", this.Name);
                 MessageBox.Show("Wrong Input");
                 return;
             }
@@ -56,10 +57,12 @@ namespace helphub
 
                     if(status == 0)
                     {
+                        CreateLogs.userlogobj.userlog(username.Text, "Unable to delete account", this.Name);
                         MessageBox.Show("Unable to Delete Account");
                     }
                     else
                     {
+                        CreateLogs.userlogobj.userlog(username.Text, "Account Deleted", this.Name);
                         MessageBox.Show("Account Successfully Deleted","Account Deleted");
                         LOGIN login = new LOGIN();
                         login.Show();
@@ -70,6 +73,7 @@ namespace helphub
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.userlogobj.userlog(username.Text, "Unable to delete account "+ex.Message, this.Name);
                     MessageBox.Show("Unable to Delete Account", ex.Message);
                 }
             }

@@ -111,8 +111,10 @@ namespace helphub
 
                     try
                     {
+
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("Request received, Checkout in status section", "Request", MessageBoxButtons.OK);
+                        CreateLogs.userlogobj.userlog(UserData.username, "User sent a request", this.Name);
                         STATUS status = new STATUS();
 
                         status.Show();
@@ -121,12 +123,14 @@ namespace helphub
                     }
                     catch (Exception ex)
                     {
+                        CreateLogs.userlogobj.userlog(UserData.username, "Can't Register Your Request: " + ex.Message , this.Name);
                         MessageBox.Show("Can't Register Your Request: " + ex.Message + "", "Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     SQLiteConn.Close();
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.userlogobj.userlog(UserData.username, "Can't Register Your Request: " + ex.Message, this.Name);
                     MessageBox.Show("Unable to Record your Request: "+ ex.Message +"", "Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine(ex);
                 }
