@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Net;
@@ -14,6 +15,7 @@ namespace helphub
     {
         // staic obj variable of class so it can be accessed without create object 
         public static CreateLogs createlogobj = new CreateLogs();
+        public DataTable dt = new DataTable();
 
         string SQLitecnStr = @"Data Source=.\helphub.db";
         SQLiteConnection SQLiteConn = new SQLiteConnection();
@@ -60,6 +62,37 @@ namespace helphub
                 Console.WriteLine(ex.Message);
             }
         }
-
+        public void fetchuserlog()
+        {
+            SQLitecmd.CommandText = "Select * from userlogs";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            dt.Clear();
+            dt.Columns.Clear();
+            da.Fill(dt);
+        }
+        public void fetchadminlog()
+        {
+            SQLitecmd.CommandText = "Select * from adminlogs";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            dt.Clear();
+            dt.Columns.Clear();
+            da.Fill(dt);
+        }
+        public void fetchbanlog()
+        {
+            SQLitecmd.CommandText = "Select * from banunbanlogs WHERE action='ban'";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            dt.Clear();
+            dt.Columns.Clear();
+            da.Fill(dt);
+        }
+        public void fetchunbanlog()
+        {
+            SQLitecmd.CommandText = "Select * from banunbanlogs WHERE action='unban'";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            dt.Clear();
+            dt.Columns.Clear();
+            da.Fill(dt);
+        }
     }
 }

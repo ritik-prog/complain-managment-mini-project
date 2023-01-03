@@ -29,7 +29,50 @@ namespace helphub
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DISPLAYLOGS displaylogs= new DISPLAYLOGS("USER LOGS");
+            displaylogs.Show();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DISPLAYLOGS displaylogs = new DISPLAYLOGS("ADMIN LOGS");
+            displaylogs.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DISPLAYLOGS displaylogs = new DISPLAYLOGS("BAN LOGS");
+            displaylogs.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DISPLAYLOGS displaylogs = new DISPLAYLOGS("UNBAN LOGS");
+            displaylogs.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button3.Text);
+            displaydatabase.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button5.Text);
+            displaydatabase.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button4.Text);
+            displaydatabase.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button5.Text);
+            displaydatabase.Show();
         }
     }
 }

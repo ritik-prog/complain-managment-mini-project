@@ -287,7 +287,7 @@
             this.MinimumSize = new System.Drawing.Size(612, 459);
             this.Name = "UPDATEDETAILS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UPDATEDETAILS";
+            this.Text = "UPDATE DETAILS";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

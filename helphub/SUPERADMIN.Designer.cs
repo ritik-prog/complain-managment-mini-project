@@ -97,6 +97,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "ADMIN LOGS";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -106,6 +107,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "USER DATABASE";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -115,6 +117,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "ADMIN DATABASE";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -124,6 +127,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "SUPERVISOR DATABASE";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -133,6 +137,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "SUPER ADMIN DATABASE";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel1
             // 
@@ -387,6 +392,7 @@
             this.button7.TabIndex = 1;
             this.button7.Text = "BAN LOGS";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -396,6 +402,7 @@
             this.button8.TabIndex = 2;
             this.button8.Text = "UNBAN LOGS";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // SUPERADMIN
             // 
@@ -412,11 +419,13 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1199, 533);
             this.MdiChildrenMinimizedAnchorBottom = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1199, 533);
             this.Name = "SUPERADMIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SUPERADMIN";
+            this.Text = "SUPER ADMIN DASHBOARD";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
