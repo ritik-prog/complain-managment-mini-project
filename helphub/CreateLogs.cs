@@ -12,6 +12,7 @@ namespace helphub
 {
     public class CreateLogs
     {
+        // staic obj variable of class so it can be accessed without create object 
         public static CreateLogs createlogobj = new CreateLogs();
 
         string SQLitecnStr = @"Data Source=.\helphub.db";
@@ -38,6 +39,18 @@ namespace helphub
         public void adminlog(string username, string action, string formname, string role)
         {
             SQLitecmd.CommandText = "insert into adminlogs(username,action,formname,time,role) VALUES('" + username + "','" + action + "','" + formname + "','" + DateTime.Now + "','" + role + "')";
+            try
+            {
+                SQLitecmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void banunbanlog(string usernameofuser, string usernameofadmin, string formname, string action)
+        {
+            SQLitecmd.CommandText = "insert into banunbanlogs(usernameofuser,usernameofadmin,time,action) VALUES('" + usernameofuser + "','" + usernameofadmin + "','" + DateTime.Now + "','" + action + "')";
             try
             {
                 SQLitecmd.ExecuteNonQuery();

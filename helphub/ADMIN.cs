@@ -43,6 +43,7 @@ namespace helphub
             comboBox3.SelectedItem = "ALL STATE";
             comboBox4.SelectedItem = "ALL STATE";
             fetchData();
+            CreateLogs.createlogobj.adminlog(UserData.username, "Checking Admin Panel", this.Name, UserData.role);
         }
 
         public void fetchData()
@@ -136,39 +137,6 @@ namespace helphub
             }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            DASHBOARD dashboard = new DASHBOARD();
-
-            dashboard.Show();
-
-            this.Hide(); //Close Form1,the current open form.
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            LOGIN login = new LOGIN();
-
-            login.Show();
-
-            this.Hide(); //Close Form1,the current open form.
-        }
-
-        private void STATUS_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void complaindataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             DASHBOARD dashboard = new DASHBOARD();
@@ -240,24 +208,28 @@ namespace helphub
                     {
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("Status Updated Succesfully");
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- "+ID+" Status updated to "+Status+"", this.Name, UserData.role);
                         fetchData();
                         this.Refresh();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Update Failed", ex.Message);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status update failed (updated status:- "+Status+") - "+ex.Message+"", this.Name, UserData.role);
                     }
                     SQLiteConn.Close();
 
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status update failed (updated status:- " + Status + ") - "+ex.Message+"", this.Name, UserData.role);
                     MessageBox.Show("Update Failed", ex.Message);
                     Console.WriteLine(ex);
                 }
             }
             else
             {
+                CreateLogs.createlogobj.adminlog(UserData.username, "Id doesn't exists - failed attempt to update complain status", this.Name, UserData.role);
                 MessageBox.Show("ID doesn't Exists");
             }
         }
@@ -314,24 +286,27 @@ namespace helphub
                     {
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("Status Updated Succesfully");
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Status updated to " + Status + "", this.Name, UserData.role);
                         fetchData();
                         this.Refresh();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Update Failed", ex.Message);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Status update failed (updated status:- " + Status + ") - " + ex.Message + "", this.Name, UserData.role);
                     }
                     SQLiteConn.Close();
-
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Status update failed (updated status:- " + Status + ") - " + ex.Message + "", this.Name, UserData.role);
                     MessageBox.Show("Update Failed", ex.Message);
                     Console.WriteLine(ex);
                 }
             }
             else
             {
+                CreateLogs.createlogobj.adminlog(UserData.username, "Id doesn't exists - failed attempt to update request status", this.Name, UserData.role);
                 MessageBox.Show("ID doesn't Exists");
 
             }
@@ -378,12 +353,15 @@ namespace helphub
                         try
                         {
                             SQLitecmd.ExecuteNonQuery();
+                            CreateLogs.createlogobj.adminlog(UserData.username, "New admin added :- "+username+" by  "+UserData.username+"", this.Name, UserData.role);
                             MessageBox.Show("New admin added Succesfully");
                             fetchData();
                             this.Refresh();
                         }
                         catch (Exception ex)
                         {
+
+                            CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Admin "+ex.Message, this.Name, UserData.role);
                             MessageBox.Show("Can't Add New Admin", ex.Message);
                         }
                         SQLiteConn.Close();
@@ -391,11 +369,13 @@ namespace helphub
                     }
                     catch (Exception ex)
                     {
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Admin " + ex.Message, this.Name, UserData.role);
                         MessageBox.Show("Can't Add New Admin", ex.Message);
                     }
                 }
                 else
                 {
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Username Doesnt Exists - adding new admin", this.Name, UserData.role);
                     MessageBox.Show("Username Doesn't Exists");
                 }
             }
@@ -427,11 +407,13 @@ namespace helphub
                         {
                             SQLitecmd.ExecuteNonQuery();
                             MessageBox.Show("New Supervisor added Succesfully");
+                            CreateLogs.createlogobj.adminlog(UserData.username, "New supervisor added :- " + username + " by  " + UserData.username + "", this.Name, UserData.role);
                             fetchData();
                             this.Refresh();
                         }
                         catch (Exception ex)
                         {
+                            CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Supervisor " + ex.Message, this.Name, UserData.role);
                             MessageBox.Show("Can't Add New Supervisor", ex.Message);
                         }
                         SQLiteConn.Close();
@@ -439,11 +421,13 @@ namespace helphub
                     }
                     catch (Exception ex)
                     {
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Supervisor "+ex.Message , this.Name, UserData.role);
                         MessageBox.Show("Can't Add New Supervisor", ex.Message);
                     }
                 }
                 else
                 {
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Username Doesnt Exists - adding new supervisor", this.Name, UserData.role);
                     MessageBox.Show("Username Doesn't Exists");
                 }
             }
@@ -479,11 +463,13 @@ namespace helphub
                     {
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("Complaint Deleted");
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Deleted", this.Name, UserData.role);
                         fetchData();
                         this.Refresh();
                     }
                     catch (Exception ex)
                     {
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Process failed "+ex.Message, this.Name, UserData.role);
                         MessageBox.Show("Process Failed", ex.Message);
                     }
                     SQLiteConn.Close();
@@ -491,11 +477,13 @@ namespace helphub
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Process Failed "+ex.Message, this.Name, UserData.role);
                     MessageBox.Show("Process Failed", ex.Message);
                 }
             }
             else
             {
+                CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Doesnt Exists", this.Name, UserData.role);
                 MessageBox.Show("ID doesn't Exists");
 
             }
@@ -533,11 +521,13 @@ namespace helphub
                     {
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("Request Deleted");
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Deleted", this.Name, UserData.role);
                         fetchData();
                         this.Refresh();
                     }
                     catch (Exception ex)
                     {
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Deleteion failed "+ex.Message, this.Name, UserData.role);
                         MessageBox.Show("Process Failed", ex.Message);
                     }
                     SQLiteConn.Close();
@@ -545,11 +535,13 @@ namespace helphub
                 }
                 catch (Exception ex)
                 {
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Deleteion failed " + ex.Message, this.Name, UserData.role);
                     MessageBox.Show("Process Failed", ex.Message);
                 }
             }
             else
             {
+                CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + "Doesnt Exists", this.Name, UserData.role);
                 MessageBox.Show("ID doesn't Exists");
 
             }
@@ -612,9 +604,12 @@ namespace helphub
                                 {
                                     SQLitecmd.ExecuteNonQuery();
                                     MessageBox.Show("User succesfully "+ option +"ned");
+                                    CreateLogs.createlogobj.banunbanlog(username, UserData.username, this.Name, option);
+                                    CreateLogs.createlogobj.adminlog(UserData.username, ""+username+" "+option+"ned", this.Name, UserData.role);
                                 }
                                 catch (Exception ex)
                                 {
+                                    CreateLogs.createlogobj.adminlog(UserData.username, "Can't " + option + " user "+ex.Message, this.Name, UserData.role);
                                     MessageBox.Show("Can't "+ option +" user", ex.Message);
                                 }
                                 SQLiteConn.Close();
@@ -622,6 +617,7 @@ namespace helphub
                             }
                             catch (Exception ex)
                             {
+                                CreateLogs.createlogobj.adminlog(UserData.username, "Can't " + option + " user "+ex.Message, this.Name, UserData.role); 
                                 MessageBox.Show("Can't "+ option +" user", ex.Message);
                             }
                         }
