@@ -86,7 +86,7 @@ namespace helphub
                     {
                         if (dt.Rows[0]["banned"].ToString() == "YES")
                         {
-                            CreateLogs.userlogobj.userlog(Username.Text,"Banned user tried login",this.Name);
+                            CreateLogs.createlogobj.userlog(Username.Text,"Banned user tried login",this.Name);
                             MessageBox.Show("Account Banned", "SECURITY SYSTEM HELPHUB", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
@@ -104,7 +104,8 @@ namespace helphub
 
                         if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role))
                         {
-                            CreateLogs.userlogobj.userlog(Username.Text, UserData.role + " Logged in" , this.Name);
+                            CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Logged in" , this.Name);
+                            CreateLogs.createlogobj.adminlog(Username.Text, "Logged in" , this.Name,UserData.role);
                             ADMIN admin = new ADMIN();
 
                             admin.Show();
@@ -115,7 +116,7 @@ namespace helphub
                         else
                         {
                             MessageBox.Show("Logedin Succesfully", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CreateLogs.userlogobj.userlog(Username.Text, UserData.role + " Logged in", this.Name);
+                            CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Logged in", this.Name);
                             DASHBOARD dashboard = new DASHBOARD();
 
                             dashboard.Show();
@@ -125,7 +126,7 @@ namespace helphub
                     }
                     else if (dt.Rows.Count >= 2)
                     {
-                        CreateLogs.userlogobj.userlog(Username.Text, "Multiple accounts error", this.Name);
+                        CreateLogs.createlogobj.userlog(Username.Text, "Multiple accounts error", this.Name);
                         MessageBox.Show("Multiple Username Error, Kindly Contact Admin....", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
@@ -135,7 +136,7 @@ namespace helphub
                         da.Fill(dt);
                         if (dt.Rows.Count != 1)
                         {
-                            CreateLogs.userlogobj.userlog(Username.Text, "Username Doesnt Exists", this.Name);
+                            CreateLogs.createlogobj.userlog(Username.Text, "Username Doesnt Exists", this.Name);
                             MessageBox.Show("Username Doesn't Exists, Kindly Register now", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             REGISTER register = new REGISTER();
 
@@ -145,7 +146,7 @@ namespace helphub
                         }
                         else
                         {
-                            CreateLogs.userlogobj.userlog(Username.Text, UserData.role + " Wrong Credentials", this.Name);
+                            CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Wrong Credentials", this.Name);
                             MessageBox.Show("Wrong Credentials", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
@@ -155,7 +156,7 @@ namespace helphub
                 }
                 catch (Exception ex)
                 {
-                    CreateLogs.userlogobj.userlog(Username.Text, UserData.role + " login failed", this.Name);
+                    CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " login failed", this.Name);
                     MessageBox.Show("Login Failed", ex.Message);
                 }
 

@@ -12,7 +12,8 @@ namespace helphub
 {
     public class CreateLogs
     {
-        public static CreateLogs userlogobj = new CreateLogs();
+        public static CreateLogs createlogobj = new CreateLogs();
+
         string SQLitecnStr = @"Data Source=.\helphub.db";
         SQLiteConnection SQLiteConn = new SQLiteConnection();
         SQLiteCommand SQLitecmd = new SQLiteCommand();
@@ -30,6 +31,18 @@ namespace helphub
                 SQLitecmd.ExecuteNonQuery();
             }
             catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public void adminlog(string username, string action, string formname, string role)
+        {
+            SQLitecmd.CommandText = "insert into adminlogs(username,action,formname,time,role) VALUES('" + username + "','" + action + "','" + formname + "','" + DateTime.Now + "','" + role + "')";
+            try
+            {
+                SQLitecmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

@@ -96,7 +96,7 @@ namespace helphub
 
             try {
                     
-                CreateLogs.userlogobj.userlog(username.Text, "User Registered", this.Name);
+                CreateLogs.createlogobj.userlog(username.Text, "User Registered", this.Name);
                 SQLitecmd.ExecuteNonQuery();
                 MessageBox.Show("Registered Succesfully", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -113,19 +113,19 @@ namespace helphub
                     if (code == 19)
                     {
 
-                        CreateLogs.userlogobj.userlog(username.Text, "Already Registered Username/Aadhar Number", this.Name);
+                        CreateLogs.createlogobj.userlog(username.Text, "Already Registered Username/Aadhar Number", this.Name);
                         MessageBox.Show("Already Registered Username/Aadhar Number", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
 
-                        CreateLogs.userlogobj.userlog(username.Text, "Database Error " + ex.Message, this.Name);
+                        CreateLogs.createlogobj.userlog(username.Text, "Database Error " + ex.Message, this.Name);
                         MessageBox.Show("Database Error: Error code:- "+ code + ",Error message:- "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
             }
             catch (Exception ex)
             {
-                    CreateLogs.userlogobj.userlog(username.Text, "Registration Failed " + ex.Message, this.Name);
+                    CreateLogs.createlogobj.userlog(username.Text, "Registration Failed " + ex.Message, this.Name);
                     MessageBox.Show("Registration Failed: "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
