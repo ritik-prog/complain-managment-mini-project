@@ -16,10 +16,13 @@ namespace helphub
         {
             InitializeComponent();
         }
+        string title = string.Empty;
         public DISPLAYDATABASE(string title)
         {
             InitializeComponent();
             label1.Text= title;
+            this.title = title;
+            this.Text = title;
             SuperAdminDatabaseOperation control = new SuperAdminDatabaseOperation();
             if(title == "USER DATABASE")
             {
@@ -40,12 +43,19 @@ namespace helphub
             {
                 control.fetchsuperadmin();
                 displaydatabasedata.DataSource = control.dt;
+                updatedatabase.Visible = false;
+                adduser.Visible = false;
+                if (UserData.role == "root")
+                {
+                    updatedatabase.Visible = true;
+                    adduser.Visible = true;
+                }
             }
         }
-
-        private void displaydatabasedata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void updatedatabase_Click(object sender, EventArgs e)
         {
-
+            UPDATEDATABASE update = new UPDATEDATABASE(title);
+            update.Show();
         }
     }
 }

@@ -19,7 +19,11 @@ namespace helphub
         public ADMIN()
         {
             InitializeComponent();
-            if(UserData.role != "ADMIN")
+            if(UserData.role != "SUPERADMIN")
+            {
+                superadmin.Hide();
+            }
+            if(UserData.role != "ADMIN" && UserData.role != "SUPERADMIN")
             {
                 pictureBox4.Hide();
                 pictureBox5.Hide();
@@ -31,7 +35,7 @@ namespace helphub
                 pictureBox1.Height = 736;
                 pictureBox1.Location = new Point(-168, -139);
             }
-            if (UserData.role != "ADMIN" && UserData.role != "SUPERVISOR")
+            if (UserData.role != "ADMIN" && UserData.role != "SUPERVISOR" && UserData.role != "SUPERADMIN")
             {
                 label5.Hide();
                 comboBox3.Hide();
@@ -60,7 +64,7 @@ namespace helphub
                 SQLitecmd1.Connection = SQLiteConn;
                 SQLitecmd.CommandText = "";
                 SQLitecmd1.CommandText = "";
-                if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR")
+                if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || UserData.role == "SUPERADMIN")
                 {
                     if (comboBox2.SelectedItem == "ALL COMPLAINS" && comboBox3.SelectedItem == "ALL STATE")
                     {
@@ -599,7 +603,7 @@ namespace helphub
                                 SQLiteConn.ConnectionString = SQLitecnStr;
                                 SQLiteConn.Open();
                                 SQLitecmd.Connection = SQLiteConn;
-                                SQLitecmd.CommandText = "UPDATE user SET banned = '"+ banorunban +"' WHERE username = '" + username + "';";
+                                SQLitecmd.CommandText = "UPDATE user SET banned = '"+ banorunban +"' WHERE username = '" + username + "' AND role='USER';";
                                 try
                                 {
                                     SQLitecmd.ExecuteNonQuery();
@@ -636,6 +640,13 @@ namespace helphub
             {
                 MessageBox.Show("Username field is empty");
             }
+        }
+
+        private void superadmin_Click(object sender, EventArgs e)
+        {
+            SUPERADMIN superadmin = new SUPERADMIN();
+            superadmin.Show();
+            this.Hide();
         }
     }
 }

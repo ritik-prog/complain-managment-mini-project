@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace helphub
+﻿namespace helphub
 {
     public partial class SUPERADMIN : Form
     {
+        StatsSuperAdmin stats = new StatsSuperAdmin();
         public SUPERADMIN()
         {
             InitializeComponent();
+            totalnumberofusers.Text= stats.totalnumberofusers().ToString();
+            totalnumberofbannedusers.Text= stats.totalnumberofbannedusers().ToString();
+            totalnumberofsupervisors.Text= stats.totalnumberofsupervisors().ToString();
+            totalnumberofadmins.Text= stats.totalnumberofadmins().ToString();
+            totalnumberofsuperadmins.Text= stats.totalnumberofsuperadmins().ToString();
+            totalnumberofcomplainspending.Text = stats.totalnumberofcomplainspending().ToString();
+            totalnumberofcomplains.Text = stats.totalnumberofcomplains().ToString();
+            totalnumberofcomplainsstatusupdated.Text = stats.totalnumberofcomplainsstatusupdated().ToString();
+            totalnumberofrequestpending.Text = stats.totalnumberofrequestspending().ToString();
+            totalnumberofrequest.Text = stats.totalnumberofrequests().ToString();
+            totalnumberofrequeststatusupdated.Text = stats.totalnumberofrequestsstatusupdated().ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -71,8 +73,29 @@ namespace helphub
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button5.Text);
+            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button6.Text);
             displaydatabase.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ADMIN admin = new ADMIN();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            DASHBOARD dashboard = new DASHBOARD();
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            LOGIN logout = new LOGIN();
+            logout.Show();
+            this.Hide();
         }
     }
 }

@@ -27,6 +27,7 @@ namespace helphub
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN));
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.superadmin = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
@@ -96,6 +97,7 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.superadmin);
             this.GroupBox1.Controls.Add(this.pictureBox7);
             this.GroupBox1.Controls.Add(this.comboBox4);
             this.GroupBox1.Controls.Add(this.ComboBox1);
@@ -126,6 +128,18 @@ namespace helphub
             this.GroupBox1.Size = new System.Drawing.Size(1354, 615);
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
+            // 
+            // superadmin
+            // 
+            this.superadmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.superadmin.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.superadmin.Location = new System.Drawing.Point(5, 548);
+            this.superadmin.Name = "superadmin";
+            this.superadmin.Size = new System.Drawing.Size(287, 55);
+            this.superadmin.TabIndex = 49;
+            this.superadmin.Text = "SUPERADMIN DASHBOARD";
+            this.superadmin.UseVisualStyleBackColor = true;
+            this.superadmin.Click += new System.EventHandler(this.superadmin_Click);
             // 
             // pictureBox7
             // 
@@ -892,5 +906,6 @@ namespace helphub
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private PictureBox pictureBox7;
+        private Button superadmin;
     }
 }

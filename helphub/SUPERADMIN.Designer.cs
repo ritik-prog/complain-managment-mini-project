@@ -41,6 +41,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.totalnumberofsuperadmins = new System.Windows.Forms.Label();
+            this.totalnumberofadmins = new System.Windows.Forms.Label();
+            this.totalnumberofsupervisors = new System.Windows.Forms.Label();
+            this.totalnumberofbannedusers = new System.Windows.Forms.Label();
+            this.totalnumberofusers = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,6 +66,15 @@
             this.label18 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.totalnumberofcomplains = new System.Windows.Forms.Label();
+            this.totalnumberofcomplainspending = new System.Windows.Forms.Label();
+            this.totalnumberofcomplainsstatusupdated = new System.Windows.Forms.Label();
+            this.totalnumberofrequest = new System.Windows.Forms.Label();
+            this.totalnumberofrequestpending = new System.Windows.Forms.Label();
+            this.totalnumberofrequeststatusupdated = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -187,6 +201,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.totalnumberofsuperadmins);
+            this.panel3.Controls.Add(this.totalnumberofadmins);
+            this.panel3.Controls.Add(this.totalnumberofsupervisors);
+            this.panel3.Controls.Add(this.totalnumberofbannedusers);
+            this.panel3.Controls.Add(this.totalnumberofusers);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
@@ -198,6 +217,51 @@
             this.panel3.Size = new System.Drawing.Size(493, 148);
             this.panel3.TabIndex = 9;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // totalnumberofsuperadmins
+            // 
+            this.totalnumberofsuperadmins.AutoSize = true;
+            this.totalnumberofsuperadmins.Location = new System.Drawing.Point(227, 120);
+            this.totalnumberofsuperadmins.Name = "totalnumberofsuperadmins";
+            this.totalnumberofsuperadmins.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofsuperadmins.TabIndex = 17;
+            this.totalnumberofsuperadmins.Text = "0";
+            // 
+            // totalnumberofadmins
+            // 
+            this.totalnumberofadmins.AutoSize = true;
+            this.totalnumberofadmins.Location = new System.Drawing.Point(189, 99);
+            this.totalnumberofadmins.Name = "totalnumberofadmins";
+            this.totalnumberofadmins.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofadmins.TabIndex = 16;
+            this.totalnumberofadmins.Text = "0";
+            // 
+            // totalnumberofsupervisors
+            // 
+            this.totalnumberofsupervisors.AutoSize = true;
+            this.totalnumberofsupervisors.Location = new System.Drawing.Point(220, 78);
+            this.totalnumberofsupervisors.Name = "totalnumberofsupervisors";
+            this.totalnumberofsupervisors.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofsupervisors.TabIndex = 15;
+            this.totalnumberofsupervisors.Text = "0";
+            // 
+            // totalnumberofbannedusers
+            // 
+            this.totalnumberofbannedusers.AutoSize = true;
+            this.totalnumberofbannedusers.Location = new System.Drawing.Point(228, 57);
+            this.totalnumberofbannedusers.Name = "totalnumberofbannedusers";
+            this.totalnumberofbannedusers.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofbannedusers.TabIndex = 11;
+            this.totalnumberofbannedusers.Text = "0";
+            // 
+            // totalnumberofusers
+            // 
+            this.totalnumberofusers.AutoSize = true;
+            this.totalnumberofusers.Location = new System.Drawing.Point(175, 36);
+            this.totalnumberofusers.Name = "totalnumberofusers";
+            this.totalnumberofusers.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofusers.TabIndex = 10;
+            this.totalnumberofusers.Text = "0";
             // 
             // label17
             // 
@@ -262,6 +326,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.totalnumberofcomplainsstatusupdated);
+            this.panel4.Controls.Add(this.totalnumberofcomplainspending);
+            this.panel4.Controls.Add(this.totalnumberofcomplains);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label12);
@@ -314,6 +381,9 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Controls.Add(this.totalnumberofrequeststatusupdated);
+            this.panel5.Controls.Add(this.totalnumberofrequestpending);
+            this.panel5.Controls.Add(this.totalnumberofrequest);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label15);
@@ -404,12 +474,105 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Location = new System.Drawing.Point(875, 9);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(145, 32);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "ADMIN DASHBOARD";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Location = new System.Drawing.Point(1026, 9);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(145, 32);
+            this.button10.TabIndex = 13;
+            this.button10.Text = "USER DASHBOARD";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button11.Location = new System.Drawing.Point(1026, 47);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(145, 25);
+            this.button11.TabIndex = 14;
+            this.button11.Text = "LOGOUT";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // totalnumberofcomplains
+            // 
+            this.totalnumberofcomplains.AutoSize = true;
+            this.totalnumberofcomplains.Location = new System.Drawing.Point(203, 36);
+            this.totalnumberofcomplains.Name = "totalnumberofcomplains";
+            this.totalnumberofcomplains.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofcomplains.TabIndex = 11;
+            this.totalnumberofcomplains.Text = "0";
+            // 
+            // totalnumberofcomplainspending
+            // 
+            this.totalnumberofcomplainspending.AutoSize = true;
+            this.totalnumberofcomplainspending.Location = new System.Drawing.Point(267, 57);
+            this.totalnumberofcomplainspending.Name = "totalnumberofcomplainspending";
+            this.totalnumberofcomplainspending.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofcomplainspending.TabIndex = 12;
+            this.totalnumberofcomplainspending.Text = "0";
+            // 
+            // totalnumberofcomplainsstatusupdated
+            // 
+            this.totalnumberofcomplainsstatusupdated.AutoSize = true;
+            this.totalnumberofcomplainsstatusupdated.Location = new System.Drawing.Point(316, 78);
+            this.totalnumberofcomplainsstatusupdated.Name = "totalnumberofcomplainsstatusupdated";
+            this.totalnumberofcomplainsstatusupdated.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofcomplainsstatusupdated.TabIndex = 13;
+            this.totalnumberofcomplainsstatusupdated.Text = "0";
+            // 
+            // totalnumberofrequest
+            // 
+            this.totalnumberofrequest.AutoSize = true;
+            this.totalnumberofrequest.Location = new System.Drawing.Point(193, 36);
+            this.totalnumberofrequest.Name = "totalnumberofrequest";
+            this.totalnumberofrequest.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofrequest.TabIndex = 11;
+            this.totalnumberofrequest.Text = "0";
+            // 
+            // totalnumberofrequestpending
+            // 
+            this.totalnumberofrequestpending.AutoSize = true;
+            this.totalnumberofrequestpending.Location = new System.Drawing.Point(255, 57);
+            this.totalnumberofrequestpending.Name = "totalnumberofrequestpending";
+            this.totalnumberofrequestpending.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofrequestpending.TabIndex = 12;
+            this.totalnumberofrequestpending.Text = "0";
+            // 
+            // totalnumberofrequeststatusupdated
+            // 
+            this.totalnumberofrequeststatusupdated.AutoSize = true;
+            this.totalnumberofrequeststatusupdated.Location = new System.Drawing.Point(305, 78);
+            this.totalnumberofrequeststatusupdated.Name = "totalnumberofrequeststatusupdated";
+            this.totalnumberofrequeststatusupdated.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofrequeststatusupdated.TabIndex = 13;
+            this.totalnumberofrequeststatusupdated.Text = "0";
+            // 
             // SUPERADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1183, 494);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -477,5 +640,19 @@
         private Label label18;
         private Button button7;
         private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button11;
+        private Label totalnumberofusers;
+        private Label totalnumberofsuperadmins;
+        private Label totalnumberofadmins;
+        private Label totalnumberofsupervisors;
+        private Label totalnumberofbannedusers;
+        private Label totalnumberofcomplainsstatusupdated;
+        private Label totalnumberofcomplainspending;
+        private Label totalnumberofcomplains;
+        private Label totalnumberofrequeststatusupdated;
+        private Label totalnumberofrequestpending;
+        private Label totalnumberofrequest;
     }
 }

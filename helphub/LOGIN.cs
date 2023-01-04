@@ -102,6 +102,14 @@ namespace helphub
                             UserData.address = row["address"].ToString();
                         }
 
+                        if (UserData.role == "SUPERADMIN")
+                        {
+                            SUPERADMIN superadmin = new SUPERADMIN();
+                            superadmin.Show();
+                            this.Hide();
+                            return;
+                        }
+
                         if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role))
                         {
                             CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Logged in" , this.Name);

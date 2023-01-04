@@ -66,11 +66,11 @@ namespace helphub
             this.REGISTRATION.Controls.Add(this.pictureBox1);
             this.REGISTRATION.Location = new System.Drawing.Point(-2, -10);
             this.REGISTRATION.Margin = new System.Windows.Forms.Padding(0);
-            this.REGISTRATION.MaximumSize = new System.Drawing.Size(854, 450);
-            this.REGISTRATION.MinimumSize = new System.Drawing.Size(854, 450);
+            this.REGISTRATION.MaximumSize = new System.Drawing.Size(811, 351);
+            this.REGISTRATION.MinimumSize = new System.Drawing.Size(811, 351);
             this.REGISTRATION.Name = "REGISTRATION";
             this.REGISTRATION.Padding = new System.Windows.Forms.Padding(0);
-            this.REGISTRATION.Size = new System.Drawing.Size(854, 450);
+            this.REGISTRATION.Size = new System.Drawing.Size(811, 351);
             this.REGISTRATION.TabIndex = 0;
             this.REGISTRATION.TabStop = false;
             // 
@@ -78,7 +78,7 @@ namespace helphub
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::helphub.Properties.Resources.Component_2_FINAL;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 295);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 12);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(148, 29);
@@ -253,10 +253,10 @@ namespace helphub
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::helphub.Properties.Resources.REGISTER_BANNER;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-11, -10);
+            this.pictureBox1.Location = new System.Drawing.Point(-8, 9);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 351);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 359);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -274,8 +274,10 @@ namespace helphub
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(811, 351);
             this.MdiChildrenMinimizedAnchorBottom = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(811, 351);
             this.Name = "REGISTER";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRATION - HELPHUB";

@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DISPLAYDATABASE));
             this.displaydatabasedata = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.updatedatabase = new System.Windows.Forms.Button();
+            this.adduser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.displaydatabasedata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,6 @@
             this.displaydatabasedata.RowTemplate.Height = 25;
             this.displaydatabasedata.Size = new System.Drawing.Size(776, 371);
             this.displaydatabasedata.TabIndex = 0;
-            this.displaydatabasedata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displaydatabasedata_CellContentClick);
             // 
             // label1
             // 
@@ -59,14 +59,24 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "PLACEHOLDER TEXT";
             // 
-            // button1
+            // updatedatabase
             // 
-            this.button1.Location = new System.Drawing.Point(595, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "UPDATE DATABASE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.updatedatabase.Location = new System.Drawing.Point(595, 21);
+            this.updatedatabase.Name = "updatedatabase";
+            this.updatedatabase.Size = new System.Drawing.Size(193, 40);
+            this.updatedatabase.TabIndex = 2;
+            this.updatedatabase.Text = "UPDATE DATABASE";
+            this.updatedatabase.UseVisualStyleBackColor = true;
+            this.updatedatabase.Click += new System.EventHandler(this.updatedatabase_Click);
+            // 
+            // adduser
+            // 
+            this.adduser.Location = new System.Drawing.Point(396, 20);
+            this.adduser.Name = "adduser";
+            this.adduser.Size = new System.Drawing.Size(193, 40);
+            this.adduser.TabIndex = 3;
+            this.adduser.Text = "ADD USER";
+            this.adduser.UseVisualStyleBackColor = true;
             // 
             // DISPLAYDATABASE
             // 
@@ -74,7 +84,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.adduser);
+            this.Controls.Add(this.updatedatabase);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.displaydatabasedata);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -96,6 +107,8 @@
 
         private DataGridView displaydatabasedata;
         private Label label1;
+        private Button updatedatabase;
         private Button button1;
+        private Button adduser;
     }
 }
