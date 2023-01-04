@@ -41,6 +41,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.totalnumberofstateadmins = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.totalnumberofsuperadmins = new System.Windows.Forms.Label();
             this.totalnumberofadmins = new System.Windows.Forms.Label();
             this.totalnumberofsupervisors = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
-            this.totalnumberofstateadmins = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -226,6 +226,25 @@
             this.panel3.Size = new System.Drawing.Size(493, 148);
             this.panel3.TabIndex = 9;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // totalnumberofstateadmins
+            // 
+            this.totalnumberofstateadmins.AutoSize = true;
+            this.totalnumberofstateadmins.Location = new System.Drawing.Point(227, 130);
+            this.totalnumberofstateadmins.Name = "totalnumberofstateadmins";
+            this.totalnumberofstateadmins.Size = new System.Drawing.Size(13, 15);
+            this.totalnumberofstateadmins.TabIndex = 19;
+            this.totalnumberofstateadmins.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(3, 125);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(229, 21);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "Total number of state admin:- ";
             // 
             // totalnumberofsuperadmins
             // 
@@ -613,25 +632,6 @@
             this.button13.Text = "STATE ADMIN DATABASE";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // totalnumberofstateadmins
-            // 
-            this.totalnumberofstateadmins.AutoSize = true;
-            this.totalnumberofstateadmins.Location = new System.Drawing.Point(227, 130);
-            this.totalnumberofstateadmins.Name = "totalnumberofstateadmins";
-            this.totalnumberofstateadmins.Size = new System.Drawing.Size(13, 15);
-            this.totalnumberofstateadmins.TabIndex = 19;
-            this.totalnumberofstateadmins.Text = "0";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(3, 125);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(229, 21);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "Total number of state admin:- ";
             // 
             // SUPERADMIN
             // 
