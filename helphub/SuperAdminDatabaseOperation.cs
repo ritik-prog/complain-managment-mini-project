@@ -58,6 +58,15 @@ namespace helphub
             da.Fill(dt);
         }
 
+        public void fetchstateadmin()
+        {
+            SQLitecmd.CommandText = "Select * from user WHERE role!='SUPERADMIN' AND role!='root' AND  role!='ADMIN' AND  role!='SUPERVISOR' AND  role!='USER'";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            dt.Clear();
+            dt.Columns.Clear();
+            da.Fill(dt);
+        }
+
         public void FetchUserDetails(string username, string role, UPDATEDATABASE passedFunction)
         {
             try
@@ -121,7 +130,65 @@ namespace helphub
                 }
                 else
                 {
-                    MessageBox.Show("Database Error: Error code:- " + code + ",Error message:- " + ex.Message + "", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Database Error: Error code:- " + code + ",Error message:- " + ex.Message + "", "Update Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public void DeleteUser(UPDATEDATABASE passedFunction)
+        {
+            SQLitecmd.CommandText = "DELETE from user WHERE username='"+passedFunction.username.Text+"'";
+            try
+            {
+                int status = SQLitecmd.ExecuteNonQuery();
+                if (status == 0)
+                {
+                    MessageBox.Show("Unable to Delete Account");
+                }
+                else
+                {
+                    MessageBox.Show("Account Successfully Deleted", "Account Deleted");
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                int code = ex.ErrorCode;
+
+                if (code == 19)
+                {
+                    MessageBox.Show("Already Registered Username/Aadhar Number", "Update Deatils", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Database Error: Error code:- " + code + ",Error message:- " + ex.Message + "", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public void AddUser(ADDUSER passedFunction,string role)
+        {
+            SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email,address,role) VALUES('" + passedFunction.aadharnumber.Text + "','" + passedFunction.username.Text + "','" + passedFunction.mobilenumber.Text + "','" + passedFunction.password.Text + "','" + passedFunction.email.Text + "','" + passedFunction.address.Text + "','" + role + "')";
+            try
+            {
+                int status = SQLitecmd.ExecuteNonQuery();
+                if (status == 0)
+                {
+                    MessageBox.Show("Unable to Add "+role+"");
+                }
+                else
+                {
+                    MessageBox.Show(""+role+" Successfully Added", ""+role+" Added");
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                int code = ex.ErrorCode;
+
+                if (code == 19)
+                {
+                    MessageBox.Show("Already Registered Username/Aadhar Number", "Add "+role+"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Database Error: Error code:- " + code + ",Error message:- " + ex.Message + "", "Add "+role+"", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

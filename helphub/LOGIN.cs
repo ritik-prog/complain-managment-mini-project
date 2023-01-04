@@ -102,6 +102,14 @@ namespace helphub
                             UserData.address = row["address"].ToString();
                         }
 
+                        if(UserData.role == "root")
+                        {
+                            ROOTDASHBOARD rootadmin = new ROOTDASHBOARD();
+                            rootadmin.Show();
+                            this.Hide();
+                            return;
+                        }
+
                         if (UserData.role == "SUPERADMIN")
                         {
                             SUPERADMIN superadmin = new SUPERADMIN();

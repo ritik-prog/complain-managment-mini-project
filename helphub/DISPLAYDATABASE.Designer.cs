@@ -77,6 +77,7 @@
             this.adduser.TabIndex = 3;
             this.adduser.Text = "ADD USER";
             this.adduser.UseVisualStyleBackColor = true;
+            this.adduser.Click += new System.EventHandler(this.adduser_Click);
             // 
             // DISPLAYDATABASE
             // 

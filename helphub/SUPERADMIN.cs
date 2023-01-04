@@ -17,6 +17,11 @@
             totalnumberofrequestpending.Text = stats.totalnumberofrequestspending().ToString();
             totalnumberofrequest.Text = stats.totalnumberofrequests().ToString();
             totalnumberofrequeststatusupdated.Text = stats.totalnumberofrequestsstatusupdated().ToString();
+            totalnumberofstateadmins.Text = stats.totalnumberofstateadmins().ToString();
+            if (UserData.role != "root")
+            {
+                button12.Hide();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -96,6 +101,19 @@
             LOGIN logout = new LOGIN();
             logout.Show();
             this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ROOTDASHBOARD root = new ROOTDASHBOARD();
+            root.Show();
+            this.Hide();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button13.Text);
+            displaydatabase.Show();
         }
     }
 }

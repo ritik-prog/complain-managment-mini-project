@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.state = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             this.username.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.username.Location = new System.Drawing.Point(176, 115);
             this.username.Name = "username";
+            this.username.PlaceholderText = "Enter existing username";
             this.username.Size = new System.Drawing.Size(274, 29);
             this.username.TabIndex = 3;
             // 
@@ -131,8 +133,8 @@
             "DL|Delhi",
             "LD|Lakshadweep",
             "PY|Puducherry"});
-            this.state.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.state.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.state.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.state.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.state.FormattingEnabled = true;
             this.state.Items.AddRange(new object[] {
@@ -176,7 +178,6 @@
             this.state.Name = "state";
             this.state.Size = new System.Drawing.Size(274, 29);
             this.state.TabIndex = 5;
-            this.state.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // button1
             // 
@@ -193,11 +194,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(264, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "(Enter Existing Username)";
+            // 
             // AddStateAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 277);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.state);
             this.Controls.Add(this.label2);
@@ -231,5 +242,6 @@
         private Label label2;
         private ComboBox state;
         private Button button1;
+        private Label label3;
     }
 }

@@ -19,13 +19,13 @@ namespace helphub
         public ADMIN()
         {
             InitializeComponent();
-            if(UserData.role != "SUPERADMIN")
+            if(UserData.role != "SUPERADMIN" && UserData.role != "root")
             {
                 superadmin.Hide();
-            }
-            if(UserData.role != "ADMIN" && UserData.role != "SUPERADMIN")
-            {
                 pictureBox4.Hide();
+            }
+            if(UserData.role != "ADMIN" && UserData.role != "SUPERADMIN" && UserData.role != "root")
+            {
                 pictureBox5.Hide();
                 pictureBox6.Hide();
                 pictureBox7.Hide();
@@ -35,7 +35,7 @@ namespace helphub
                 pictureBox1.Height = 736;
                 pictureBox1.Location = new Point(-168, -139);
             }
-            if (UserData.role != "ADMIN" && UserData.role != "SUPERVISOR" && UserData.role != "SUPERADMIN")
+            if (UserData.role != "ADMIN" && UserData.role != "SUPERVISOR" && UserData.role != "SUPERADMIN" && UserData.role != "root")
             {
                 label5.Hide();
                 comboBox3.Hide();
@@ -64,7 +64,7 @@ namespace helphub
                 SQLitecmd1.Connection = SQLiteConn;
                 SQLitecmd.CommandText = "";
                 SQLitecmd1.CommandText = "";
-                if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || UserData.role == "SUPERADMIN")
+                if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || UserData.role == "SUPERADMIN" || UserData.role != "root")
                 {
                     if (comboBox2.SelectedItem == "ALL COMPLAINS" && comboBox3.SelectedItem == "ALL STATE")
                     {

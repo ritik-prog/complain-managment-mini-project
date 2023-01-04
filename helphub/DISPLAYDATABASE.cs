@@ -50,12 +50,30 @@ namespace helphub
                     updatedatabase.Visible = true;
                     adduser.Visible = true;
                 }
+            }else if(title == "STATE ADMIN DATABASE")
+            {
+                control.fetchstateadmin();
+                displaydatabasedata.DataSource = control.dt;
             }
         }
         private void updatedatabase_Click(object sender, EventArgs e)
         {
             UPDATEDATABASE update = new UPDATEDATABASE(title);
             update.Show();
+        }
+
+        private void adduser_Click(object sender, EventArgs e)
+        {
+            if(title == "STATE ADMIN DATABASE")
+            {
+                AddStateAdmin stateadmin = new AddStateAdmin();
+                stateadmin.Show();
+            }
+            else
+            {
+                ADDUSER adduser = new ADDUSER(title);
+                adduser.Show();
+            }
         }
     }
 }

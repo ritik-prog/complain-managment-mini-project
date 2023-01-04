@@ -100,6 +100,24 @@ namespace helphub
             }
             return RowCount;
         }
+
+        public int totalnumberofstateadmins()
+        {
+            SQLitecmd.CommandText = "select count(id) from user WHERE role!='SUPERADMIN' AND role!='root' AND  role!='ADMIN' AND  role!='SUPERVISOR' AND  role!='USER'";
+            SQLitecmd.CommandType = CommandType.Text;
+            int RowCount = 0;
+            try
+            {
+                RowCount = Convert.ToInt32(SQLitecmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+            return RowCount;
+        }
+
         public int totalnumberofcomplains()
         {
             SQLitecmd.CommandText = "select count(id) from complaint;";

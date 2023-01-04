@@ -54,7 +54,7 @@ namespace helphub
         public DASHBOARD()
         {
             InitializeComponent();
-            if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role) || UserData.role == "SUPERADMIN")
+            if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role) || UserData.role == "SUPERADMIN" || UserData.role == "root")
             {
                 this.pictureBox3.Visible = true;
             }
@@ -102,7 +102,7 @@ namespace helphub
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if(UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role) || UserData.role == "SUPERADMIN")
+            if(UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role) || UserData.role == "SUPERADMIN" || UserData.role == "root")
             {
                 ADMIN admin = new ADMIN();
 

@@ -50,6 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.updatedetails = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
+            this.deleteaccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +69,7 @@
             this.searchbox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.searchbox.Location = new System.Drawing.Point(166, 10);
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(160, 29);
+            this.searchbox.Size = new System.Drawing.Size(202, 29);
             this.searchbox.TabIndex = 1;
             // 
             // search
@@ -76,9 +77,9 @@
             this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.search.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.search.Location = new System.Drawing.Point(332, 10);
+            this.search.Location = new System.Drawing.Point(374, 10);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(110, 23);
+            this.search.Size = new System.Drawing.Size(68, 29);
             this.search.TabIndex = 2;
             this.search.Text = "SEARCH";
             this.search.UseVisualStyleBackColor = false;
@@ -257,9 +258,9 @@
             this.updatedetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.updatedetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updatedetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.updatedetails.Location = new System.Drawing.Point(249, 327);
+            this.updatedetails.Location = new System.Drawing.Point(249, 392);
             this.updatedetails.Name = "updatedetails";
-            this.updatedetails.Size = new System.Drawing.Size(111, 50);
+            this.updatedetails.Size = new System.Drawing.Size(193, 50);
             this.updatedetails.TabIndex = 19;
             this.updatedetails.Text = "UPDATE DETAILS";
             this.updatedetails.UseVisualStyleBackColor = false;
@@ -270,20 +271,35 @@
             this.clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.clear.Location = new System.Drawing.Point(366, 327);
+            this.clear.Location = new System.Drawing.Point(249, 327);
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(76, 50);
+            this.clear.Size = new System.Drawing.Size(193, 50);
             this.clear.TabIndex = 20;
             this.clear.Text = "CLEAR";
             this.clear.UseVisualStyleBackColor = false;
             this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // deleteaccount
+            // 
+            this.deleteaccount.BackColor = System.Drawing.Color.Red;
+            this.deleteaccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteaccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteaccount.ForeColor = System.Drawing.Color.White;
+            this.deleteaccount.Location = new System.Drawing.Point(13, 392);
+            this.deleteaccount.Name = "deleteaccount";
+            this.deleteaccount.Size = new System.Drawing.Size(193, 50);
+            this.deleteaccount.TabIndex = 21;
+            this.deleteaccount.Text = "DELETE ACCOUNT";
+            this.deleteaccount.UseVisualStyleBackColor = false;
+            this.deleteaccount.Click += new System.EventHandler(this.deleteaccount_Click);
             // 
             // UPDATEDATABASE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(454, 389);
+            this.ClientSize = new System.Drawing.Size(454, 454);
+            this.Controls.Add(this.deleteaccount);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.updatedetails);
             this.Controls.Add(this.password);
@@ -306,8 +322,11 @@
             this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(470, 428);
-            this.MinimumSize = new System.Drawing.Size(470, 428);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(470, 493);
+            this.MdiChildrenMinimizedAnchorBottom = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(470, 493);
             this.Name = "UPDATEDATABASE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UPDATE DATABASE";
@@ -339,5 +358,6 @@
         public Label label9;
         public Button updatedetails;
         public Button clear;
+        public Button deleteaccount;
     }
 }

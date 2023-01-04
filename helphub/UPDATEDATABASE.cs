@@ -36,8 +36,10 @@ namespace helphub
                 role.SelectedItem = "";
                 address.Text = "";
                 password.Text = "";
+            searchbox.Text = "";
+            searchbox.Enabled = true;
         }
-
+ 
         private void updatedetails_Click(object sender, EventArgs e)
         {
             control.UpdateUserDetails(this);
@@ -67,6 +69,13 @@ namespace helphub
         private void clear_Click(object sender, EventArgs e)
         {
             searchbox.Enabled = true;
+            RefreshData();
+            this.Refresh();
+        }
+
+        private void deleteaccount_Click(object sender, EventArgs e)
+        {
+            control.DeleteUser(this);
             RefreshData();
             this.Refresh();
         }
