@@ -109,7 +109,7 @@ namespace helphub
                         {
                             MessageBox.Show("Update Failed", "Update Deatils", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             profile.Show();
-                            this.Close(); //Close Form1,the current open form.
+                            this.Hide(); //Close Form1,the current open form.
                         }
                         else
                         {
@@ -133,7 +133,7 @@ namespace helphub
                                 }
                             }
                             profile.Show();
-                            this.Close(); //Close Form1,the current open form.
+                            this.Hide(); //Close Form1,the current open form.
                         }
                     }
                     catch (SQLiteException ex)
@@ -150,14 +150,14 @@ namespace helphub
                         }
 
                         profile.Show();
-                        this.Close(); //Close Form1,the current open form.
+                        this.Hide(); //Close Form1,the current open form.
                     }
 
                     catch (Exception ex)
                     {
                         MessageBox.Show("Update Failed: " + ex.Message + "", "Update Deatils", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         profile.Show();
-                        this.Close(); //Close Form1,the current open form.
+                        this.Hide(); //Close Form1,the current open form.
                     }
                 }
                 SQLiteConn.Close();
@@ -168,7 +168,7 @@ namespace helphub
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             profile.Show();
-            this.Close(); //Close Form1,the current open form.
+            this.Hide(); //Close Form1,the current open form.
         }
     }
 }

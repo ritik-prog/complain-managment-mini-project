@@ -58,12 +58,12 @@ namespace helphub
 
                         CreateLogs.createlogobj.adminlog(UserData.username, "New state admin added :- " + username + " by  " + UserData.username + " state:- "+state.Text+"", this.Name, UserData.role);
                         MessageBox.Show("New admin added Succesfully");
-                            this.Hide();
+                            this.Close();
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Can't Add New Admin", ex.Message);
-                            this.Hide();
+                            this.Close();
                         }
                         SQLiteConn.Close();
 
@@ -71,18 +71,13 @@ namespace helphub
                     catch (Exception ex)
                     {
                         MessageBox.Show("Can't Add New Admin", ex.Message);
-                        this.Hide();
+                        this.Close();
                     }
             }
             else
             {
                 MessageBox.Show("Username Doesn't Exists");
             }
-        }
-
-        private void AddStateAdmin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

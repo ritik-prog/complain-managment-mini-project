@@ -859,7 +859,7 @@ namespace helphub
         private PictureBox pictureBox3;
         private DataGridViewTextBoxColumn REQUEST;
         public Label label2;
-        private DataGridView requestdataview;
+        public DataGridView requestdataview;
         private Button button2;
         private Button button1;
         private DataGridViewTextBoxColumn Request_dataview;
@@ -873,7 +873,7 @@ namespace helphub
         public Label label3;
         public ComboBox comboBox2;
         public Label label4;
-        private DataGridView complaindataview;
+        public DataGridView complaindataview;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;

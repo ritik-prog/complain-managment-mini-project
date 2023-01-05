@@ -590,7 +590,7 @@ namespace helphub
             {
                 if (check_username_exist(username))
                 {
-                    string option = Microsoft.VisualBasic.Interaction.InputBox("Want to ban user or unban?\nType 'ban' to Ban a user\nType 'unban' to UnBan a user\nNote:- Type in lowercase only", "BAN/UNBAN USER", "", x, y);
+                    string option = Microsoft.VisualBasic.Interaction.InputBox("Want to ban user or unban?\nType 'ban' to Ban a user\nType 'unban' to UnBan a user\nNote:- Type in lowercase only(only users can be banned from admin panel)", "BAN/UNBAN USER", "", x, y);
                     if (option != "")
                     {
                         string banorunban = option == "ban" ? "YES" : "NO";

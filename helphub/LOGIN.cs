@@ -23,160 +23,15 @@ namespace helphub
             Username.Select();
         }
 
-        public List<string> StateList = new List<string> {
-            "AP|Andhra Pradesh",
-            "AR|Arunachal Pradesh",
-            "AS|Assam",
-            "BR|Bihar",
-            "CT|Chhattisgarh",
-            "GA|Goa",
-            "GJ|Gujarat",
-            "HR|Haryana",
-            "HP|Himachal Pradesh",
-            "JK|Jammu and Kashmir",
-            "JH|Jharkhand",
-            "KA|Karnataka",
-            "KL|Kerala",
-            "MP|Madhya Pradesh",
-            "MH|Maharashtra",
-            "MN|Manipur",
-            "ML|Meghalaya",
-            "MZ|Mizoram",
-            "NL|Nagaland",
-            "OR|Odisha",
-            "PB|Punjab",
-            "RJ|Rajasthan",
-            "SK|Sikkim",
-            "TN|Tamil Nadu",
-            "TG|Telangana",
-            "TR|Tripura",
-            "UT|Uttarakhand",
-            "UP|Uttar Pradesh",
-            "WB|West Bengal",
-            "AN|Andaman and Nicobar Islands",
-            "CH|Chandigarh",
-            "DN|Dadra and Nagar Haveli",
-            "DD|Daman and Diu",
-            "DL|Delhi",
-            "LD|Lakshadweep",
-            "PY|Puducherry"};
-
-
         private void Button2_Click(object sender, EventArgs e)
         {
             if (Username.Text.Trim() == "" || Password.Text.Trim() == "")
             {
                 MessageBox.Show("Empty Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else {
-                try
-                {
-                    string SQLitecnStr = @"Data Source=./helphub.db";
-                    SQLiteConnection SQLiteConn = new SQLiteConnection();
-                    SQLiteCommand SQLitecmd = new SQLiteCommand();
-                    SQLiteConn.ConnectionString = SQLitecnStr;
-                    SQLiteConn.Open();
-                    SQLitecmd.Connection = SQLiteConn;
-                    SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + Username.Text + "' AND password='" + Password.Text + "'";
-                    SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    if(dt.Rows.Count == 1)
-                    {
-                        if (dt.Rows[0]["banned"].ToString() == "YES")
-                        {
-                            CreateLogs.createlogobj.userlog(Username.Text,"Banned user tried login",this.Name);
-                            MessageBox.Show("Account Banned", "SECURITY SYSTEM HELPHUB", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            UserData.ID = row["ID"].ToString();
-                            UserData.username = row["username"].ToString();
-                            UserData.aadharno = row["aadharno"].ToString();
-                            UserData.mobilenumber = row["mobilenumber"].ToString();
-                            UserData.password = row["password"].ToString();
-                            UserData.email = row["email"].ToString();
-                            UserData.role = row["Role"].ToString();
-                            UserData.address = row["address"].ToString();
-                        }
-
-                        if(UserData.role == "root")
-                        {
-                            ROOTDASHBOARD rootadmin = new ROOTDASHBOARD();
-                            rootadmin.Show();
-                            this.Hide();
-                            return;
-                        }
-
-                        if (UserData.role == "SUPERADMIN")
-                        {
-                            SUPERADMIN superadmin = new SUPERADMIN();
-                            superadmin.Show();
-                            this.Hide();
-                            return;
-                        }
-
-                        if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || StateList.Contains(UserData.role))
-                        {
-                            CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Logged in" , this.Name);
-                            CreateLogs.createlogobj.adminlog(Username.Text, "Logged in" , this.Name,UserData.role);
-                            ADMIN admin = new ADMIN();
-
-                            admin.Show();
-
-                            this.Hide(); //Close Form1,the current open form.
-                            return;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Logedin Succesfully", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Logged in", this.Name);
-                            DASHBOARD dashboard = new DASHBOARD();
-
-                            dashboard.Show();
-
-                            this.Hide(); //Close Form1,the current open form.
-                        }
-                    }
-                    else if (dt.Rows.Count >= 2)
-                    {
-                        CreateLogs.createlogobj.userlog(Username.Text, "Multiple accounts error", this.Name);
-                        MessageBox.Show("Multiple Username Error, Kindly Contact Admin....", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + Username.Text + "'";
-                        da = new SQLiteDataAdapter(SQLitecmd);
-                        da.Fill(dt);
-                        if (dt.Rows.Count != 1)
-                        {
-                            CreateLogs.createlogobj.userlog(Username.Text, "Username Doesnt Exists", this.Name);
-                            MessageBox.Show("Username Doesn't Exists, Kindly Register now", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            REGISTER register = new REGISTER();
-
-                            register.Show();
-
-                            this.Hide(); //Close Form1,the current open form.
-                        }
-                        else
-                        {
-                            CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " Wrong Credentials", this.Name);
-                            MessageBox.Show("Wrong Credentials", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-
-                    SQLiteConn.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    CreateLogs.createlogobj.userlog(Username.Text, UserData.role + " login failed", this.Name);
-                    MessageBox.Show("Login Failed", ex.Message);
-                }
-
-
+            else
+            {
+                Database.databaseobj.login(this);
             }
         }
 
@@ -186,7 +41,7 @@ namespace helphub
 
             register.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
         private void username_KeyDown(object sender, KeyEventArgs e)
         {

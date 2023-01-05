@@ -27,7 +27,7 @@ namespace helphub
         {
             UPDATEDETAILS updatedetails = new UPDATEDETAILS();
             updatedetails.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,38 +43,13 @@ namespace helphub
             }
             if (confirm == "confirm")
             {
-                try
+                if (Database.databaseobj.deleteaccount(username.Text, "PROFILE") == 0)
                 {
-                    string SQLitecnStr = @"Data Source=./helphub.db";
-                    SQLiteConnection SQLiteConn = new SQLiteConnection();
-                    SQLiteCommand SQLitecmd = new SQLiteCommand();
-                    SQLiteConn.ConnectionString = SQLitecnStr;
-                    SQLiteConn.Open();
-                    SQLitecmd.Connection = SQLiteConn;
-                    SQLitecmd.CommandText = "DELETE FROM user WHERE ID=" + UserData.ID + "";
-
-                    int status = SQLitecmd.ExecuteNonQuery();
-
-                    if(status == 0)
-                    {
-                        CreateLogs.createlogobj.userlog(username.Text, "Unable to delete account", this.Name);
-                        MessageBox.Show("Unable to Delete Account");
-                    }
-                    else
-                    {
-                        CreateLogs.createlogobj.userlog(username.Text, "Account Deleted", this.Name);
-                        MessageBox.Show("Account Successfully Deleted","Account Deleted");
-                        LOGIN login = new LOGIN();
-                        login.Show();
-                        this.Hide();
-                    }
-
-                    SQLiteConn.Close();
+                    return;
                 }
-                catch (Exception ex)
+                else
                 {
-                    CreateLogs.createlogobj.userlog(username.Text, "Unable to delete account "+ex.Message, this.Name);
-                    MessageBox.Show("Unable to Delete Account", ex.Message);
+                    this.Close();
                 }
             }
         }
@@ -83,7 +58,7 @@ namespace helphub
         {
             DASHBOARD dashboard = new DASHBOARD();
             dashboard.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

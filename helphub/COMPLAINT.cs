@@ -53,7 +53,7 @@ namespace helphub
 
             login.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
 
         private void Label3_Click(object sender, EventArgs e)
@@ -91,48 +91,7 @@ namespace helphub
             }
             else
             {
-                try
-                {
-                    string SQLitecnStr = @"Data Source=./helphub.db";
-                    SQLiteConnection SQLiteConn = new SQLiteConnection();
-                    SQLiteCommand SQLitecmd = new SQLiteCommand();
-
-                    SQLiteConn.ConnectionString = SQLitecnStr;
-                    SQLiteConn.Open();
-                    SQLitecmd.Connection = SQLiteConn;
-                    String typeofcomplain = ComboBox1.SelectedItem.ToString();
-                    String state = comboBox2.SelectedItem.ToString();
-
-                    SQLitecmd.CommandText = "insert into complaint(aadharno,typeofcomplain,mobilenumber,aboutcomplain,address,state,city,username) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + Dcomplaint.Text + "','" + Address.Text + "','"+ state + "','" + city.Text + "','" + UserData.username + "')";
-
-                    try
-                    {
-
-                        CreateLogs.createlogobj.userlog(UserData.username, "Complain filled", this.Name);
-                        SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("complain Filled, Checkout in status section", "Complain", MessageBoxButtons.OK);
-                        STATUS status = new STATUS();
-
-                        status.Show();
-
-                        this.Hide(); //Close Form1,the current open form.
-                    }
-                    catch (Exception ex)
-                    {
-
-                        CreateLogs.createlogobj.userlog(UserData.username, "Unable to file complain: " + ex.Message, this.Name);
-                        MessageBox.Show("Unable to file complain: " + ex.Message + "", "Complain", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    SQLiteConn.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    CreateLogs.createlogobj.userlog(UserData.username, "Unable to file complain: " + ex.Message, this.Name);
-                    MessageBox.Show("Unable to File Complain", ex.Message);
-                    Console.WriteLine(ex);
-                }
+                Database.databaseobj.complaint(this);
             }
         }
 
@@ -142,7 +101,7 @@ namespace helphub
 
             dashboard.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
 
         private void Label4_Click(object sender, EventArgs e)

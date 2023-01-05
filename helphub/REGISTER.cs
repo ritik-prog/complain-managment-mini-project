@@ -83,54 +83,7 @@ namespace helphub
             }
             else
             {
-            string SQLitecnStr = @"Data Source=.\helphub.db";
-            SQLiteConnection SQLiteConn = new SQLiteConnection();
-            SQLiteCommand SQLitecmd = new SQLiteCommand();
-
-            SQLiteConn.ConnectionString = SQLitecnStr;
-            SQLiteConn.Open();
-
-            SQLitecmd.Connection = SQLiteConn;
-
-            SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email,address) VALUES('"+Aadhar.Text+"','"+ username.Text +"','"+ Contact.Text +"','"+ Password.Text +"','"+ Email.Text + "','"+ Address.Text +"')";
-
-            try {
-                    
-                CreateLogs.createlogobj.userlog(username.Text, "User Registered", this.Name);
-                SQLitecmd.ExecuteNonQuery();
-                MessageBox.Show("Registered Succesfully", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LOGIN login = new LOGIN();
-
-                login.Show();
-
-                this.Hide(); //Close Form1,the current open form.
-            }
-            catch (SQLiteException ex)
-            {
-                    int code = ex.ErrorCode;
-
-                    if (code == 19)
-                    {
-
-                        CreateLogs.createlogobj.userlog(username.Text, "Already Registered Username/Aadhar Number", this.Name);
-                        MessageBox.Show("Already Registered Username/Aadhar Number", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-
-                        CreateLogs.createlogobj.userlog(username.Text, "Database Error " + ex.Message, this.Name);
-                        MessageBox.Show("Database Error: Error code:- "+ code + ",Error message:- "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-            }
-            catch (Exception ex)
-            {
-                    CreateLogs.createlogobj.userlog(username.Text, "Registration Failed " + ex.Message, this.Name);
-                    MessageBox.Show("Registration Failed: "+ ex.Message +"", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            SQLiteConn.Close();
+                Database.databaseobj.register(this);
             }
         }
 
@@ -140,7 +93,7 @@ namespace helphub
 
             login.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
 
         // change focus

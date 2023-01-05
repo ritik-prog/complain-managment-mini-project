@@ -70,7 +70,7 @@ namespace helphub
 
             login.Show();
 
-            this.Close(); //Close Form1,the current open form.
+            this.Hide(); //Close Form1,the current open form.
         }
 
         private void Button1_Click(object sender, EventArgs e)

@@ -60,7 +60,7 @@ namespace helphub
 
             login.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
@@ -95,45 +95,7 @@ namespace helphub
             }
             else
             {
-                try
-                {
-                    string SQLitecnStr = @"Data Source=./helphub.db";
-                    SQLiteConnection SQLiteConn = new SQLiteConnection();
-                    SQLiteCommand SQLitecmd = new SQLiteCommand();
-
-                    SQLiteConn.ConnectionString = SQLitecnStr;
-                    SQLiteConn.Open();
-                    SQLitecmd.Connection = SQLiteConn;
-                    String typeofcomplain = ComboBox1.SelectedItem.ToString();
-                    String state = comboBox2.SelectedItem.ToString();
-
-                    SQLitecmd.CommandText = "insert into request(aadharno,typeofrequest,mobilenumber,aboutrequest,address,state,city,username) VALUES('" + Aadhar.Text + "','" + typeofcomplain + "','" + Contact.Text + "','" + DREQUEST.Text + "','" + Address.Text + "','"+ state + "','" + city.Text + "','" + UserData.username + "')";
-
-                    try
-                    {
-
-                        SQLitecmd.ExecuteNonQuery();
-                        MessageBox.Show("Request received, Checkout in status section", "Request", MessageBoxButtons.OK);
-                        CreateLogs.createlogobj.userlog(UserData.username, "User sent a request", this.Name);
-                        STATUS status = new STATUS();
-
-                        status.Show();
-
-                        this.Hide(); //Close Form1,the current open form.
-                    }
-                    catch (Exception ex)
-                    {
-                        CreateLogs.createlogobj.userlog(UserData.username, "Can't Register Your Request: " + ex.Message , this.Name);
-                        MessageBox.Show("Can't Register Your Request: " + ex.Message + "", "Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    SQLiteConn.Close();
-                }
-                catch (Exception ex)
-                {
-                    CreateLogs.createlogobj.userlog(UserData.username, "Can't Register Your Request: " + ex.Message, this.Name);
-                    MessageBox.Show("Unable to Record your Request: "+ ex.Message +"", "Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Console.WriteLine(ex);
-                }
+                Database.databaseobj.request(this);
             }
         }
 
@@ -143,7 +105,7 @@ namespace helphub
 
             dashboard.Show();
 
-            this.Hide(); //Close Form1,the current open form.
+            this.Close(); //Close Form1,the current open form.
         }
     }
 }
