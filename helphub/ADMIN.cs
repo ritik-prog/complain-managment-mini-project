@@ -64,6 +64,7 @@ namespace helphub
                 SQLitecmd1.Connection = SQLiteConn;
                 SQLitecmd.CommandText = "";
                 SQLitecmd1.CommandText = "";
+                CreateLogs.createlogobj.adminlog(UserData.username, "Fetching Data of complain and request", this.Name, UserData.role);
                 if (UserData.role == "ADMIN" || UserData.role == "SUPERVISOR" || UserData.role == "SUPERADMIN" || UserData.role != "root")
                 {
                     if (comboBox2.SelectedItem == "ALL COMPLAINS" && comboBox3.SelectedItem == "ALL STATE")

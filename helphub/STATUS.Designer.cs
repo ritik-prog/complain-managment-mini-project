@@ -28,6 +28,8 @@ namespace helphub
             this.Button1 = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.requestdataview = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +83,8 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.button3);
+            this.GroupBox1.Controls.Add(this.button2);
             this.GroupBox1.Controls.Add(this.requestdataview);
             this.GroupBox1.Controls.Add(this.label2);
             this.GroupBox1.Controls.Add(this.complaindataview);
@@ -97,6 +101,26 @@ namespace helphub
             this.GroupBox1.Size = new System.Drawing.Size(909, 528);
             this.GroupBox1.TabIndex = 28;
             this.GroupBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(639, 324);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(212, 25);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "DOWNLOAD REQUESTS REPORT\r\n\r\n";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(639, 126);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(212, 25);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "DOWNLOAD COMPLAINS REPORT";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // requestdataview
             // 
@@ -380,5 +404,7 @@ namespace helphub
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private Button button3;
+        private Button button2;
     }
 }

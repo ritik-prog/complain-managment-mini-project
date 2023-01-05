@@ -17,19 +17,15 @@ namespace helphub
             InitializeComponent();
         }
         string title = string.Empty;
-        public DISPLAYDATABASE(string title)
+        SuperAdminDatabaseOperation control = new SuperAdminDatabaseOperation();
+        void fetchdata()
         {
-            InitializeComponent();
-            label1.Text= title;
-            this.title = title;
-            this.Text = title;
-            SuperAdminDatabaseOperation control = new SuperAdminDatabaseOperation();
-            if(title == "USER DATABASE")
+            if (title == "USER DATABASE")
             {
                 control.fetchusers();
-                displaydatabasedata.DataSource= control.dt;
+                displaydatabasedata.DataSource = control.dt;
             }
-            else if(title == "SUPERVISOR DATABASE")
+            else if (title == "SUPERVISOR DATABASE")
             {
                 control.fetchsupervisor();
                 displaydatabasedata.DataSource = control.dt;
@@ -50,16 +46,33 @@ namespace helphub
                     updatedatabase.Visible = true;
                     adduser.Visible = true;
                 }
-            }else if(title == "STATE ADMIN DATABASE")
+            }
+            else if (title == "STATE ADMIN DATABASE")
             {
                 control.fetchstateadmin();
                 displaydatabasedata.DataSource = control.dt;
             }
         }
+        public DISPLAYDATABASE(string title)
+        {
+            InitializeComponent();
+            label1.Text= title;
+            this.title = title;
+            this.Text = title;
+            fetchdata();
+        }
         private void updatedatabase_Click(object sender, EventArgs e)
         {
-            UPDATEDATABASE update = new UPDATEDATABASE(title);
-            update.Show();
+            if (title == "STATE ADMIN DATABASE")
+            {
+                UPDATESTATEADMINDATABASE stateadmin = new UPDATESTATEADMINDATABASE(fetchdata);
+                stateadmin.Show();
+            }
+            else
+            {
+                UPDATEDATABASE update = new UPDATEDATABASE(title, fetchdata);
+                update.Show();
+            }
         }
 
         private void adduser_Click(object sender, EventArgs e)
@@ -71,9 +84,14 @@ namespace helphub
             }
             else
             {
-                ADDUSER adduser = new ADDUSER(title);
+                ADDUSER adduser = new ADDUSER(title, fetchdata);
                 adduser.Show();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fetchdata();
         }
     }
 }

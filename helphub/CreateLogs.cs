@@ -62,6 +62,18 @@ namespace helphub
                 Console.WriteLine(ex.Message);
             }
         }
+        public void superadminlog(string username,string action, string formname, string role)
+        {
+            SQLitecmd.CommandText = "insert into superadminlogs(username,action,formname,time,role) VALUES('" + username + "','" + action + "','" + formname + "','" + DateTime.Now + "','" + role + "')";
+            try
+            {
+                SQLitecmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         public void fetchuserlog()
         {
             SQLitecmd.CommandText = "Select * from userlogs";
@@ -89,6 +101,14 @@ namespace helphub
         public void fetchunbanlog()
         {
             SQLitecmd.CommandText = "Select * from banunbanlogs WHERE action='unban'";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            dt.Clear();
+            dt.Columns.Clear();
+            da.Fill(dt);
+        }
+        public void fetchsuperadminlog()
+        {
+            SQLitecmd.CommandText = "Select * from superadminlogs";
             SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
             dt.Clear();
             dt.Columns.Clear();

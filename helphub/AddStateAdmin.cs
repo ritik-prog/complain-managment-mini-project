@@ -55,7 +55,9 @@ namespace helphub
                         try
                         {
                             SQLitecmd.ExecuteNonQuery();
-                            MessageBox.Show("New admin added Succesfully");
+
+                        CreateLogs.createlogobj.adminlog(UserData.username, "New state admin added :- " + username + " by  " + UserData.username + " state:- "+state.Text+"", this.Name, UserData.role);
+                        MessageBox.Show("New admin added Succesfully");
                             this.Hide();
                         }
                         catch (Exception ex)

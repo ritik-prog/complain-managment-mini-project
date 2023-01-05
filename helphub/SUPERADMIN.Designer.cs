@@ -81,6 +81,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -633,12 +634,23 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(54, 29);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(204, 42);
+            this.button14.TabIndex = 4;
+            this.button14.Text = "REFRESH STATISTICS";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
             // SUPERADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1183, 494);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -733,5 +745,6 @@
         private Button button13;
         private Label totalnumberofstateadmins;
         private Label label21;
+        private Button button14;
     }
 }

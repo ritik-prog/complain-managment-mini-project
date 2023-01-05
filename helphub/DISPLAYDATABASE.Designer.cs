@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.updatedatabase = new System.Windows.Forms.Button();
             this.adduser = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.displaydatabasedata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.displaydatabasedata.Name = "displaydatabasedata";
             this.displaydatabasedata.ReadOnly = true;
             this.displaydatabasedata.RowTemplate.Height = 25;
-            this.displaydatabasedata.Size = new System.Drawing.Size(776, 371);
+            this.displaydatabasedata.Size = new System.Drawing.Size(776, 340);
             this.displaydatabasedata.TabIndex = 0;
             // 
             // label1
@@ -79,12 +80,23 @@
             this.adduser.UseVisualStyleBackColor = true;
             this.adduser.Click += new System.EventHandler(this.adduser_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(595, 411);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(193, 36);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "REFRESH DATABASE";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // DISPLAYDATABASE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.adduser);
             this.Controls.Add(this.updatedatabase);
             this.Controls.Add(this.label1);
@@ -111,5 +123,6 @@
         private Button updatedatabase;
         private Button button1;
         private Button adduser;
+        private Button button2;
     }
 }

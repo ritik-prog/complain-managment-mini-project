@@ -39,6 +39,11 @@ namespace helphub
                 CreateLogs.createlogobj.fetchunbanlog();
                 displaylogsdata.DataSource = CreateLogs.createlogobj.dt;
             }
+            else if (title == "SUPERADMIN LOGS")
+            {
+                CreateLogs.createlogobj.fetchsuperadminlog();
+                displaylogsdata.DataSource = CreateLogs.createlogobj.dt;
+            }
         }
 
     }

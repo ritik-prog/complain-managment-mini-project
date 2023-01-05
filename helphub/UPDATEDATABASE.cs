@@ -19,12 +19,15 @@ namespace helphub
         
         string title = string.Empty;
         SuperAdminDatabaseOperation control = new SuperAdminDatabaseOperation();
-
-        public UPDATEDATABASE(string title)
+        Action fetchdata;
+        public UPDATEDATABASE(string title, Action fetchdata)
         {
             InitializeComponent();
             this.Text = "UPDATE " + title;
             this.title = title;
+            this.fetchdata = fetchdata;
+
+            CreateLogs.createlogobj.superadminlog(UserData.username, "SuperAdmin checking "+title+"", this.Name, UserData.role);
         }
 
         public void RefreshData()
@@ -42,12 +45,15 @@ namespace helphub
  
         private void updatedetails_Click(object sender, EventArgs e)
         {
-            control.UpdateUserDetails(this);
+
+            CreateLogs.createlogobj.superadminlog(UserData.username, "SuperAdmin updating details of username:- " + searchbox.Text + " on " + title + "", this.Name, UserData.role);
+            control.UpdateUserDetails(this, fetchdata);
         }
 
         private void search_Click(object sender, EventArgs e)
         {
             searchbox.Enabled = false;
+            CreateLogs.createlogobj.superadminlog(UserData.username, "SuperAdmin checking details of username:- "+searchbox.Text+ " on "+title+"", this.Name, UserData.role);
             if (title == "USER DATABASE")
             {
                 control.FetchUserDetails(searchbox.Text,"USER",this);
@@ -75,7 +81,8 @@ namespace helphub
 
         private void deleteaccount_Click(object sender, EventArgs e)
         {
-            control.DeleteUser(this);
+            CreateLogs.createlogobj.superadminlog(UserData.username, "SuperAdmin deleting user username:- " + searchbox.Text + " on " + title + "", this.Name, UserData.role);
+            control.DeleteUser(this, fetchdata);
             RefreshData();
             this.Refresh();
         }

@@ -3,14 +3,13 @@
     public partial class SUPERADMIN : Form
     {
         StatsSuperAdmin stats = new StatsSuperAdmin();
-        public SUPERADMIN()
+        void fetchstats()
         {
-            InitializeComponent();
-            totalnumberofusers.Text= stats.totalnumberofusers().ToString();
-            totalnumberofbannedusers.Text= stats.totalnumberofbannedusers().ToString();
-            totalnumberofsupervisors.Text= stats.totalnumberofsupervisors().ToString();
-            totalnumberofadmins.Text= stats.totalnumberofadmins().ToString();
-            totalnumberofsuperadmins.Text= stats.totalnumberofsuperadmins().ToString();
+            totalnumberofusers.Text = stats.totalnumberofusers().ToString();
+            totalnumberofbannedusers.Text = stats.totalnumberofbannedusers().ToString();
+            totalnumberofsupervisors.Text = stats.totalnumberofsupervisors().ToString();
+            totalnumberofadmins.Text = stats.totalnumberofadmins().ToString();
+            totalnumberofsuperadmins.Text = stats.totalnumberofsuperadmins().ToString();
             totalnumberofcomplainspending.Text = stats.totalnumberofcomplainspending().ToString();
             totalnumberofcomplains.Text = stats.totalnumberofcomplains().ToString();
             totalnumberofcomplainsstatusupdated.Text = stats.totalnumberofcomplainsstatusupdated().ToString();
@@ -18,10 +17,16 @@
             totalnumberofrequest.Text = stats.totalnumberofrequests().ToString();
             totalnumberofrequeststatusupdated.Text = stats.totalnumberofrequestsstatusupdated().ToString();
             totalnumberofstateadmins.Text = stats.totalnumberofstateadmins().ToString();
+        }
+        public SUPERADMIN()
+        {
+            InitializeComponent();
             if (UserData.role != "root")
             {
                 button12.Hide();
             }
+            fetchstats();
+            CreateLogs.createlogobj.superadminlog(UserData.username, "SuperAdmin checking Dashboard", this.Name, UserData.role);
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -113,6 +118,11 @@
         {
             DISPLAYDATABASE displaydatabase = new DISPLAYDATABASE(button13.Text);
             displaydatabase.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            fetchstats();
         }
     }
 }
