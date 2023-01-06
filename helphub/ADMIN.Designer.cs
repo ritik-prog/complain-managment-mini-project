@@ -70,6 +70,8 @@ namespace helphub
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaindataview)).BeginInit();
@@ -89,7 +91,7 @@ namespace helphub
             this.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Label1.ForeColor = System.Drawing.Color.Black;
-            this.Label1.Location = new System.Drawing.Point(758, 19);
+            this.Label1.Location = new System.Drawing.Point(410, 40);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(202, 38);
             this.Label1.TabIndex = 12;
@@ -97,6 +99,8 @@ namespace helphub
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.button6);
+            this.GroupBox1.Controls.Add(this.button5);
             this.GroupBox1.Controls.Add(this.superadmin);
             this.GroupBox1.Controls.Add(this.pictureBox7);
             this.GroupBox1.Controls.Add(this.comboBox4);
@@ -253,7 +257,7 @@ namespace helphub
             this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBox1.BackColor = System.Drawing.Color.White;
             this.ComboBox1.DropDownWidth = 579;
-            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ComboBox1.FormattingEnabled = true;
             this.ComboBox1.Items.AddRange(new object[] {
             "ALL REQUEST",
@@ -262,10 +266,10 @@ namespace helphub
             "NEW ROAD ",
             "WATER SUPPLY",
             "OTHER ISSUES"});
-            this.ComboBox1.Location = new System.Drawing.Point(1094, 385);
+            this.ComboBox1.Location = new System.Drawing.Point(1092, 383);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(227, 30);
+            this.ComboBox1.Size = new System.Drawing.Size(227, 33);
             this.ComboBox1.TabIndex = 39;
             this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
@@ -567,7 +571,7 @@ namespace helphub
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(410, 352);
+            this.button4.Location = new System.Drawing.Point(879, 348);
             this.button4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(219, 30);
@@ -582,7 +586,7 @@ namespace helphub
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(410, 48);
+            this.button3.Location = new System.Drawing.Point(877, 48);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(219, 30);
@@ -627,7 +631,7 @@ namespace helphub
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1100, 48);
+            this.button2.Location = new System.Drawing.Point(654, 48);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(219, 30);
@@ -642,7 +646,7 @@ namespace helphub
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1100, 352);
+            this.button1.Location = new System.Drawing.Point(656, 348);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 30);
@@ -775,7 +779,7 @@ namespace helphub
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(771, 324);
+            this.label2.Location = new System.Drawing.Point(410, 344);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(189, 38);
             this.label2.TabIndex = 30;
@@ -821,6 +825,36 @@ namespace helphub
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(1100, 48);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(219, 30);
+            this.button5.TabIndex = 50;
+            this.button5.Text = "DOWNLOAD REPORT";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(1102, 348);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(219, 30);
+            this.button6.TabIndex = 51;
+            this.button6.Text = "DOWNLOAD REPORT";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // ADMIN
             // 
@@ -907,5 +941,7 @@ namespace helphub
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private PictureBox pictureBox7;
         private Button superadmin;
+        private Button button6;
+        private Button button5;
     }
 }

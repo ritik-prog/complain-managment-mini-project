@@ -649,5 +649,15 @@ namespace helphub
             superadmin.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DownloadPdf.downloadpdf("REQUESTS REPORT", complaindataview);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DownloadPdf.downloadpdf("COMPLAINS REPORT", complaindataview);
+        }
     }
 }

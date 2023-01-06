@@ -98,5 +98,10 @@ namespace helphub
         {
             fetchdata();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DownloadPdf.downloadpdf(""+title+" REPORT",displaydatabasedata);
+        }
     }
 }
