@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace helphub
 {
@@ -19,12 +20,12 @@ namespace helphub
         public ADMIN()
         {
             InitializeComponent();
-            if(UserData.role != "SUPERADMIN" && UserData.role != "root")
+            if (UserData.role != "SUPERADMIN" && UserData.role != "root")
             {
                 superadmin.Hide();
                 pictureBox4.Hide();
             }
-            if(UserData.role != "ADMIN" && UserData.role != "SUPERADMIN" && UserData.role != "root")
+            if (UserData.role != "ADMIN" && UserData.role != "SUPERADMIN" && UserData.role != "root")
             {
                 pictureBox5.Hide();
                 pictureBox6.Hide();
@@ -81,7 +82,7 @@ namespace helphub
                     }
                     else
                     {
-                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '"+ comboBox2.SelectedItem +"' AND state = '" + comboBox3.SelectedItem + "'";
+                        SQLitecmd.CommandText = "SELECT * FROM complaint WHERE typeofcomplain = '" + comboBox2.SelectedItem + "' AND state = '" + comboBox3.SelectedItem + "'";
                     }
                     if (ComboBox1.SelectedItem == "ALL REQUEST" && comboBox4.SelectedItem == "ALL STATE")
                     {
@@ -97,7 +98,7 @@ namespace helphub
                     }
                     else
                     {
-                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE typeofrequest = '"+ ComboBox1.SelectedItem + "' AND state = '" + comboBox4.SelectedItem + "'";
+                        SQLitecmd1.CommandText = "SELECT * FROM request WHERE typeofrequest = '" + ComboBox1.SelectedItem + "' AND state = '" + comboBox4.SelectedItem + "'";
                     }
                 }
                 else
@@ -185,7 +186,7 @@ namespace helphub
             int y = this.Top + (this.Height / 2) - 100;
             string ID = "";
             ID = Microsoft.VisualBasic.Interaction.InputBox("Enter ID of Complaint", "Update Complaint status", "", x, y);
-            if(ID == "")
+            if (ID == "")
             {
                 MessageBox.Show("ID field is empty/Updating status aborted");
                 return;
@@ -213,21 +214,21 @@ namespace helphub
                     {
                         SQLitecmd.ExecuteNonQuery();
                         MessageBox.Show("Status Updated Succesfully");
-                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- "+ID+" Status updated to "+Status+"", this.Name, UserData.role);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status updated to " + Status + "", this.Name, UserData.role);
                         fetchData();
                         this.Refresh();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Update Failed", ex.Message);
-                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status update failed (updated status:- "+Status+") - "+ex.Message+"", this.Name, UserData.role);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status update failed (updated status:- " + Status + ") - " + ex.Message + "", this.Name, UserData.role);
                     }
                     SQLiteConn.Close();
 
                 }
                 catch (Exception ex)
                 {
-                    CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status update failed (updated status:- " + Status + ") - "+ex.Message+"", this.Name, UserData.role);
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Status update failed (updated status:- " + Status + ") - " + ex.Message + "", this.Name, UserData.role);
                     MessageBox.Show("Update Failed", ex.Message);
                     Console.WriteLine(ex);
                 }
@@ -331,7 +332,16 @@ namespace helphub
             da.Fill(dt);
             if (dt.Rows.Count == 1)
             {
-                return true;
+                if ((dt.Rows[0]["role"].ToString() == "SUPERADMIN" || dt.Rows[0]["role"].ToString() == "SUPERVISOR" || dt.Rows[0]["role"].ToString() == "root" || dt.Rows[0]["role"].ToString() == "ADMIN" || Database.databaseobj.StateList.Contains(dt.Rows[0]["role"].ToString())) && UserData.role == "ADMIN")
+                {
+                    MessageBox.Show("You can't change details of a " + dt.Rows[0]["role"].ToString() + "");
+                    CreateLogs.createlogobj.adminlog(UserData.username, "You can't change details of a " + dt.Rows[0]["role"].ToString() + "", this.Name, UserData.role);
+                    throw new Exception("You can't change details of a " + dt.Rows[0]["role"].ToString() + "");
+                }
+                else
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -344,9 +354,9 @@ namespace helphub
             string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make admin", "Update user role", "", x, y);
             if (username != "")
             {
-                if (check_username_exist(username))
+                try
                 {
-                    try
+                    if (check_username_exist(username))
                     {
                         string SQLitecnStr = @"Data Source=./helphub.db";
                         SQLiteConnection SQLiteConn = new SQLiteConnection();
@@ -358,7 +368,7 @@ namespace helphub
                         try
                         {
                             SQLitecmd.ExecuteNonQuery();
-                            CreateLogs.createlogobj.adminlog(UserData.username, "New admin added :- "+username+" by  "+UserData.username+"", this.Name, UserData.role);
+                            CreateLogs.createlogobj.adminlog(UserData.username, "New admin added :- " + username + " by  " + UserData.username + "", this.Name, UserData.role);
                             MessageBox.Show("New admin added Succesfully");
                             fetchData();
                             this.Refresh();
@@ -366,22 +376,23 @@ namespace helphub
                         catch (Exception ex)
                         {
 
-                            CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Admin "+ex.Message, this.Name, UserData.role);
+                            CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Admin " + ex.Message, this.Name, UserData.role);
                             MessageBox.Show("Can't Add New Admin", ex.Message);
                         }
                         SQLiteConn.Close();
 
+
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Admin " + ex.Message, this.Name, UserData.role);
-                        MessageBox.Show("Can't Add New Admin", ex.Message);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Username Doesnt Exists - adding new admin", this.Name, UserData.role);
+                        MessageBox.Show("Username Doesn't Exists");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    CreateLogs.createlogobj.adminlog(UserData.username, "Username Doesnt Exists - adding new admin", this.Name, UserData.role);
-                    MessageBox.Show("Username Doesn't Exists");
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Admin " + ex.Message, this.Name, UserData.role);
+                    MessageBox.Show("Can't Add New Admin", ex.Message);
                 }
             }
             else
@@ -397,9 +408,9 @@ namespace helphub
             string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to make supervisor", "Update user role", "", x, y);
             if (username != "")
             {
-                if (check_username_exist(username))
+                try
                 {
-                    try
+                    if (check_username_exist(username))
                     {
                         string SQLitecnStr = @"Data Source=./helphub.db";
                         SQLiteConnection SQLiteConn = new SQLiteConnection();
@@ -422,18 +433,17 @@ namespace helphub
                             MessageBox.Show("Can't Add New Supervisor", ex.Message);
                         }
                         SQLiteConn.Close();
-
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Supervisor "+ex.Message , this.Name, UserData.role);
-                        MessageBox.Show("Can't Add New Supervisor", ex.Message);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Username Doesnt Exists - adding new supervisor", this.Name, UserData.role);
+                        MessageBox.Show("Username Doesn't Exists");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    CreateLogs.createlogobj.adminlog(UserData.username, "Username Doesnt Exists - adding new supervisor", this.Name, UserData.role);
-                    MessageBox.Show("Username Doesn't Exists");
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Can't Add New Supervisor " + ex.Message, this.Name, UserData.role);
+                    MessageBox.Show("Can't Add New Supervisor", ex.Message);
                 }
             }
             else
@@ -474,7 +484,7 @@ namespace helphub
                     }
                     catch (Exception ex)
                     {
-                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Process failed "+ex.Message, this.Name, UserData.role);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Process failed " + ex.Message, this.Name, UserData.role);
                         MessageBox.Show("Process Failed", ex.Message);
                     }
                     SQLiteConn.Close();
@@ -482,7 +492,7 @@ namespace helphub
                 }
                 catch (Exception ex)
                 {
-                    CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Process Failed "+ex.Message, this.Name, UserData.role);
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Complain Id:- " + ID + " Process Failed " + ex.Message, this.Name, UserData.role);
                     MessageBox.Show("Process Failed", ex.Message);
                 }
             }
@@ -532,7 +542,7 @@ namespace helphub
                     }
                     catch (Exception ex)
                     {
-                        CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Deleteion failed "+ex.Message, this.Name, UserData.role);
+                        CreateLogs.createlogobj.adminlog(UserData.username, "Request Id:- " + ID + " Deleteion failed " + ex.Message, this.Name, UserData.role);
                         MessageBox.Show("Process Failed", ex.Message);
                     }
                     SQLiteConn.Close();
@@ -588,15 +598,15 @@ namespace helphub
             string username = Microsoft.VisualBasic.Interaction.InputBox("Enter username of user to BAN/UNBAN", "BAN/UNBAN USER", "", x, y);
             if (username != "")
             {
-                if (check_username_exist(username))
+                try
                 {
-                    string option = Microsoft.VisualBasic.Interaction.InputBox("Want to ban user or unban?\nType 'ban' to Ban a user\nType 'unban' to UnBan a user\nNote:- Type in lowercase only(only users can be banned from admin panel)", "BAN/UNBAN USER", "", x, y);
-                    if (option != "")
+                    if (check_username_exist(username))
                     {
-                        string banorunban = option == "ban" ? "YES" : "NO";
-                        if (username != "")
+                        string option = Microsoft.VisualBasic.Interaction.InputBox("Want to ban user or unban?\nType 'ban' to Ban a user\nType 'unban' to UnBan a user\nNote:- Type in lowercase only(only users can be banned from admin panel)", "BAN/UNBAN USER", "", x, y);
+                        if (option != "")
                         {
-                            try
+                            string banorunban = option == "ban" ? "YES" : "NO";
+                            if (username != "")
                             {
                                 string SQLitecnStr = @"Data Source=./helphub.db";
                                 SQLiteConnection SQLiteConn = new SQLiteConnection();
@@ -604,37 +614,35 @@ namespace helphub
                                 SQLiteConn.ConnectionString = SQLitecnStr;
                                 SQLiteConn.Open();
                                 SQLitecmd.Connection = SQLiteConn;
-                                SQLitecmd.CommandText = "UPDATE user SET banned = '"+ banorunban +"' WHERE username = '" + username + "' AND role='USER';";
+                                SQLitecmd.CommandText = "UPDATE user SET banned = '" + banorunban + "' WHERE username = '" + username + "' AND role='USER';";
                                 try
                                 {
                                     SQLitecmd.ExecuteNonQuery();
-                                    MessageBox.Show("User succesfully "+ option +"ned");
-                                    CreateLogs.createlogobj.banunbanlog(username, UserData.username, this.Name, option);
-                                    CreateLogs.createlogobj.adminlog(UserData.username, ""+username+" "+option+"ned", this.Name, UserData.role);
+                                    MessageBox.Show("User succesfully " + option + "ned");
+                                    CreateLogs.createlogobj.banunbanlog(username, UserData.username, option);
+                                    CreateLogs.createlogobj.adminlog(UserData.username, "" + username + " " + option + "ned", this.Name, UserData.role);
                                 }
                                 catch (Exception ex)
                                 {
-                                    CreateLogs.createlogobj.adminlog(UserData.username, "Can't " + option + " user "+ex.Message, this.Name, UserData.role);
-                                    MessageBox.Show("Can't "+ option +" user", ex.Message);
+                                    CreateLogs.createlogobj.adminlog(UserData.username, "Can't " + option + " user " + ex.Message, this.Name, UserData.role);
+                                    MessageBox.Show("Can't " + option + " user", ex.Message);
                                 }
                                 SQLiteConn.Close();
-
                             }
-                            catch (Exception ex)
-                            {
-                                CreateLogs.createlogobj.adminlog(UserData.username, "Can't " + option + " user "+ex.Message, this.Name, UserData.role); 
-                                MessageBox.Show("Can't "+ option +" user", ex.Message);
-                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Option field is empty");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Option field is empty");
+                        MessageBox.Show("Username Doesn't Exists");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Username Doesn't Exists");
+                    CreateLogs.createlogobj.adminlog(UserData.username, "Can't  ban/unban  user " + ex.Message, this.Name, UserData.role);
                 }
             }
             else

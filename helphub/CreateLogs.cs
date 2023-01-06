@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -26,8 +27,17 @@ namespace helphub
             SQLiteConn.Open();
             SQLitecmd.Connection = SQLiteConn;
         }
+
+        void checkconn()
+        {
+            if(SQLiteConn.State == ConnectionState.Closed)
+            {
+                SQLiteConn.Open();
+            }
+        } 
         public void userlog(string username,string action,string formname)
         {
+            checkconn();
             SQLitecmd.CommandText = "insert into userlogs(username,action,formname,time) VALUES('" + username + "','" + action + "','" + formname + "','" + DateTime.Now + "')";
             try
             {
@@ -40,6 +50,7 @@ namespace helphub
         }
         public void adminlog(string username, string action, string formname, string role)
         {
+            checkconn();
             SQLitecmd.CommandText = "insert into adminlogs(username,action,formname,time,role) VALUES('" + username + "','" + action + "','" + formname + "','" + DateTime.Now + "','" + role + "')";
             try
             {
@@ -50,8 +61,9 @@ namespace helphub
                 Console.WriteLine(ex.Message);
             }
         }
-        public void banunbanlog(string usernameofuser, string usernameofadmin, string formname, string action)
+        public void banunbanlog(string usernameofuser, string usernameofadmin, string action)
         {
+            checkconn();
             SQLitecmd.CommandText = "insert into banunbanlogs(usernameofuser,usernameofadmin,time,action) VALUES('" + usernameofuser + "','" + usernameofadmin + "','" + DateTime.Now + "','" + action + "')";
             try
             {
@@ -64,6 +76,7 @@ namespace helphub
         }
         public void superadminlog(string username,string action, string formname, string role)
         {
+            checkconn();
             SQLitecmd.CommandText = "insert into superadminlogs(username,action,formname,time,role) VALUES('" + username + "','" + action + "','" + formname + "','" + DateTime.Now + "','" + role + "')";
             try
             {
@@ -76,6 +89,7 @@ namespace helphub
         }
         public void fetchuserlog()
         {
+            checkconn();
             SQLitecmd.CommandText = "Select * from userlogs";
             SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
             dt.Clear();
@@ -84,6 +98,7 @@ namespace helphub
         }
         public void fetchadminlog()
         {
+            checkconn();
             SQLitecmd.CommandText = "Select * from adminlogs";
             SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
             dt.Clear();
@@ -92,6 +107,7 @@ namespace helphub
         }
         public void fetchbanlog()
         {
+            checkconn();
             SQLitecmd.CommandText = "Select * from banunbanlogs WHERE action='ban'";
             SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
             dt.Clear();
@@ -100,6 +116,7 @@ namespace helphub
         }
         public void fetchunbanlog()
         {
+            checkconn();
             SQLitecmd.CommandText = "Select * from banunbanlogs WHERE action='unban'";
             SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
             dt.Clear();
@@ -108,6 +125,7 @@ namespace helphub
         }
         public void fetchsuperadminlog()
         {
+            checkconn();
             SQLitecmd.CommandText = "Select * from superadminlogs";
             SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
             dt.Clear();

@@ -31,105 +31,13 @@ namespace helphub
             SQLitecmd.Connection = SQLiteConn;
         }
 
-        // clear function
-        public void clear()
+        void checkconn()
         {
-            dt.Clear();
-            dt.Columns.Clear();
-            dt1.Clear();
-            dt1.Columns.Clear();
-        }
-
-        // common functions
-        public Boolean check_username_exist(string username)
-        {
-            clear();
-            SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + username + "'";
-            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
-            da.Fill(dt);
-            if (dt.Rows.Count == 1)
+            if(SQLiteConn.State == ConnectionState.Closed)
             {
-                return true;
-            }
-            return false;
-        }
-
-        public int deleteaccount(string username,string formname)
-        {
-            try
-            {
-                string SQLitecnStr = @"Data Source=./helphub.db";
-                SQLiteConnection SQLiteConn = new SQLiteConnection();
-                SQLiteCommand SQLitecmd = new SQLiteCommand();
-                SQLiteConn.ConnectionString = SQLitecnStr;
                 SQLiteConn.Open();
-                SQLitecmd.Connection = SQLiteConn;
-                SQLitecmd.CommandText = "DELETE FROM user WHERE ID=" + UserData.ID + "";
-
-                int status = SQLitecmd.ExecuteNonQuery();
-
-                if (status == 0)
-                {
-                    CreateLogs.createlogobj.userlog(username, "Unable to delete account", formname);
-                    MessageBox.Show("Unable to Delete Account");
-                    return 0;
-                }
-                else
-                {
-                    CreateLogs.createlogobj.userlog(username, "Account Deleted", formname);
-                    MessageBox.Show("Account Successfully Deleted", "Account Deleted");
-                    LOGIN login = new LOGIN();
-                    login.Show();
-                    return 1;
-                }
             }
-            catch (Exception ex)
-            {
-                CreateLogs.createlogobj.userlog(username, "Unable to delete account " + ex.Message, formname);
-                MessageBox.Show("Unable to Delete Account", ex.Message);
-            }
-            return 0;
-        }
-
-        public void FetchData(DataGridView complaindataview, DataGridView requestdataview)
-        {
-            clear();
-            try
-            {
-                // connection + query
-                SQLitecmd.Connection = SQLiteConn;
-                SQLitecmd.CommandText = "SELECT * FROM complaint WHERE aadharno='" + UserData.aadharno + "'";
-                // connection + query
-                SQLitecmd1.Connection = SQLiteConn;
-                SQLitecmd1.CommandText = "SELECT * FROM request WHERE aadharno='" + UserData.aadharno + "'";
-                // data adapter
-                SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
-                SQLiteDataAdapter da1 = new SQLiteDataAdapter(SQLitecmd1);
-
-                // filling data in datatable with adapter
-                da.Fill(dt);
-                da1.Fill(dt1);
-
-                if (dt.Rows.Count > 0 || dt1.Rows.Count > 0)
-                {
-                    complaindataview.DataSource = dt;
-                    requestdataview.DataSource = dt1;
-                }
-                else
-                {
-                    MessageBox.Show("No records found", "STATUS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                SQLiteConn.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to Load Data", ex.Message);
-                Console.WriteLine(ex);
-            }
-        }
-
+        } 
 
         // state list
         public List<string> StateList = new List<string> {
@@ -170,10 +78,109 @@ namespace helphub
             "LD|Lakshadweep",
             "PY|Puducherry"};
 
+        // clear function
+        public void clear()
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            dt1.Clear();
+            dt1.Columns.Clear();
+        }
+
+        // common functions
+        public Boolean check_username_exist(string username)
+        {
+            clear();
+            checkconn();
+            SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + username + "'";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+            da.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public int deleteaccount(string username,string formname)
+        {
+            try
+            {
+                clear();
+                checkconn();
+                SQLitecmd.CommandText = "DELETE FROM user WHERE ID=" + UserData.ID + "";
+
+                int status = SQLitecmd.ExecuteNonQuery();
+
+                if (status == 0)
+                {
+                    CreateLogs.createlogobj.userlog(username, "Unable to delete account", formname);
+                    MessageBox.Show("Unable to Delete Account");
+                    return 0;
+                }
+                else
+                {
+                    CreateLogs.createlogobj.userlog(username, "Account Deleted", formname);
+                    MessageBox.Show("Account Successfully Deleted", "Account Deleted");
+                    LOGIN login = new LOGIN();
+                    login.Show();
+                    return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                CreateLogs.createlogobj.userlog(username, "Unable to delete account " + ex.Message, formname);
+                MessageBox.Show("Unable to Delete Account", ex.Message);
+            }
+            return 0;
+        }
+
+        public void FetchData(DataGridView complaindataview, DataGridView requestdataview)
+        {
+            clear();
+            checkconn();
+            try
+            {
+                // connection + query
+                SQLitecmd.Connection = SQLiteConn;
+                SQLitecmd.CommandText = "SELECT * FROM complaint WHERE aadharno='" + UserData.aadharno + "'";
+                // connection + query
+                SQLitecmd1.Connection = SQLiteConn;
+                SQLitecmd1.CommandText = "SELECT * FROM request WHERE aadharno='" + UserData.aadharno + "'";
+                // data adapter
+                SQLiteDataAdapter da = new SQLiteDataAdapter(SQLitecmd);
+                SQLiteDataAdapter da1 = new SQLiteDataAdapter(SQLitecmd1);
+
+                // filling data in datatable with adapter
+                da.Fill(dt);
+                da1.Fill(dt1);
+
+                if (dt.Rows.Count > 0 || dt1.Rows.Count > 0)
+                {
+                    complaindataview.DataSource = dt;
+                    requestdataview.DataSource = dt1;
+                }
+                else
+                {
+                    MessageBox.Show("No records found", "STATUS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                SQLiteConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to Load Data", ex.Message);
+                Console.WriteLine(ex);
+            }
+        }
+
+
         // specific function
         public void register(REGISTER passedFunction)
         {
             clear();
+            checkconn();
             SQLitecmd.CommandText = "insert into user(aadharno,username,mobilenumber,password,email,address) VALUES('" + passedFunction.Aadhar.Text + "','" + passedFunction.username.Text + "','" + passedFunction.Contact.Text + "','" + passedFunction.Password.Text + "','" + passedFunction.Email.Text + "','" + passedFunction.Address.Text + "')";
             try
             {
@@ -214,6 +221,7 @@ namespace helphub
         public void login(LOGIN passedFunction)
         {
             clear();
+            checkconn();
             try
             {
                 SQLitecmd.CommandText = "SELECT * FROM user WHERE username='" + passedFunction.Username.Text + "' AND password='" + passedFunction.Password.Text + "'";
@@ -312,6 +320,7 @@ namespace helphub
         public void complaint(COMPLAINT passedFunction)
         {
             clear();
+            checkconn();
             try
             {
                 String typeofcomplain = passedFunction.ComboBox1.SelectedItem.ToString();
@@ -348,8 +357,8 @@ namespace helphub
 
         public void request(REQUEST passedFunction)
         {
-            SQLiteConn.Open();
             clear();
+            checkconn();
             try
             {
                 String typeofcomplain = passedFunction.ComboBox1.SelectedItem.ToString();
