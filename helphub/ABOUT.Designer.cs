@@ -39,11 +39,11 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::helphub.Properties.Resources.about;
-            this.pictureBox1.Location = new System.Drawing.Point(-420, 0);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(1279, 206);
-            this.pictureBox1.MinimumSize = new System.Drawing.Size(1279, 206);
+            this.pictureBox1.Location = new System.Drawing.Point(-10, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1279, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(1485, 249);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -51,9 +51,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(17, 232);
+            this.label1.Location = new System.Drawing.Point(0, 270);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(767, 180);
+            this.label1.Size = new System.Drawing.Size(1466, 369);
             this.label1.TabIndex = 1;
             this.label1.Text = resources.GetString("label1.Text");
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,9 +63,10 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::helphub.Properties.Resources.DASHBOARD;
-            this.pictureBox2.Location = new System.Drawing.Point(656, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(1153, 15);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(161, 44);
+            this.pictureBox2.Size = new System.Drawing.Size(299, 94);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -72,17 +74,18 @@
             // 
             // ABOUT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1467, 679);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(816, 489);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximumSize = new System.Drawing.Size(1493, 750);
+            this.MinimumSize = new System.Drawing.Size(1493, 750);
             this.Name = "ABOUT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABOUT - HELPHUB";

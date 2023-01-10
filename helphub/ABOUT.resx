@@ -58,9 +58,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>The HelpHub is a windows form application designed and developed which aimed at computerizing all its official 
-functions to ensure simple operations. It covers wide circle of media of request, complain and ensures smooth 
-running of operations with respect to the database. 
+    <value>The HelpHub is a windows form application designed and developed which aimed at computerizing all its 
+official functions to ensure simple operations. It covers wide circle of media of request, complain and ensures 
+smooth running of operations with respect to the database. 
 
 
 Manual maintenance of complains and requests does not ensure security and consumes more time when 

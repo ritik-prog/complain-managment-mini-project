@@ -187,7 +187,7 @@ namespace helphub
 
                 CreateLogs.createlogobj.userlog(passedFunction.username.Text, "User Registered", passedFunction.Name);
                 SQLitecmd.ExecuteNonQuery();
-                MessageBox.Show("Registered Succesfully", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registered Successfully", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LOGIN login = new LOGIN();
 
@@ -277,7 +277,7 @@ namespace helphub
                     }
                     else
                     {
-                        MessageBox.Show("Logedin Succesfully", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Logged in Successfully", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CreateLogs.createlogobj.userlog(passedFunction.Username.Text, UserData.role + " Logged in", passedFunction.Name);
                         DASHBOARD dashboard = new DASHBOARD();
 
