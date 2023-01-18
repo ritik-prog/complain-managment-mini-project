@@ -97,7 +97,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(193, 36);
             this.button3.TabIndex = 5;
-            this.button3.Text = "REFRESH DATABASE";
+            this.button3.Text = "DOWNLOAD DATA";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
