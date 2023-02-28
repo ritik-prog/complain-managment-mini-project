@@ -1,3 +1,5 @@
+### Checkout [Blog](https://blog.ritikmakhija.tech/perfect-college-project)
+
 ### Introduction
 
 Are you a college student looking to create a project that showcases your coding skills? Look no further than the Complain Management System project, available for free on GitHub. This project is written in both C# and VB.NET, making it a great choice for students who are comfortable working in either language.
