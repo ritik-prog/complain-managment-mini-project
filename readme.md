@@ -63,13 +63,3 @@ By setting the "Copy to Output Directory" property, Visual Studio will automatic
         
 
 That's it! By following these steps, you can ensure that the "helphub.db" file is always copied to the bin folder of your Visual Basic project.
-
----
-
-### Conclusion
-
-Congratulations! You have successfully installed and run the Complain Management System project using both C# and VB.NET. This project is a great starting point for any college student looking to create a project that showcases their coding skills. Feel free to customize the project to fit your needs and show off your creativity.
-
-In conclusion, Visual Basic 2022 is a powerful development environment that enables developers to create high-quality Windows applications with ease. With its intuitive interface, advanced debugging tools, and extensive library of pre-built components, Visual Basic 2022 is an excellent choice for developers of all skill levels.
-
-In this blog, we discussed how to run a Visual Basic project in the 2022 version, as well as how to ensure that files such as the "helphub.db" file are copied to the bin folder when building a project.
