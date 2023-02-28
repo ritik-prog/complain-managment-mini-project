@@ -34,11 +34,9 @@ Once you have these tools installed, follow these steps to install and run the C
 
 1. In Visual Studio, right-click on the "helphub.db" file in the Solution Explorer window and select "Properties".
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677592540060/cfa89476-437f-4d26-a10c-5b3c0bf305e4.png align="center")
     
 2. In the Properties window, set the "Copy to Output Directory" property to "Copy always".
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677592605335/9b46ac59-7c37-4ed4-9cad-900d0b50ff04.png align="center")
     
 3. Save the changes and build your project.
     
@@ -60,8 +58,6 @@ By setting the "Copy to Output Directory" property, Visual Studio will automatic
     3. For example, if you are building the Debug configuration of your project, the "helphub.db" file will be copied to the "Debug" subfolder within the bin folder. Similarly, if you are building the Release configuration, the file will be copied to the "Release" subfolder.
         
         I hope this provides more clarity on the location of the bin folder within your Visual Basic project!
-        
-        ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677592855172/d97cd5cc-f833-466e-8a1a-626c95c42d30.png align="center")
         
 
 That's it! By following these steps, you can ensure that the "helphub.db" file is always copied to the bin folder of your Visual Basic project.
