@@ -1,4 +1,4 @@
-### Checkout [Blog](https://blog.ritikmakhija.tech/perfect-college-project)
+### [Blog](https://blog.ritikmakhija.tech/perfect-college-project) [Demo](https://github.com/ritik-prog/complain-managment-system/blob/master/demo.zip)
 
 ### Introduction
 
