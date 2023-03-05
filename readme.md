@@ -17,8 +17,6 @@ The document folder contains important documents such as project scope, project 
 
 To access the document folder, simply navigate to the project GitHub repository and look for the "Documents" folder. Once inside the folder, you will find all the relevant project documents that you can download and review at your convenience.
 
-%[https://github.com/ritik-prog/complain-request-managment-system.git] 
-
 ---
 
 ## Prerequisites
