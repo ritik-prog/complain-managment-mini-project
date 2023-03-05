@@ -1,6 +1,6 @@
 ![banner](https://user-images.githubusercontent.com/35072415/222943588-30dd2fa4-2438-48cc-879b-3da05f02ce7c.png)
 
-### [Blog](https://blog.ritikmakhija.tech/perfect-college-project) ### [Demo](https://github.com/ritik-prog/complain-managment-system/blob/master/demo.zip)
+### ->[Blog](https://blog.ritikmakhija.tech/perfect-college-project) ->[Demo](https://github.com/ritik-prog/complain-managment-system/blob/master/demo.zip)
 
 ## Introduction
 
