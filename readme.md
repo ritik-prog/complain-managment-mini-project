@@ -55,7 +55,7 @@ Once you have these tools installed, follow these steps to install and run the C
 
 ### Dependencies Installation
 
-![Perfect for Your College Project](https://cdn.hashnode.com/res/hashnode/image/upload/v1677641700943/7bccb334-7a5d-495c-a0e6-ff965191a14b.png align="center")
+![Perfect for Your College Project](https://cdn.hashnode.com/res/hashnode/image/upload/v1677641700943/7bccb334-7a5d-495c-a0e6-ff965191a14b.png)
 
 The picture you have listed under Dependencies Installation lists the required packages that <mark>need to be installed to run the project successfully</mark>. These packages are crucial dependencies that are necessary for the project to function properly.
 
@@ -118,11 +118,11 @@ It is crucial to cross-check all the dependencies to ensure that the project fun
 
 1. In Visual Studio, right-click on the "helphub.db" file in the Solution Explorer window and select "Properties".
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677680330067/136c17d7-2dae-49ce-a3fe-dc20575933be.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677680330067/136c17d7-2dae-49ce-a3fe-dc20575933be.png)
     
 2. In the Properties window, set the "Copy to Output Directory" property to "Copy always".
     
-    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677680374142/dc0be0ae-6e8d-4e1e-a748-c266563e282e.png align="center")
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677680374142/dc0be0ae-6e8d-4e1e-a748-c266563e282e.png)
     
 3. Save the changes and build your project.
     
@@ -145,7 +145,7 @@ By setting the "Copy to Output Directory" property, Visual Studio will automatic
         
         I hope this provides more clarity on the location of the bin folder within your Visual Basic project!
         
-        ![Design Your Next Project with Ease: Complain and Request Management System for College Students](https://cdn.hashnode.com/res/hashnode/image/upload/v1677592855172/d97cd5cc-f833-466e-8a1a-626c95c42d30.png align="center")
+        ![Design Your Next Project with Ease: Complain and Request Management System for College Students](https://cdn.hashnode.com/res/hashnode/image/upload/v1677592855172/d97cd5cc-f833-466e-8a1a-626c95c42d30.png)
         
 
 That's it! By following these steps, you can ensure that the "helphub.db" file is always copied to the bin folder of your Visual Basic project.
@@ -212,7 +212,7 @@ Accessing the Complain and Request Management System project requires users to p
 
 The login details for the project are created during the installation process. Users can customize the login credentials to their liking, including the username and password. It is recommended that users choose strong, unique passwords that are not easy to guess to ensure the security of their data.
 
-![Design Your Next Project with Ease: Complain and Request Management System for College Students](https://cdn.hashnode.com/res/hashnode/image/upload/v1677593717390/4326e81c-7093-4b19-9ecf-794cf9289a8e.png align="center")
+![Design Your Next Project with Ease: Complain and Request Management System for College Students](https://cdn.hashnode.com/res/hashnode/image/upload/v1677593717390/4326e81c-7093-4b19-9ecf-794cf9289a8e.png)
 
 ---
 
